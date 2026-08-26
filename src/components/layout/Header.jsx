@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { useScrollState } from "../../hooks/useScrollState";
@@ -15,7 +16,7 @@ export function Header() {
     { label: t("매물", "Properties"), sub: [t("매매", "Buy"), t("임대", "Rent"), t("신규개발", "New Developments")] },
     { label: t("부동산 노트", "Property Notes") },
     { label: t("시드니 지역", "Sydney Areas") },
-    { label: t("서비스", "Services") },
+    { label: t("서비스", "Services"), to: "/services" },
     { label: t("소개", "About") },
     { label: t("연락처", "Contact") },
   ];
@@ -33,18 +34,28 @@ export function Header() {
         <div className="flex items-center justify-between h-[62px] md:h-[68px]">
 
           {/* Logo — full official brand name only, no eyebrow label */}
-          <a href="#" style={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
             <div
               className="text-[14px] font-medium leading-none"
               style={{ fontFamily: display, color: COLORS.ink, letterSpacing: "0.03em" }}
             >
               {t("시드니 복덕방", "Sydney Bokdokbang")}
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
-            {NAV_ITEMS.map((item) => (
+            {NAV_ITEMS.map((item) =>
+              item.to ? (
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  className="flex items-center gap-1 text-[13px] py-1 transition-colors duration-150 hover:opacity-60"
+                  style={{ color: COLORS.ink, fontFamily: body, letterSpacing: "0.01em", textDecoration: "none" }}
+                >
+                  {item.label}
+                </Link>
+              ) : (
               <div key={item.label} className="relative group">
                 <button
                   className="flex items-center gap-1 text-[13px] py-1 transition-colors duration-150 hover:opacity-60"
@@ -71,7 +82,8 @@ export function Header() {
                   </div>
                 )}
               </div>
-            ))}
+              )
+            )}
           </nav>
 
           {/* Right controls */}
@@ -110,13 +122,24 @@ export function Header() {
           <div className="px-5 py-6 space-y-0">
             {NAV_ITEMS.map((item) => (
               <div key={item.label} className="border-b" style={{ borderColor: COLORS.stone }}>
-                <button
-                  className="w-full text-left py-3.5 text-[15px] flex items-center justify-between"
-                  style={{ color: COLORS.ink, fontFamily: body }}
-                >
-                  {item.label}
-                  {item.sub && <ChevronDown size={14} className="opacity-40" />}
-                </button>
+                {item.to ? (
+                  <Link
+                    to={item.to}
+                    onClick={() => setMobileOpen(false)}
+                    className="w-full text-left py-3.5 text-[15px] flex items-center justify-between"
+                    style={{ color: COLORS.ink, fontFamily: body, textDecoration: "none" }}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    className="w-full text-left py-3.5 text-[15px] flex items-center justify-between"
+                    style={{ color: COLORS.ink, fontFamily: body }}
+                  >
+                    {item.label}
+                    {item.sub && <ChevronDown size={14} className="opacity-40" />}
+                  </button>
+                )}
               </div>
             ))}
             <div className="pt-5 space-y-3">

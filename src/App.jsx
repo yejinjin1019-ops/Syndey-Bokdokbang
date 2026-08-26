@@ -1,29 +1,22 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./i18n/translations";
 import { COLORS } from "./lib/theme";
 import { Header } from "./components/layout/Header";
-import { Hero } from "./components/sections/Hero";
-import { BrandPromise } from "./components/sections/BrandPromise";
-import { FindAProperty } from "./components/sections/FindAProperty";
-import { NewDevelopments } from "./components/sections/NewDevelopments";
-import { WhyUs } from "./components/sections/WhyUs";
-import { Services } from "./components/sections/Services";
-import { AboutTeam } from "./components/sections/AboutTeam";
+import { HomePage } from "./pages/HomePage";
+import { ServicesPage } from "./pages/ServicesPage";
 
 export default function App() {
   return (
     <LanguageProvider>
-      <div style={{ backgroundColor: COLORS.warm, color: COLORS.ink, overflowX: "hidden" }}>
-        <Header />
-        <Hero />
-        <BrandPromise />
-        <FindAProperty />
-        <NewDevelopments />
-        <WhyUs />
-        <Services />
-        <AboutTeam />
-        {/* Remaining PRD §4 sections (Sydney Areas, Property Notes, Journey,
-            Testimonials, Final CTA, Footer) are implemented incrementally. */}
-      </div>
+      <BrowserRouter>
+        <div style={{ backgroundColor: COLORS.warm, color: COLORS.ink, overflowX: "hidden" }}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/services" element={<ServicesPage />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </LanguageProvider>
   );
 }
