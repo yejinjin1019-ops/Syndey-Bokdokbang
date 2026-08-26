@@ -9,6 +9,12 @@ const VARIANT_STYLES = {
     fontWeight: 400,
     backgroundColor: "transparent",
   },
+  "outline-dark": {
+    border: `1px solid ${COLORS.stone}`,
+    color: COLORS.ink,
+    fontWeight: 400,
+    backgroundColor: "transparent",
+  },
 };
 
 const SIZE_CLASSES = {

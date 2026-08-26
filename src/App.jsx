@@ -4,6 +4,8 @@ import { COLORS } from "./lib/theme";
 import { Header } from "./components/layout/Header";
 import { HomePage } from "./pages/HomePage";
 import { ServicesPage } from "./pages/ServicesPage";
+import { BuyPage } from "./pages/BuyPage";
+import { RentPage } from "./pages/RentPage";
 
 export default function App() {
   return (
@@ -14,6 +16,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/buy" element={<BuyPage />} />
+            <Route path="/rent" element={<RentPage />} />
           </Routes>
         </div>
       </BrowserRouter>

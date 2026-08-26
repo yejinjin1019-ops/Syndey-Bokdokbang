@@ -10,13 +10,29 @@ export function Header() {
   const { lang, toggleLang, t } = useLanguage();
   const scrolled = useScrollState();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSubOpen, setMobileSubOpen] = useState(false);
   const { display, body } = getThemeFonts(lang);
 
   const NAV_ITEMS = [
-    { label: t("매물", "Properties"), sub: [t("매매", "Buy"), t("임대", "Rent"), t("신규개발", "New Developments")] },
+    {
+      label: t("매물", "Properties"),
+      sub: [
+        { label: t("매매", "Buy"), to: "/buy" },
+        { label: t("임대", "Rent"), to: "/rent" },
+        { label: t("신규개발", "New Developments") },
+      ],
+    },
     { label: t("부동산 노트", "Property Notes") },
     { label: t("시드니 지역", "Sydney Areas") },
-    { label: t("서비스", "Services"), to: "/services" },
+    {
+      label: t("서비스", "Services"),
+      sub: [
+        { label: t("부동산 자문", "Property Advisory") },
+        { label: t("정착 케어", "Settlement Care") },
+        { label: t("임대 케어", "Leasing Care") },
+        { label: t("입주 케어", "Move-In Care") },
+      ],
+    },
     { label: t("소개", "About") },
     { label: t("연락처", "Contact") },
   ];
@@ -69,16 +85,27 @@ export function Header() {
                     className="absolute top-full left-0 mt-1.5 py-1.5 min-w-[190px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
                     style={{ backgroundColor: COLORS.warm, border: `1px solid ${COLORS.stone}`, boxShadow: "0 8px 32px rgba(0,0,0,0.07)" }}
                   >
-                    {item.sub.map((s) => (
-                      <a
-                        key={s}
-                        href="#"
-                        className="block px-5 py-2.5 text-[12.5px] transition-colors hover:bg-[#F5F1E8]"
-                        style={{ color: COLORS.ink, textDecoration: "none", fontFamily: body }}
-                      >
-                        {s}
-                      </a>
-                    ))}
+                    {item.sub.map((s) =>
+                      s.to ? (
+                        <Link
+                          key={s.label}
+                          to={s.to}
+                          className="block px-5 py-2.5 text-[12.5px] transition-colors hover:bg-[#F5F1E8]"
+                          style={{ color: COLORS.ink, textDecoration: "none", fontFamily: body }}
+                        >
+                          {s.label}
+                        </Link>
+                      ) : (
+                        <a
+                          key={s.label}
+                          href="#"
+                          className="block px-5 py-2.5 text-[12.5px] transition-colors hover:bg-[#F5F1E8]"
+                          style={{ color: COLORS.ink, textDecoration: "none", fontFamily: body }}
+                        >
+                          {s.label}
+                        </a>
+                      )
+                    )}
                   </div>
                 )}
               </div>
@@ -94,8 +121,8 @@ export function Header() {
               style={{ fontFamily: body }}
               aria-label="Switch language"
             >
-              <span style={{ color: lang === "ko" ? COLORS.green : COLORS.dim, fontWeight: lang === "ko" ? 600 : 400 }}>KR</span>
-              <span className="mx-1.5 opacity-40">/</span>
+              <span style={{ color: lang === "ko" ? COLORS.green : COLORS.dim, fontWeight: lang === "ko" ? 600 : 400 }}>한국어</span>
+              <span className="mx-1.5 opacity-40">·</span>
               <span style={{ color: lang === "en" ? COLORS.green : COLORS.dim, fontWeight: lang === "en" ? 600 : 400 }}>EN</span>
             </button>
 
@@ -132,13 +159,43 @@ export function Header() {
                     {item.label}
                   </Link>
                 ) : (
-                  <button
-                    className="w-full text-left py-3.5 text-[15px] flex items-center justify-between"
-                    style={{ color: COLORS.ink, fontFamily: body }}
-                  >
-                    {item.label}
-                    {item.sub && <ChevronDown size={14} className="opacity-40" />}
-                  </button>
+                  <>
+                    <button
+                      onClick={() => item.sub && setMobileSubOpen((v) => !v)}
+                      className="w-full text-left py-3.5 text-[15px] flex items-center justify-between"
+                      style={{ color: COLORS.ink, fontFamily: body }}
+                    >
+                      {item.label}
+                      {item.sub && (
+                        <ChevronDown
+                          size={14}
+                          className="opacity-40 transition-transform duration-200"
+                          style={{ transform: mobileSubOpen ? "rotate(180deg)" : "none" }}
+                        />
+                      )}
+                    </button>
+                    {item.sub && mobileSubOpen && (
+                      <div className="pb-3 pl-3 space-y-0.5">
+                        {item.sub.map((s) =>
+                          s.to ? (
+                            <Link
+                              key={s.label}
+                              to={s.to}
+                              onClick={() => setMobileOpen(false)}
+                              className="block py-2 text-[13.5px]"
+                              style={{ color: COLORS.dim, fontFamily: body, textDecoration: "none" }}
+                            >
+                              {s.label}
+                            </Link>
+                          ) : (
+                            <span key={s.label} className="block py-2 text-[13.5px]" style={{ color: COLORS.dim, fontFamily: body }}>
+                              {s.label}
+                            </span>
+                          )
+                        )}
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
             ))}
@@ -151,7 +208,7 @@ export function Header() {
                 className="w-full text-center text-[13px] py-2"
                 style={{ color: COLORS.dim, fontFamily: body }}
               >
-                KR / EN
+                한국어 · EN
               </button>
             </div>
           </div>
