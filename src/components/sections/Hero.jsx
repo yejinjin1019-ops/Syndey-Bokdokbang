@@ -64,7 +64,7 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3">
-            <Button variant="fill-ivory" href="#" font={body}>
+            <Button variant="fill-ivory" href="/contact" font={body}>
               {t("상담하기", "Book a Consultation")} <ArrowRight size={14} />
             </Button>
             <Button variant="outline" href="#properties" font={body}>

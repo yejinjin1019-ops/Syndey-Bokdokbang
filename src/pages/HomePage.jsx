@@ -5,6 +5,7 @@ import { NewDevelopments } from "../components/sections/NewDevelopments";
 import { WhyUs } from "../components/sections/WhyUs";
 import { Services } from "../components/sections/Services";
 import { AboutTeam } from "../components/sections/AboutTeam";
+import { GuidesPreview } from "../components/sections/GuidesPreview";
 
 export function HomePage() {
   return (
@@ -16,8 +17,9 @@ export function HomePage() {
       <WhyUs />
       <Services />
       <AboutTeam />
-      {/* Remaining PRD §4 sections (Sydney Areas, Property Notes, Journey,
-          Testimonials, Final CTA, Footer) are implemented incrementally. */}
+      <GuidesPreview />
+      {/* Remaining PRD §4 sections (Sydney Areas, Property Notes,
+          Testimonials) are implemented incrementally. */}
     </>
   );
 }

@@ -1,25 +1,47 @@
 // About/Team section data (PRD §5.11). Initials are used as avatar
-// placeholders until real team photos are available (PRD §11).
+// placeholders until real team photos are available (PRD §11). `slug` backs
+// the individual Agent Profile pages at /about/agents/:slug.
 export const TEAM = [
   {
+    slug: "jisoo-kim",
     nameKo: "김지수", nameEn: "Jisoo Kim",
     roleKo: "대표 · 수석 어드바이저", roleEn: "Principal & Senior Advisor",
     bioKo: "시드니 부동산 15년 경력. 맥쿼리 대학교 경제학 전공.",
     bioEn: "15 years in Sydney property. Economics graduate, Macquarie University.",
+    longBioKo: "시드니 부동산 시장에서 15년간 활동하며 수백 가구의 한인 가족과 투자자의 매매·정착을 도왔습니다. 맥쿼리 대학교에서 경제학을 전공했고, 시드니 복덕방을 설립해 한국어 사용 고객이 신뢰할 수 있는 부동산 자문 문화를 만들고자 합니다.",
+    longBioEn: "With 15 years in the Sydney property market, Jisoo has guided hundreds of Korean-speaking families and investors through purchases and settlement. An economics graduate of Macquarie University, she founded Sydney Bokdokbang to build a property advisory culture Korean-speaking clients can genuinely trust.",
+    specialtiesKo: ["매매 자문", "투자 전략", "신규 분양"],
+    specialtiesEn: ["Buyer's Advisory", "Investment Strategy", "New Developments"],
+    email: "jisoo@sydneybokdokbang.com.au",
+    phone: "+61 2 9876 5432",
     initial: "김",
   },
   {
+    slug: "minjun-lee",
     nameKo: "이민준", nameEn: "Minjun Lee",
     roleKo: "구매 어드바이저", roleEn: "Buyers Advocate",
     bioKo: "노스쇼어 및 이너웨스트 전문. 첫 주택 구입자 지원 다수.",
     bioEn: "Specialist in North Shore & Inner West. First home buyer specialist.",
+    longBioKo: "노스쇼어와 이너웨스트 지역을 중심으로 활동하며, 특히 첫 주택 구입을 앞둔 고객들이 겪는 불안을 줄이는 데 집중합니다. 협상과 계약 과정을 명확하게 설명하는 것을 가장 중요하게 생각합니다.",
+    longBioEn: "Minjun focuses on the North Shore and Inner West, and specialises in easing the anxiety first-home buyers often feel. He places the highest priority on explaining negotiation and contract steps in plain terms.",
+    specialtiesKo: ["첫 주택 구입자 지원", "노스쇼어/이너웨스트", "협상 대행"],
+    specialtiesEn: ["First Home Buyers", "North Shore & Inner West", "Negotiation"],
+    email: "minjun@sydneybokdokbang.com.au",
+    phone: "+61 2 9876 5433",
     initial: "이",
   },
   {
+    slug: "soyeon-park",
     nameKo: "박소연", nameEn: "Soyeon Park",
     roleKo: "프로퍼티 매니저", roleEn: "Property Manager",
     bioKo: "임대 관리 및 정착 지원 전문. 세심한 고객 케어.",
     bioEn: "Rental management & settlement care. Detail-focused service.",
+    longBioKo: "임대인과 세입자 모두를 위한 프로퍼티 매니지먼트를 담당합니다. 세입자 심사, 정기 점검, 유지보수 요청 처리까지 — 투자 부동산이 안정적으로 운영되도록 세심하게 관리합니다.",
+    longBioEn: "Soyeon manages property management for landlords and tenants alike — tenant screening, routine inspections, and maintenance requests — keeping investment properties running smoothly with meticulous attention to detail.",
+    specialtiesKo: ["프로퍼티 매니지먼트", "임대인 케어", "유지보수 관리"],
+    specialtiesEn: ["Property Management", "Landlord Care", "Maintenance Coordination"],
+    email: "soyeon@sydneybokdokbang.com.au",
+    phone: "+61 2 9876 5434",
     initial: "박",
   },
 ];

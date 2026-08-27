@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
 import { Reveal } from "../ui/Reveal";
@@ -56,9 +58,18 @@ export function FlagshipServices() {
                   >
                     {t(service.titleKo, service.titleEn)}
                   </h3>
-                  <p className="text-[14.5px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body, maxWidth: "440px" }}>
+                  <p className="text-[14.5px] leading-relaxed mb-6" style={{ color: COLORS.dim, fontFamily: body, maxWidth: "440px" }}>
                     {t(service.descKo, service.descEn)}
                   </p>
+                  {service.to && (
+                    <Link
+                      to={service.to}
+                      className="inline-flex items-center gap-1.5 text-[13px] font-medium transition-opacity hover:opacity-60"
+                      style={{ color: COLORS.green, fontFamily: body, textDecoration: "none" }}
+                    >
+                      {t("자세히 보기", "Learn more")} <ArrowRight size={13} />
+                    </Link>
+                  )}
                 </Reveal>
               </div>
             );

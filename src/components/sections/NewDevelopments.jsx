@@ -57,10 +57,10 @@ export function NewDevelopments() {
                 ))}
               </div>
               <div className="flex flex-wrap gap-3">
-                <Button variant="fill-ivory" href="#" font={body}>
+                <Button variant="fill-ivory" href="/contact" font={body}>
                   {t("브로셔 받기", "Get Brochure")} <ArrowRight size={13} />
                 </Button>
-                <Button variant="outline" href="#" font={body}>
+                <Button variant="outline" href={`/new-developments/${dev.id}`} font={body}>
                   {t("더 보기", "Learn More")}
                 </Button>
               </div>

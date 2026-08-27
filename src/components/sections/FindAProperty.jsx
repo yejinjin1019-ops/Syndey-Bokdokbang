@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Search, MapPin } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
@@ -142,7 +143,9 @@ export function FindAProperty() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
               {filtered.map((property, i) => (
                 <Reveal key={property.id} delay={(i % 3) * 70}>
-                  <PropertyCard property={property} t={t} font={body} />
+                  <Link to="/new-developments" style={{ textDecoration: "none", color: "inherit" }}>
+                    <PropertyCard property={property} t={t} font={body} />
+                  </Link>
                 </Reveal>
               ))}
             </div>
@@ -150,13 +153,13 @@ export function FindAProperty() {
         </div>
 
         <div className="mt-16 text-center">
-          <a
-            href="#"
+          <Link
+            to="/new-developments"
             className="inline-flex items-center gap-1.5 text-[13px] font-medium transition-opacity hover:opacity-60"
             style={{ color: COLORS.green, fontFamily: body, textDecoration: "none" }}
           >
             {t("전체 매물 보기", "View All Properties")} <ArrowRight size={13} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

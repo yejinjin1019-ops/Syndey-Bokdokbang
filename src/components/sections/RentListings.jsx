@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Search, MapPin, Map as MapIcon, List as ListIcon } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
@@ -162,7 +163,9 @@ export function RentListings() {
               <div className={`grid grid-cols-1 ${view === "map" ? "sm:grid-cols-1" : "md:grid-cols-3"} gap-x-8 gap-y-14`}>
                 {filtered.map((listing, i) => (
                   <Reveal key={listing.id} delay={(i % 4) * 60}>
-                    <RentListingCard listing={listing} t={t} font={body} />
+                    <Link to={`/property/${listing.id}`} style={{ textDecoration: "none", color: "inherit" }}>
+                      <RentListingCard listing={listing} t={t} font={body} />
+                    </Link>
                   </Reveal>
                 ))}
               </div>

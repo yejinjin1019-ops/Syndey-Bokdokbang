@@ -19,22 +19,22 @@ export function Header() {
       sub: [
         { label: t("매매", "Buy"), to: "/buy" },
         { label: t("임대", "Rent"), to: "/rent" },
-        { label: t("신규개발", "New Developments") },
+        { label: t("신규개발", "New Developments"), to: "/new-developments" },
+        { label: t("무료 감정평가", "Property Appraisal"), to: "/appraisal" },
       ],
     },
-    { label: t("부동산 노트", "Property Notes") },
-    { label: t("시드니 지역", "Sydney Areas") },
     {
       label: t("서비스", "Services"),
       sub: [
-        { label: t("부동산 자문", "Property Advisory") },
-        { label: t("정착 케어", "Settlement Care") },
-        { label: t("임대 케어", "Leasing Care") },
-        { label: t("입주 케어", "Move-In Care") },
+        { label: t("부동산 자문", "Property Advisory"), to: "/services/property-advisory" },
+        { label: t("프로퍼티 매니지먼트", "Property Management"), to: "/services/property-management" },
+        { label: t("정착 케어", "Settlement Care"), to: "/services/settlement-care" },
+        { label: t("임대 케어", "Leasing Care"), to: "/services/leasing-care" },
+        { label: t("입주 케어", "Move-In Care"), to: "/services/move-in-care" },
       ],
     },
-    { label: t("소개", "About") },
-    { label: t("연락처", "Contact") },
+    { label: t("소개", "About"), to: "/about" },
+    { label: t("연락처", "Contact"), to: "/contact" },
   ];
 
   return (
@@ -126,7 +126,7 @@ export function Header() {
               <span style={{ color: lang === "en" ? COLORS.green : COLORS.dim, fontWeight: lang === "en" ? 600 : 400 }}>EN</span>
             </button>
 
-            <Button variant="fill-green" size="sm" href="#" font={body} className="hidden md:inline-flex">
+            <Button variant="fill-green" size="sm" href="/contact" font={body} className="hidden md:inline-flex">
               {t("상담 예약", "Book a Consultation")}
             </Button>
 
@@ -200,7 +200,7 @@ export function Header() {
               </div>
             ))}
             <div className="pt-5 space-y-3">
-              <Button variant="fill-green" href="#" font={body} className="w-full">
+              <Button variant="fill-green" href="/contact" font={body} className="w-full" onClick={() => setMobileOpen(false)}>
                 {t("상담 예약", "Book a Consultation")}
               </Button>
               <button

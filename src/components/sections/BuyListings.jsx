@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Search, MapPin, Map as MapIcon, List as ListIcon } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
@@ -144,7 +145,9 @@ export function BuyListings() {
               <div className={`grid grid-cols-1 ${view === "map" ? "sm:grid-cols-1" : "md:grid-cols-2"} gap-x-10 gap-y-16`}>
                 {filtered.map((listing, i) => (
                   <Reveal key={listing.id} delay={(i % 4) * 60}>
-                    <BuyListingCard listing={listing} t={t} font={body} />
+                    <Link to={`/property/${listing.id}`} style={{ textDecoration: "none", color: "inherit" }}>
+                      <BuyListingCard listing={listing} t={t} font={body} />
+                    </Link>
                   </Reveal>
                 ))}
               </div>

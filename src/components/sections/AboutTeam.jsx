@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts, FONT_KO_DISPLAY } from "../../lib/theme";
@@ -33,7 +34,7 @@ export function AboutTeam() {
                   "Sydney Bokdokbang was founded to improve the property experience for Sydney's Korean-speaking community. Sydney property expertise with Korean warmth."
                 )}
               </p>
-              <Button variant="fill-green" href="#" font={body}>
+              <Button variant="fill-green" href="/about" font={body}>
                 {t("소개 더 보기", "About us")} <ArrowRight size={13} />
               </Button>
             </div>
@@ -43,7 +44,7 @@ export function AboutTeam() {
           <div className="grid sm:grid-cols-3 gap-7">
             {TEAM.map((member, i) => (
               <Reveal key={member.nameEn} delay={i * 90}>
-                <div>
+                <Link to={`/about/agents/${member.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
                   <div className="aspect-square mb-5 flex items-center justify-center" style={{ backgroundColor: COLORS.ivory }}>
                     <span className="text-5xl font-medium" style={{ fontFamily: FONT_KO_DISPLAY, color: COLORS.green }}>
                       {member.initial}
@@ -58,7 +59,7 @@ export function AboutTeam() {
                   <p className="text-[13px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body }}>
                     {t(member.bioKo, member.bioEn)}
                   </p>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>

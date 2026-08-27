@@ -35,10 +35,10 @@ export function RentFinalCTA() {
             )}
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-3.5">
-            <Button variant="outline-dark" href="#" font={body}>
+            <Button variant="outline-dark" href="/guides/renting-process-guide" font={body}>
               {t("한국어 임대 가이드 읽기", "Read the Korean Rental Guide")} <ArrowRight size={14} />
             </Button>
-            <Button variant="fill-green" href="#" font={body}>
+            <Button variant="fill-green" href="/contact" font={body}>
               <MessageCircle size={14} /> {t("복덕방에 문의하기", "Ask Bokdokbang")}
             </Button>
           </div>

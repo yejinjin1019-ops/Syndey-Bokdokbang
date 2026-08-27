@@ -34,7 +34,7 @@ export function BuyFinalCTA() {
               "Book a property consultation and let Sydney Bokdokbang help you find the right home."
             )}
           </p>
-          <Button variant="fill-green" href="#" font={body}>
+          <Button variant="fill-green" href="/contact" font={body}>
             {t("부동산 상담 예약하기", "Book a Property Consultation")} <ArrowRight size={14} />
           </Button>
         </Reveal>

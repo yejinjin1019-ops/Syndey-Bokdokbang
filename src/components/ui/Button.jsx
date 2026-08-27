@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { COLORS } from "../../lib/theme";
 
 const VARIANT_STYLES = {
@@ -42,8 +43,16 @@ export function Button({
   };
 
   if (href) {
+    const isInternal = href.startsWith("/") || href.startsWith("#");
+    if (isInternal && href.startsWith("/")) {
+      return (
+        <Link to={href} className={classes} style={style} onClick={onClick}>
+          {children}
+        </Link>
+      );
+    }
     return (
-      <a href={href} className={classes} style={style}>
+      <a href={href} className={classes} style={style} onClick={onClick} {...(!isInternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
         {children}
       </a>
     );
