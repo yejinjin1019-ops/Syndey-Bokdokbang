@@ -28,7 +28,7 @@ export function Header() {
       label: t("서비스", "Services"),
       sub: [
         { label: t("부동산 자문", "Property Advisory"), to: "/services/property-advisory" },
-        { label: t("프로퍼티 매니지먼트", "Property Management"), to: "/services/property-management" },
+        { label: t("부동산 임대관리", "Property Management"), to: "/services/property-management" },
         { label: t("정착 케어", "Settlement Care"), to: "/services/settlement-care" },
         { label: t("임대 케어", "Leasing Care"), to: "/services/leasing-care" },
         { label: t("입주 케어", "Move-In Care"), to: "/services/move-in-care" },

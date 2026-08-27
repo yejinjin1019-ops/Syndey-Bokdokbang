@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./i18n/translations";
 import { COLORS } from "./lib/theme";
+import { ScrollToTop } from "./components/ScrollToTop";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { HomePage } from "./pages/HomePage";
@@ -13,6 +14,10 @@ import { NewDevelopmentsPage } from "./pages/NewDevelopmentsPage";
 import { ProjectDetailPage } from "./pages/ProjectDetailPage";
 import { AppraisalPage } from "./pages/AppraisalPage";
 import { PropertyManagementPage } from "./pages/services/PropertyManagementPage";
+import { PropertyAdvisoryPage } from "./pages/services/PropertyAdvisoryPage";
+import { SettlementCarePage } from "./pages/services/SettlementCarePage";
+import { LeasingCarePage } from "./pages/services/LeasingCarePage";
+import { MoveInCarePage } from "./pages/services/MoveInCarePage";
 import { TenantApplicationPage } from "./pages/services/TenantApplicationPage";
 import { MaintenanceRequestPage } from "./pages/services/MaintenanceRequestPage";
 import { LandlordPortalPage } from "./pages/services/LandlordPortalPage";
@@ -28,6 +33,7 @@ export default function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <div style={{ backgroundColor: COLORS.warm, color: COLORS.ink, overflowX: "hidden" }}>
           <Header />
           <Routes>
@@ -44,6 +50,10 @@ export default function App() {
             <Route path="/appraisal" element={<AppraisalPage />} />
 
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/property-advisory" element={<PropertyAdvisoryPage />} />
+            <Route path="/services/settlement-care" element={<SettlementCarePage />} />
+            <Route path="/services/leasing-care" element={<LeasingCarePage />} />
+            <Route path="/services/move-in-care" element={<MoveInCarePage />} />
             <Route path="/services/property-management" element={<PropertyManagementPage />} />
             <Route path="/services/property-management/tenant-application" element={<TenantApplicationPage />} />
             <Route path="/services/property-management/maintenance-request" element={<MaintenanceRequestPage />} />

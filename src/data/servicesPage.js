@@ -21,9 +21,9 @@ export const FLAGSHIP_SERVICES = [
   },
   {
     key: "property-management",
-    labelKo: "복덕 프로퍼티 매니지먼트", labelEn: "Bokdok Property Management",
+    labelKo: "복덕 부동산 임대관리", labelEn: "Bokdok Property Management",
     titleKo: "임차부터 유지보수까지, 한눈에.", titleEn: "Tenancy to maintenance, all in clear view.",
-    descKo: "세입자 신청, 유지보수 요청, 임대인 리포트까지 — 프로퍼티 매니지먼트의 모든 절차를 체계적으로 지원합니다.",
+    descKo: "세입자 신청, 유지보수 요청, 임대인 리포트까지 — 부동산 임대관리의 모든 절차를 체계적으로 지원합니다.",
     descEn: "Tenant applications, maintenance requests, landlord reporting — the full property management workflow, organised and supported.",
     img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&h=700&fit=crop&auto=format",
     to: "/services/property-management",

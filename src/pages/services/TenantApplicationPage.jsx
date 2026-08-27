@@ -21,7 +21,7 @@ export function TenantApplicationPage() {
   return (
     <>
       <PageHero
-        label={t("프로퍼티 매니지먼트 · 세입자 신청", "Property Management · Tenant Application")}
+        label={t("부동산 임대관리 · 세입자 신청", "Property Management · Tenant Application")}
         titleKo="새로운 집, 신청은 간단하게."
         titleEn="Applying for your next home, made simple."
         descKo="관심 있는 임대 매물에 온라인으로 지원하세요. 접수 후 담당자가 빠르게 안내해드립니다."
@@ -37,7 +37,7 @@ export function TenantApplicationPage() {
               submitLabelEn="Submit Application"
               successTitleKo="신청서가 접수되었습니다."
               successTitleEn="Your application has been received."
-              successBodyKo="프로퍼티 매니지먼트 담당자가 신청 내용을 검토한 후 연락드립니다."
+              successBodyKo="부동산 임대관리 담당자가 신청 내용을 검토한 후 연락드립니다."
               successBodyEn="Our property management team will review your application and be in touch."
             />
           </Reveal>

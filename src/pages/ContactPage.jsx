@@ -17,7 +17,7 @@ const FIELDS = [
       { value: "buying", labelKo: "매매 문의", labelEn: "Buying enquiry" },
       { value: "renting", labelKo: "임대 문의", labelEn: "Renting enquiry" },
       { value: "appraisal", labelKo: "감정평가 문의", labelEn: "Appraisal enquiry" },
-      { value: "property-management", labelKo: "프로퍼티 매니지먼트 문의", labelEn: "Property management enquiry" },
+      { value: "property-management", labelKo: "부동산 임대관리 문의", labelEn: "Property management enquiry" },
       { value: "other", labelKo: "기타", labelEn: "Other" },
     ],
   },

@@ -37,7 +37,7 @@ export function MaintenanceRequestPage() {
   return (
     <>
       <PageHero
-        label={t("프로퍼티 매니지먼트 · 유지보수 요청", "Property Management · Maintenance Request")}
+        label={t("부동산 임대관리 · 유지보수 요청", "Property Management · Maintenance Request")}
         titleKo="문제가 생기면, 바로 알려주세요."
         titleEn="Something's not right? Let us know."
         descKo="임대 중인 주택의 유지보수 문제를 신고하세요. 긴급도에 따라 우선순위를 두고 처리합니다."

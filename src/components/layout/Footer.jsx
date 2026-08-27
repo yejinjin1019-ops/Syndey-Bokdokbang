@@ -21,7 +21,7 @@ const EXPLORE_LINKS = [
 
 const SERVICE_LINKS = [
   { ko: "부동산 자문", en: "Property Advisory", to: "/services/property-advisory" },
-  { ko: "프로퍼티 매니지먼트", en: "Property Management", to: "/services/property-management" },
+  { ko: "부동산 임대관리", en: "Property Management", to: "/services/property-management" },
   { ko: "정착 케어", en: "Settlement Care", to: "/services/settlement-care" },
   { ko: "임대 케어", en: "Leasing Care", to: "/services/leasing-care" },
   { ko: "이사 케어", en: "Move-In Care", to: "/services/move-in-care" },

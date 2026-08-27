@@ -72,8 +72,8 @@ export function LandlordPortalPage() {
   return (
     <>
       <PageHero
-        label={t("프로퍼티 매니지먼트 · 임대인 포털", "Property Management · Landlord Portal")}
-        titleKo="더 선명해지는 프로퍼티 매니지먼트."
+        label={t("부동산 임대관리 · 임대인 포털", "Property Management · Landlord Portal")}
+        titleKo="더 선명해지는 부동산 임대관리."
         titleEn="Property management, with clearer visibility."
         descKo="임대료 정산부터 유지보수 현황까지, 소유하신 부동산에 대한 중요한 정보에 체계적으로 접근할 수 있도록 지원해드립니다."
         descEn="From rental statements to maintenance tracking, we help you get organised access to the information that matters for your property."
