@@ -5,6 +5,7 @@ import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { HomePage } from "./pages/HomePage";
 import { ServicesPage } from "./pages/ServicesPage";
+import { PropertiesPage } from "./pages/PropertiesPage";
 import { BuyPage } from "./pages/BuyPage";
 import { RentPage } from "./pages/RentPage";
 import { PropertyDetailPage } from "./pages/PropertyDetailPage";
@@ -32,6 +33,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
 
+            <Route path="/properties" element={<PropertiesPage />} />
             <Route path="/buy" element={<BuyPage />} />
             <Route path="/rent" element={<RentPage />} />
             <Route path="/property/:id" element={<PropertyDetailPage />} />

@@ -24,6 +24,7 @@ export function RentListings() {
   const [bedrooms, setBedrooms] = useState("any");
   const [bathrooms, setBathrooms] = useState("any");
   const [parkingMin, setParkingMin] = useState("any");
+  const [availableFilter, setAvailableFilter] = useState("any");
   const [openOnly, setOpenOnly] = useState(false);
   const [view, setView] = useState("list"); // "list" | "map"
   const [sort, setSort] = useState("newest"); // "newest" | "rent"
@@ -40,6 +41,8 @@ export function RentListings() {
       if (bathrooms !== "any" && (p.baths ?? 0) < Number(bathrooms)) return false;
       if (parkingMin !== "any" && p.parking < Number(parkingMin)) return false;
       if (openOnly && p.inspection?.status !== "open") return false;
+      if (availableFilter === "now" && !p.availableNow) return false;
+      if (availableFilter === "30" && p.availableNow) return false;
       if (rentBucket !== "any") {
         const bucket = RENT_PRICE_BUCKETS.find((b) => b.id === rentBucket);
         if (bucket && !(p.rentValue >= bucket.min && p.rentValue < bucket.max)) return false;
@@ -51,7 +54,7 @@ export function RentListings() {
       results = [...results].sort((a, b) => a.rentValue - b.rentValue);
     }
     return results;
-  }, [suburbQuery, propertyType, rentBucket, bedrooms, bathrooms, parkingMin, openOnly, sort]);
+  }, [suburbQuery, propertyType, rentBucket, bedrooms, bathrooms, parkingMin, availableFilter, openOnly, sort]);
 
   return (
     <section style={{ backgroundColor: COLORS.warm }}>
@@ -97,7 +100,7 @@ export function RentListings() {
               <option value="Apartment">{t("아파트", "Apartment")}</option>
               <option value="Townhouse">{t("타운하우스", "Townhouse")}</option>
             </select>
-            <select className="px-3 py-2.5 text-[13px] outline-none appearance-none" style={SELECT_STYLE(body)} defaultValue="any">
+            <select value={availableFilter} onChange={(e) => setAvailableFilter(e.target.value)} className="px-3 py-2.5 text-[13px] outline-none appearance-none" style={SELECT_STYLE(body)}>
               <option value="any">{t("입주 가능일", "Available Date")}</option>
               <option value="now">{t("즉시 입주", "Available Now")}</option>
               <option value="30">{t("30일 이내", "Within 30 Days")}</option>

@@ -10,12 +10,13 @@ export function Header() {
   const { lang, toggleLang, t } = useLanguage();
   const scrolled = useScrollState();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileSubOpen, setMobileSubOpen] = useState(false);
+  const [openMobileSub, setOpenMobileSub] = useState(null);
   const { display, body } = getThemeFonts(lang);
 
   const NAV_ITEMS = [
     {
       label: t("매물", "Properties"),
+      to: "/properties",
       sub: [
         { label: t("매매", "Buy"), to: "/buy" },
         { label: t("임대", "Rent"), to: "/rent" },
@@ -61,56 +62,45 @@ export function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
-            {NAV_ITEMS.map((item) =>
-              item.to ? (
-                <Link
-                  key={item.label}
-                  to={item.to}
-                  className="flex items-center gap-1 text-[13px] py-1 transition-colors duration-150 hover:opacity-60"
-                  style={{ color: COLORS.ink, fontFamily: body, letterSpacing: "0.01em", textDecoration: "none" }}
-                >
-                  {item.label}
-                </Link>
-              ) : (
+            {NAV_ITEMS.map((item) => (
               <div key={item.label} className="relative group">
-                <button
-                  className="flex items-center gap-1 text-[13px] py-1 transition-colors duration-150 hover:opacity-60"
-                  style={{ color: COLORS.ink, fontFamily: body, letterSpacing: "0.01em" }}
-                >
-                  {item.label}
-                  {item.sub && <ChevronDown size={11} className="opacity-50 mt-px" />}
-                </button>
+                {item.to ? (
+                  <Link
+                    to={item.to}
+                    className="flex items-center gap-1 text-[13px] py-1 transition-colors duration-150 hover:opacity-60"
+                    style={{ color: COLORS.ink, fontFamily: body, letterSpacing: "0.01em", textDecoration: "none" }}
+                  >
+                    {item.label}
+                    {item.sub && <ChevronDown size={11} className="opacity-50 mt-px" />}
+                  </Link>
+                ) : (
+                  <button
+                    className="flex items-center gap-1 text-[13px] py-1 transition-colors duration-150 hover:opacity-60"
+                    style={{ color: COLORS.ink, fontFamily: body, letterSpacing: "0.01em" }}
+                  >
+                    {item.label}
+                    {item.sub && <ChevronDown size={11} className="opacity-50 mt-px" />}
+                  </button>
+                )}
                 {item.sub && (
                   <div
                     className="absolute top-full left-0 mt-1.5 py-1.5 min-w-[190px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
                     style={{ backgroundColor: COLORS.warm, border: `1px solid ${COLORS.stone}`, boxShadow: "0 8px 32px rgba(0,0,0,0.07)" }}
                   >
-                    {item.sub.map((s) =>
-                      s.to ? (
-                        <Link
-                          key={s.label}
-                          to={s.to}
-                          className="block px-5 py-2.5 text-[12.5px] transition-colors hover:bg-[#F5F1E8]"
-                          style={{ color: COLORS.ink, textDecoration: "none", fontFamily: body }}
-                        >
-                          {s.label}
-                        </Link>
-                      ) : (
-                        <a
-                          key={s.label}
-                          href="#"
-                          className="block px-5 py-2.5 text-[12.5px] transition-colors hover:bg-[#F5F1E8]"
-                          style={{ color: COLORS.ink, textDecoration: "none", fontFamily: body }}
-                        >
-                          {s.label}
-                        </a>
-                      )
-                    )}
+                    {item.sub.map((s) => (
+                      <Link
+                        key={s.label}
+                        to={s.to}
+                        className="block px-5 py-2.5 text-[12.5px] transition-colors hover:bg-[#F5F1E8]"
+                        style={{ color: COLORS.ink, textDecoration: "none", fontFamily: body }}
+                      >
+                        {s.label}
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
-              )
-            )}
+            ))}
           </nav>
 
           {/* Right controls */}
@@ -147,58 +137,62 @@ export function Header() {
       {mobileOpen && (
         <div className="lg:hidden" style={{ backgroundColor: COLORS.warm, borderTop: `1px solid ${COLORS.stone}` }}>
           <div className="px-5 py-6 space-y-0">
-            {NAV_ITEMS.map((item) => (
-              <div key={item.label} className="border-b" style={{ borderColor: COLORS.stone }}>
-                {item.to ? (
-                  <Link
-                    to={item.to}
-                    onClick={() => setMobileOpen(false)}
-                    className="w-full text-left py-3.5 text-[15px] flex items-center justify-between"
-                    style={{ color: COLORS.ink, fontFamily: body, textDecoration: "none" }}
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <>
-                    <button
-                      onClick={() => item.sub && setMobileSubOpen((v) => !v)}
-                      className="w-full text-left py-3.5 text-[15px] flex items-center justify-between"
-                      style={{ color: COLORS.ink, fontFamily: body }}
-                    >
-                      {item.label}
-                      {item.sub && (
+            {NAV_ITEMS.map((item) => {
+              const isSubOpen = openMobileSub === item.label;
+              return (
+                <div key={item.label} className="border-b" style={{ borderColor: COLORS.stone }}>
+                  <div className="flex items-center justify-between">
+                    {item.to ? (
+                      <Link
+                        to={item.to}
+                        onClick={() => setMobileOpen(false)}
+                        className="flex-1 text-left py-3.5 text-[15px]"
+                        style={{ color: COLORS.ink, fontFamily: body, textDecoration: "none" }}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => item.sub && setOpenMobileSub(isSubOpen ? null : item.label)}
+                        className="flex-1 text-left py-3.5 text-[15px]"
+                        style={{ color: COLORS.ink, fontFamily: body }}
+                      >
+                        {item.label}
+                      </button>
+                    )}
+                    {item.sub && (
+                      <button
+                        onClick={() => setOpenMobileSub(isSubOpen ? null : item.label)}
+                        className="p-3.5"
+                        aria-label="Toggle submenu"
+                        aria-expanded={isSubOpen}
+                      >
                         <ChevronDown
                           size={14}
                           className="opacity-40 transition-transform duration-200"
-                          style={{ transform: mobileSubOpen ? "rotate(180deg)" : "none" }}
+                          style={{ transform: isSubOpen ? "rotate(180deg)" : "none" }}
                         />
-                      )}
-                    </button>
-                    {item.sub && mobileSubOpen && (
-                      <div className="pb-3 pl-3 space-y-0.5">
-                        {item.sub.map((s) =>
-                          s.to ? (
-                            <Link
-                              key={s.label}
-                              to={s.to}
-                              onClick={() => setMobileOpen(false)}
-                              className="block py-2 text-[13.5px]"
-                              style={{ color: COLORS.dim, fontFamily: body, textDecoration: "none" }}
-                            >
-                              {s.label}
-                            </Link>
-                          ) : (
-                            <span key={s.label} className="block py-2 text-[13.5px]" style={{ color: COLORS.dim, fontFamily: body }}>
-                              {s.label}
-                            </span>
-                          )
-                        )}
-                      </div>
+                      </button>
                     )}
-                  </>
-                )}
-              </div>
-            ))}
+                  </div>
+                  {item.sub && isSubOpen && (
+                    <div className="pb-3 pl-3 space-y-0.5">
+                      {item.sub.map((s) => (
+                        <Link
+                          key={s.label}
+                          to={s.to}
+                          onClick={() => setMobileOpen(false)}
+                          className="block py-2 text-[13.5px]"
+                          style={{ color: COLORS.dim, fontFamily: body, textDecoration: "none" }}
+                        >
+                          {s.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
             <div className="pt-5 space-y-3">
               <Button variant="fill-green" href="/contact" font={body} className="w-full" onClick={() => setMobileOpen(false)}>
                 {t("상담 예약", "Book a Consultation")}

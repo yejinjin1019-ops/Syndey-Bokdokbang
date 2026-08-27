@@ -142,7 +142,7 @@ export function BuyListings() {
                 {t("조건에 맞는 매물이 없습니다. 필터를 조정해보세요.", "No properties match your filters. Try adjusting your search.")}
               </p>
             ) : (
-              <div className={`grid grid-cols-1 ${view === "map" ? "sm:grid-cols-1" : "md:grid-cols-2"} gap-x-10 gap-y-16`}>
+              <div className={`grid grid-cols-1 ${view === "map" ? "sm:grid-cols-1" : "md:grid-cols-2 xl:grid-cols-3"} gap-x-10 gap-y-16`}>
                 {filtered.map((listing, i) => (
                   <Reveal key={listing.id} delay={(i % 4) * 60}>
                     <Link to={`/property/${listing.id}`} style={{ textDecoration: "none", color: "inherit" }}>

@@ -5,6 +5,11 @@ import { Reveal } from "../ui/Reveal";
 
 const STEPS = [
   {
+    ko: "방문 확인", en: "Inspection",
+    descKo: "오픈 하우스 또는 예약 방문으로 실제 매물을 확인합니다.",
+    descEn: "View the property in person at an open inspection or private appointment.",
+  },
+  {
     ko: "신청서", en: "Application",
     descKo: "관심 매물에 대해 신청서(개인정보, 재직/소득 증빙)를 제출합니다.",
     descEn: "Submit a rental application with your ID, income, and employment details.",
@@ -13,11 +18,6 @@ const STEPS = [
     ko: "서류 준비", en: "Documents",
     descKo: "여권, 비자, 급여명세서, 재직증명서 등 서류를 준비합니다.",
     descEn: "Prepare supporting documents — passport, visa, payslips, employment letter.",
-  },
-  {
-    ko: "방문 확인", en: "Inspection",
-    descKo: "오픈 하우스 또는 예약 방문으로 실제 매물을 확인합니다.",
-    descEn: "View the property in person at an open inspection or private appointment.",
   },
   {
     ko: "승인", en: "Approval",

@@ -1,23 +1,23 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts, FONT_EN_DISPLAY, FONT_KO_BODY } from "../../lib/theme";
 import { Reveal } from "../ui/Reveal";
 import { Button } from "../ui/Button";
 
-export function RentFinalCTA() {
+export function NewDevelopmentsFinalCTA() {
   const { lang, t } = useLanguage();
   const { display, body } = getThemeFonts(lang);
 
   return (
-    <section style={{ backgroundColor: COLORS.warm, borderTop: `1px solid ${COLORS.stone}` }}>
+    <section style={{ backgroundColor: COLORS.ivory, borderTop: `1px solid ${COLORS.stone}` }}>
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-24 md:py-32">
         <Reveal className="max-w-2xl mx-auto text-center flex flex-col items-center">
           <h2
             className="font-medium mb-6"
             style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3.2vw,44px)", lineHeight: 1.5 }}
           >
-            {t("임대가", "New to")}<br />
-            {t("처음이신가요?", "renting?")}
+            {t("어떤 프로젝트가", "Not sure which")}<br />
+            {t("맞는지 궁금하신가요?", "project is right for you?")}
           </h2>
           <p
             className="mb-10"
@@ -30,18 +30,13 @@ export function RentFinalCTA() {
             }}
           >
             {t(
-              "마음에 드는 매물을 찾으셨다면 신청서를 접수하시거나, 시드니 복덕방에 직접 문의해 보세요.",
-              "Ready to move forward on a listing? Submit your application, or reach out to Sydney Bokdokbang directly."
+              "분양가, 완공 시점, 계약 절차까지 — 결정하기 전에 시드니 복덕방과 먼저 상담하세요.",
+              "Pricing, timelines, and the contract process — talk it through with Sydney Bokdokbang before you decide."
             )}
           </p>
-          <div className="flex flex-col sm:flex-row items-center gap-3.5">
-            <Button variant="outline-dark" href="/services/property-management/tenant-application" font={body}>
-              {t("매물 신청하기", "Apply for Property")} <ArrowRight size={14} />
-            </Button>
-            <Button variant="fill-green" href="/contact" font={body}>
-              <MessageCircle size={14} /> {t("시드니 복덕방에 문의하기", "Ask Sydney Bokdokbang")}
-            </Button>
-          </div>
+          <Button variant="fill-green" href="/contact" font={body}>
+            {t("프로젝트 상담 예약하기", "Book a Project Consultation")} <ArrowRight size={14} />
+          </Button>
         </Reveal>
       </div>
     </section>
