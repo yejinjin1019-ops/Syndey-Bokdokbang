@@ -32,6 +32,7 @@ export function PageHero({ label, titleKo, titleEn, descKo, descEn, dark = false
           </h1>
           {(descKo || descEn) && (
             <p
+              className="whitespace-pre-line"
               style={{
                 fontFamily: lang === "ko" ? FONT_KO_BODY : FONT_EN_DISPLAY,
                 fontStyle: lang === "ko" ? "normal" : "italic",

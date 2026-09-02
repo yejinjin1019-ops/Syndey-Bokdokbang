@@ -11,6 +11,7 @@ export function Header() {
   const scrolled = useScrollState();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMobileSub, setOpenMobileSub] = useState(null);
+  const [openDesktopSub, setOpenDesktopSub] = useState(null);
   const { display, body } = getThemeFonts(lang);
 
   const NAV_ITEMS = [
@@ -63,7 +64,12 @@ export function Header() {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
             {NAV_ITEMS.map((item) => (
-              <div key={item.label} className="relative group">
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => item.sub && setOpenDesktopSub(item.label)}
+                onMouseLeave={() => item.sub && setOpenDesktopSub(null)}
+              >
                 {item.to ? (
                   <Link
                     to={item.to}
@@ -83,20 +89,27 @@ export function Header() {
                   </button>
                 )}
                 {item.sub && (
-                  <div
-                    className="absolute top-full left-0 mt-1.5 py-1.5 min-w-[190px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
-                    style={{ backgroundColor: COLORS.warm, border: `1px solid ${COLORS.stone}`, boxShadow: "0 8px 32px rgba(0,0,0,0.07)" }}
-                  >
-                    {item.sub.map((s) => (
-                      <Link
-                        key={s.label}
-                        to={s.to}
-                        className="block px-5 py-2.5 text-[12.5px] transition-colors hover:bg-[#F5F1E8]"
-                        style={{ color: COLORS.ink, textDecoration: "none", fontFamily: body }}
-                      >
-                        {s.label}
-                      </Link>
-                    ))}
+                  <div className="absolute top-full left-0 pt-1.5 min-w-[190px]">
+                    <div
+                      className={
+                        "py-1.5 transition-all duration-200 ease-out " +
+                        (openDesktopSub === item.label
+                          ? "opacity-100 visible translate-y-0"
+                          : "opacity-0 invisible -translate-y-1 pointer-events-none")
+                      }
+                      style={{ backgroundColor: COLORS.warm, border: `1px solid ${COLORS.stone}`, boxShadow: "0 8px 32px rgba(0,0,0,0.07)" }}
+                    >
+                      {item.sub.map((s) => (
+                        <Link
+                          key={s.label}
+                          to={s.to}
+                          className="block px-5 py-2.5 text-[12.5px] transition-colors hover:bg-[#F5F1E8]"
+                          style={{ color: COLORS.ink, textDecoration: "none", fontFamily: body }}
+                        >
+                          {s.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
