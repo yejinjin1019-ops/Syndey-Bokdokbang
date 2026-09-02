@@ -14,11 +14,12 @@ const FIELD_STYLE = (body) => ({
 });
 
 /**
- * Generic client-side lead form: takes a field schema, validates required
- * fields (+ email format), and renders a success confirmation panel on
- * submit. No backend — this project has no form library/API, so every lead
- * form (Appraisal, Tenant Application, Maintenance Request, Landlord Portal,
- * Contact) shares this one implementation instead of re-deriving it.
+ * Generic lead form: takes a field schema, validates required fields (+
+ * email format), and renders a success confirmation panel on submit. By
+ * default there's no backend — every lead form (Appraisal, Tenant
+ * Application, Maintenance Request, Landlord Portal, Contact) shares this
+ * one implementation instead of re-deriving it. Pass `onSubmit` to actually
+ * deliver the values (e.g. via EmailJS) before the success panel shows.
  *
  * fields: [{ name, labelKo, labelEn, type: "text"|"email"|"tel"|"textarea"|"select",
  *            required, options?: [{ value, labelKo, labelEn }], placeholderKo?, placeholderEn? }]
@@ -32,6 +33,9 @@ export function LeadForm({
   successBodyKo,
   successBodyEn,
   successChildren,
+  onSubmit,
+  errorTitleKo = "문의 전송에 실패했습니다.",
+  errorTitleEn = "Something went wrong sending your enquiry.",
 }) {
   const { lang, t } = useLanguage();
   const { body } = getThemeFonts(lang);
@@ -39,6 +43,8 @@ export function LeadForm({
   const [values, setValues] = useState(() => Object.fromEntries(fields.map((f) => [f.name, ""])));
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
 
   const setValue = (name, value) => setValues((v) => ({ ...v, [name]: value }));
 
@@ -56,9 +62,22 @@ export function LeadForm({
     return Object.keys(next).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) setSubmitted(true);
+    if (!validate()) return;
+    setSendError(false);
+    if (onSubmit) {
+      setSending(true);
+      try {
+        await onSubmit(values);
+      } catch {
+        setSending(false);
+        setSendError(true);
+        return;
+      }
+      setSending(false);
+    }
+    setSubmitted(true);
   };
 
   if (submitted) {
@@ -121,12 +140,18 @@ export function LeadForm({
           )}
         </div>
       ))}
+      {sendError && (
+        <p className="text-[12.5px]" style={{ color: "#B0442E", fontFamily: body }}>
+          {t(errorTitleKo, errorTitleEn)}
+        </p>
+      )}
       <button
         type="submit"
-        className="mt-2 inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-[13.5px] font-semibold transition-opacity hover:opacity-85"
+        disabled={sending}
+        className="mt-2 inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-[13.5px] font-semibold transition-opacity hover:opacity-85 disabled:opacity-60"
         style={{ backgroundColor: COLORS.green, color: COLORS.ivory, fontFamily: body, letterSpacing: "0.03em" }}
       >
-        {t(submitLabelKo, submitLabelEn)}
+        {sending ? t("전송 중...", "Sending...") : t(submitLabelKo, submitLabelEn)}
       </button>
     </form>
   );

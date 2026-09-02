@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail } from "lucide-react";
+import { Phone, MessageSquare, Mail } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
 import { CONTACT_INFO } from "../../data/contactInfo";
@@ -81,7 +81,7 @@ export function Footer() {
 
           <div>
             <div className="text-[11px] tracking-[0.14em] uppercase mb-5" style={{ color: FAINT_TEXT, fontFamily: body }}>
-              {t("연락처", "Contact")}
+              {t("문의하기", "Get in Touch")}
             </div>
             <div className="flex flex-col gap-3">
               <div className="text-[13px]" style={{ color: COLORS.ivory, fontFamily: body }}>
@@ -90,13 +90,23 @@ export function Footer() {
               <p className="text-[13px] leading-relaxed" style={{ color: DIM_TEXT, fontFamily: body, maxWidth: "240px" }}>
                 {CONTACT_INFO.addressEn}
               </p>
-              <a
-                href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
-                className="flex items-center gap-2 text-[13px] transition-opacity hover:opacity-70"
-                style={{ color: COLORS.ivory, fontFamily: body, textDecoration: "none" }}
-              >
-                <Phone size={13} style={{ color: COLORS.yellow }} /> {CONTACT_INFO.phoneDisplay}
-              </a>
+              <div className="flex items-center gap-3">
+                <a
+                  href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
+                  className="flex items-center gap-2 text-[13px] transition-opacity hover:opacity-70"
+                  style={{ color: COLORS.ivory, fontFamily: body, textDecoration: "none" }}
+                >
+                  <Phone size={13} style={{ color: COLORS.yellow }} /> {CONTACT_INFO.phoneDisplay}
+                </a>
+                <a
+                  href={`sms:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
+                  aria-label={t("문자 메시지 보내기", "Send a text message")}
+                  className="flex items-center transition-opacity hover:opacity-70"
+                  style={{ color: DIM_TEXT }}
+                >
+                  <MessageSquare size={13} />
+                </a>
+              </div>
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
                 className="flex items-center gap-2 text-[13px] transition-opacity hover:opacity-70"

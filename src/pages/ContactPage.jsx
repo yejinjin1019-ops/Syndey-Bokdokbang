@@ -1,10 +1,11 @@
-import { Phone, Mail, MessageCircle, Clock } from "lucide-react";
+import { Phone, MessageSquare, Mail, MessageCircle, Clock } from "lucide-react";
 import { useLanguage } from "../i18n/translations";
 import { COLORS, getThemeFonts } from "../lib/theme";
 import { PageHero } from "../components/ui/PageHero";
 import { Reveal } from "../components/ui/Reveal";
 import { LeadForm } from "../components/ui/LeadForm";
 import { CONTACT_INFO } from "../data/contactInfo";
+import { sendContactEnquiry } from "../lib/emailjs";
 
 const FIELDS = [
   { name: "name", labelKo: "이름", labelEn: "Full name", type: "text", required: true },
@@ -53,9 +54,19 @@ export function ContactPage() {
                 </div>
                 <div>
                   <div className="text-[12px] tracking-wide uppercase mb-2" style={{ color: COLORS.dim, fontFamily: body }}>{t("전화", "Phone")}</div>
-                  <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`} className="flex items-center gap-2.5 text-[15px]" style={{ color: COLORS.ink, fontFamily: body, textDecoration: "none" }}>
-                    <Phone size={16} style={{ color: COLORS.green }} /> {CONTACT_INFO.phoneDisplay}
-                  </a>
+                  <div className="flex items-center gap-4">
+                    <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`} className="flex items-center gap-2.5 text-[15px]" style={{ color: COLORS.ink, fontFamily: body, textDecoration: "none" }}>
+                      <Phone size={16} style={{ color: COLORS.green }} /> {CONTACT_INFO.phoneDisplay}
+                    </a>
+                    <a
+                      href={`sms:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
+                      aria-label={t("문자 메시지 보내기", "Send a text message")}
+                      className="flex items-center gap-1.5 text-[13px]"
+                      style={{ color: COLORS.dim, fontFamily: body, textDecoration: "none" }}
+                    >
+                      <MessageSquare size={14} /> {t("문자", "Text")}
+                    </a>
+                  </div>
                 </div>
                 <div>
                   <div className="text-[12px] tracking-wide uppercase mb-2" style={{ color: COLORS.dim, fontFamily: body }}>{t("이메일", "Email")}</div>
@@ -106,6 +117,7 @@ export function ContactPage() {
               </h2>
               <LeadForm
                 fields={FIELDS}
+                onSubmit={sendContactEnquiry}
                 submitLabelKo="문의 보내기"
                 submitLabelEn="Send Enquiry"
                 successTitleKo="문의가 접수되었습니다."
