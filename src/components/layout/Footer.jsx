@@ -88,7 +88,7 @@ export function Footer() {
                 {CONTACT_INFO.tradingName}
               </div>
               <p className="text-[13px] leading-relaxed" style={{ color: DIM_TEXT, fontFamily: body, maxWidth: "240px" }}>
-                {CONTACT_INFO.addressEn}
+                {CONTACT_INFO.address}
               </p>
               <div className="flex items-center gap-3">
                 <a

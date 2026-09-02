@@ -49,7 +49,7 @@ export function ContactPage() {
                     {CONTACT_INFO.tradingName}
                   </div>
                   <p className="text-[14px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body }}>
-                    {t(CONTACT_INFO.addressKo, CONTACT_INFO.addressEn)}
+                    {CONTACT_INFO.address}
                   </p>
                 </div>
                 <div>

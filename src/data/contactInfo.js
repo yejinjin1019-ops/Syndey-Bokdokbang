@@ -11,13 +11,14 @@ export const CONTACT_INFO = {
   email: "info.sydneybokdokbang@gmail.com",
   kakaoId: "sydneybokdokbang",
   kakaoUrl: "https://open.kakao.com/o/sydneybokdokbang",
-  addressKo: "호주 뉴사우스웨일스주 스트라스필드 라이언스 스트리트 27, 101A호 (Suite 101A, 27 Lyons Street, Strathfield NSW 2135)",
-  addressEn: "Suite 101A, 27 Lyons Street, Strathfield NSW 2135, Australia",
-  hoursKo: "월–금 오전 9:00–오후 6:00, 토 오전 10:00–오후 2:00 (한국어/영어 상담 가능)",
-  hoursEn: "Mon–Fri 9:00am–6:00pm, Sat 10:00am–2:00pm (Korean & English)",
-  mapEmbedSrc:
-    "https://www.google.com/maps?q=Suite+101A,+27+Lyons+Street,+Strathfield+NSW+2135,+Australia&output=embed",
-  mapDirectionsUrl: "https://www.google.com/maps/search/?api=1&query=Suite+101A+27+Lyons+Street+Strathfield+NSW+2135+Australia",
+  // Kept English-only everywhere (Footer, Contact page) — not translated to Korean.
+  address: "Suite 101A, 27 Lyons Street, Strathfield NSW 2135, Australia",
+  hoursKo: "월–금 오전 9:30–오후 5:30 (주말 휴무)",
+  hoursEn: "Mon–Fri 9:30am–5:30pm (Closed weekends)",
+  // cid identifies Sydney Bokdokbang's actual Google Maps business profile
+  // (Ste 101A/27 Lyons St, Strathfield NSW 2135) rather than just a raw address pin.
+  mapEmbedSrc: "https://www.google.com/maps?cid=6161591704060864020&output=embed",
+  mapDirectionsUrl: "https://www.google.com/maps?cid=6161591704060864020",
   abn: "ABN 51 651 205 159",
   licence: "Corporate Licence No. 10157652",
 };
