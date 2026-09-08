@@ -7,9 +7,9 @@
 // the UI shows "-" rather than guessing a figure.
 //
 // Photos: real marketing photography supplied by the agent for TRILOGY, BAIA,
-// Cezanne, Manet, Marigold, Castle Grange, Carling and Cielo (public/properties/).
-// 180 GEORGE and the two Boston Projects listings (La Vera, Marquet & Mary)
-// still use placeholder editorial photography pending marketing assets.
+// Cezanne, Manet, Marigold, Castle Grange, Carling, Cielo, La Vera and
+// Marquet & Mary (public/properties/, public/developments/). 180 GEORGE
+// still uses placeholder editorial photography pending marketing assets.
 export const PROPERTIES = [
   {
     id: "trilogy-0607",
@@ -48,7 +48,7 @@ export const PROPERTIES = [
     priceValue: 1475000,
     beds: 3, baths: 2, parking: 1,
     sqmInt: 96, sqmExt: 12,
-    img: "https://images.unsplash.com/photo-1586105251261-72a756497a11?w=960&h=720&fit=crop&auto=format",
+    img: "/developments/la-vera-macquarie-park/01-hero.jpg",
   },
   {
     id: "baia-0205",
@@ -87,7 +87,7 @@ export const PROPERTIES = [
     priceValue: 1455000,
     beds: 2, baths: null, parking: 1,
     sqmInt: 85, sqmExt: 10,
-    img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=960&h=720&fit=crop&auto=format",
+    img: "/developments/marquet-mary-rhodes/01-hero.jpg",
   },
   {
     id: "marquet-mary-102",
@@ -100,7 +100,7 @@ export const PROPERTIES = [
     priceValue: 780000,
     beds: 1, baths: null, parking: 0,
     sqmInt: 63, sqmExt: 12,
-    img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=960&h=720&fit=crop&auto=format",
+    img: "/developments/marquet-mary-rhodes/01-hero.jpg",
   },
   {
     id: "180george-6235",

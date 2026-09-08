@@ -38,7 +38,10 @@ export function NewDevelopmentsGrid() {
       if (completion !== "any") {
         const opt = DEV_COMPLETION_OPTIONS.find((o) => o.id === completion);
         if (opt) {
-          const matches = completion === "2028" ? d.completionYear >= opt.year : d.completionYear === opt.year;
+          const matches =
+            completion === "2028" ? d.completionYear >= opt.year
+            : completion === "2025" ? d.completionYear <= opt.year
+            : d.completionYear === opt.year;
           if (!matches) return false;
         }
       }
