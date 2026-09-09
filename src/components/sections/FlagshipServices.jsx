@@ -22,7 +22,7 @@ export function FlagshipServices() {
               className="font-medium leading-snug"
               style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
             >
-              {t("여정의 각 단계마다, 전담 케어.", "A dedicated service for every stage of the journey.")}
+              {t("여정의 각 단계마다 전담 케어", "A dedicated service for every stage of the journey")}
             </h2>
           </div>
         </Reveal>

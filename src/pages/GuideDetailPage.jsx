@@ -17,7 +17,7 @@ export function GuideDetailPage() {
       <section style={{ backgroundColor: COLORS.warm }}>
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 pt-32 md:pt-40 pb-24 text-center">
           <h1 className="text-[22px] mb-4" style={{ fontFamily: display, color: COLORS.ink }}>
-            {t("가이드를 찾을 수 없습니다.", "Guide not found.")}
+            {t("가이드를 찾을 수 없습니다", "Guide not found")}
           </h1>
           <Link to="/guides" style={{ color: COLORS.green, fontFamily: body }}>{t("가이드로 돌아가기", "Back to Guides")}</Link>
         </div>

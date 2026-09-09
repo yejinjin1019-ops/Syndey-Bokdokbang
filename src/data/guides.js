@@ -69,7 +69,7 @@ export const GUIDES = [
   {
     slug: "buying-process-guide",
     category: "buying-renting-guides",
-    titleKo: "시드니 매매 절차 가이드", titleEn: "The Sydney Buying Process, Step by Step",
+    titleKo: "시드니 매매 절차 가이드", titleEn: "The Sydney Buying Process — Step by Step",
     excerptKo: "매물 탐색부터 등기 이전까지, 매매 절차를 정리했습니다.",
     excerptEn: "A clear walkthrough of the buying process, from search to title transfer.",
     bodyKo: "시드니 주택 매매는 크게 매물 탐색 → 건물/해충 점검 → 계약 체결(사모임 또는 경매) → 계약금 납부 → 잔금 및 등기 이전 순으로 진행됩니다. 경매 매물의 경우 낙찰 즉시 구속력 있는 계약이 성립되므로 사전 금융 승인이 특히 중요합니다.",

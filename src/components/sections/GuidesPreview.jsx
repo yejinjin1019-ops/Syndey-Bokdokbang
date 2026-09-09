@@ -21,7 +21,7 @@ export function GuidesPreview() {
             <SectionLabel font={body}>{t("가이드 & 리소스", "Guides & Resources")}</SectionLabel>
           </div>
           <h2 className="font-medium mb-12 md:mb-16" style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)" }}>
-            {t("정착을 위한 실용 정보를 모았습니다.", "Practical guidance, gathered in one place.")}
+            {t("정착을 위한 실용 정보를 모았습니다", "Practical guidance gathered in one place")}
           </h2>
         </Reveal>
 

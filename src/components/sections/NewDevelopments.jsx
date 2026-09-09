@@ -21,7 +21,7 @@ export function NewDevelopments() {
 
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <Reveal>
-            <div className="overflow-hidden bg-stone-700 aspect-[4/3]">
+            <div className="overflow-hidden bg-stone-700 aspect-square">
               <img
                 src={dev.img}
                 alt={`${dev.name} — new development ${dev.suburb}`}

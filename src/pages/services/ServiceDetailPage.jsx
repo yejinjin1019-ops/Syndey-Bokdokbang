@@ -21,7 +21,7 @@ export function ServiceDetailPage() {
       <section style={{ backgroundColor: COLORS.warm }}>
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 pt-32 md:pt-40 pb-24 text-center">
           <h1 className="text-[22px] mb-4" style={{ fontFamily: display, color: COLORS.ink }}>
-            {t("서비스를 찾을 수 없습니다.", "Service not found.")}
+            {t("서비스를 찾을 수 없습니다", "Service not found")}
           </h1>
           <Link to="/services" style={{ color: COLORS.green, fontFamily: body }}>{t("서비스로 돌아가기", "Back to Services")}</Link>
         </div>

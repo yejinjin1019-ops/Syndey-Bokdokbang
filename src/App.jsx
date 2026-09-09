@@ -23,7 +23,6 @@ import { MaintenanceRequestPage } from "./pages/services/MaintenanceRequestPage"
 import { LandlordPortalPage } from "./pages/services/LandlordPortalPage";
 import { ServiceDetailPage } from "./pages/services/ServiceDetailPage";
 import { AboutPage } from "./pages/AboutPage";
-import { AgentProfilePage } from "./pages/AgentProfilePage";
 import { ContactPage } from "./pages/ContactPage";
 import { GuidesPage } from "./pages/GuidesPage";
 import { GuideDetailPage } from "./pages/GuideDetailPage";
@@ -61,7 +60,6 @@ export default function App() {
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
 
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/about/agents/:slug" element={<AgentProfilePage />} />
 
             <Route path="/contact" element={<ContactPage />} />
 

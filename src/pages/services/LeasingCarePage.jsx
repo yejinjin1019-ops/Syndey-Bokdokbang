@@ -92,8 +92,8 @@ export function LeasingCarePage() {
     <>
       <PageHero
         label={t("서비스 · 임대 케어", "Services · Leasing Care")}
-        titleKo="투자 부동산 임대, 준비부터 함께"
-        titleEn="Getting your investment property leased, the right way."
+        titleKo="투자 부동산 임대 준비부터 함께"
+        titleEn="Getting your investment property leased the right way"
         descKo="임대를 앞둔 소유주와 투자자를 위한 서비스입니다. 매물 준비부터 세입자 매칭, 계약 체결까지 — 임대 시작의 전 과정을 함께 준비합니다."
         descEn="Built for property owners and investors preparing to lease. From getting the property ready to matching tenants and signing the lease, we help prepare every step of getting a tenancy started."
       />
@@ -118,7 +118,7 @@ export function LeasingCarePage() {
                 className="font-medium mb-7 leading-snug"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(22px,2.4vw,32px)", lineHeight: 1.5 }}
               >
-                {t("임대의 시작부터, 그 다음까지", "From the start of leasing, to what comes after")}
+                {t("임대의 시작부터 그 다음까지", "From the start of leasing to what comes after")}
               </h2>
               <ul className="flex flex-col gap-5">
                 {SUPPORT_ITEMS.map((item) => (
@@ -151,7 +151,7 @@ export function LeasingCarePage() {
                 className="font-medium leading-snug"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
               >
-                {t("상황에 따라, 필요한 지원도 다릅니다", "Different situations call for different support.")}
+                {t("상황에 따라 필요한 지원도 다릅니다", "Different situations call for different support")}
               </h2>
             </div>
           </Reveal>
@@ -208,8 +208,8 @@ export function LeasingCarePage() {
               fields={FIELDS}
               submitLabelKo="문의 보내기"
               submitLabelEn="Send Enquiry"
-              successTitleKo="문의가 접수되었습니다."
-              successTitleEn="Your enquiry has been received."
+              successTitleKo="문의가 접수되었습니다"
+              successTitleEn="Your enquiry has been received"
               successBodyKo="담당자가 문의 내용을 확인한 후 빠른 시일 내에 연락드립니다."
               successBodyEn="A member of our team will review your enquiry and be in touch soon."
             />
@@ -224,7 +224,7 @@ export function LeasingCarePage() {
               className="font-medium mb-6"
               style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3.2vw,44px)", lineHeight: 1.5 }}
             >
-              {t("임대, 어디서부터 시작할지 고민이신가요", "Not sure where to start with leasing your property?")}
+              {t("임대 어디서부터 시작할지 고민이신가요", "Not sure where to start with leasing your property?")}
             </h2>
             <p
               className="mb-10"

@@ -129,8 +129,8 @@ export function SettlementCarePage() {
     <>
       <PageHero
         label={t("서비스 · 정착 케어", "Services · Settlement Care")}
-        titleKo="계약부터 열쇠까지, 놓치는 것 없이"
-        titleEn="From contract to keys, without losing track of the details."
+        titleKo="계약부터 열쇠까지 놓치는 것 없이"
+        titleEn="From contract to keys without losing track of the details"
         descKo="계약 체결 후 잔금일까지, 챙겨야 할 일정과 서류가 한꺼번에 몰리는 시기입니다. 시드니 복덕방이 전체 일정을 정리하고, 관련 전문가들과의 소통을 조율해드립니다."
         descEn="Between exchanging contracts and settlement day, tasks and paperwork pile up fast. Sydney Bokdokbang keeps the timeline organised and coordinates communication with everyone involved."
       />
@@ -146,7 +146,7 @@ export function SettlementCarePage() {
                 className="font-medium leading-snug"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
               >
-                {t("일곱 단계, 하나의 흐름으로", "Seven stages, tracked as one continuous flow.")}
+                {t("일곱 단계 하나의 흐름으로", "Seven stages tracked as one continuous flow")}
               </h2>
             </div>
           </Reveal>
@@ -169,7 +169,7 @@ export function SettlementCarePage() {
                 className="font-medium mb-5 leading-snug"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
               >
-                {t("필요한 전문가와, 필요한 순간에", "The right professional, at the right moment.")}
+                {t("필요한 전문가와 필요한 순간에", "The right professional at the right moment")}
               </h2>
               <p className="text-[13.5px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body, maxWidth: "560px" }}>
                 {t(
@@ -208,7 +208,7 @@ export function SettlementCarePage() {
               className="font-medium mb-6"
               style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3.2vw,44px)", lineHeight: 1.5 }}
             >
-              {t("정착까지, 혼자 챙기지 마세요", "You don't have to track it all alone.")}
+              {t("정착까지 혼자 챙기지 마세요", "You don't have to track it all alone")}
             </h2>
             <p
               className="mb-10"

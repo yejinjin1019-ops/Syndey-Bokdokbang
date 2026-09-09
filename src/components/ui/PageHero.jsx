@@ -19,7 +19,7 @@ export function PageHero({ label, titleKo, titleEn, descKo, descEn, dark = false
             <SectionLabel font={body} dark={dark}>{label}</SectionLabel>
           </div>
           <h1
-            className="font-medium mb-6"
+            className="font-medium mb-6 whitespace-pre-line"
             style={{
               fontFamily: display,
               color: dark ? COLORS.ivory : COLORS.ink,

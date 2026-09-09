@@ -312,7 +312,8 @@ export const DEVELOPMENTS = [
     { typeKo: "3침실", typeEn: "3 Bedroom", priceFrom: "$1,390,000" },
     { typeKo: "4침실", typeEn: "4 Bedroom", priceFrom: "$1,950,000" },
   ] },
-  { id: "marquet-mary-rhodes", name: "Marquet & Mary", suburb: "Rhodes", subKo: "로즈", developer: "Deicorp", statusKo: "분양 중", statusEn: "Selling Now", availabilityId: "selling-now", startingPrice: 780000, bedsMin: 1, bedsMax: 4, completionLabel: "2028", completionYear: 2028, lastUpdated: "8 Sep 2026", descKo: "로즈 반도, 마르케 스트리트와 메리 스트리트가 만나는 자리에 들어서는 마르케 앤 메리는 디자인 공모전에서 우승한 펜더 카트살리디스가 설계한 고층 타워로, 로즈 센트럴 상업지구와 기차역까지 라네웨이로 바로 연결됩니다. 1999년 설립된 디코프(Deicorp)가 개발하며, 1~4베드룸 아파트와 4개 층의 상가·상업 포디움, 옥상 커뮤널 공간을 갖추고 있습니다.", descEn: "Rising on the Rhodes peninsula at the corner of Marquet and Mary Streets, Marquet & Mary is a high-rise tower designed by award-winning architects Fender Katsalidis, with direct laneway access to the Rhodes Central retail precinct and train station. Developed by Deicorp (established 1999), it offers one- to four-bedroom apartments above a four-level retail and commercial podium topped with a rooftop communal area.", img: "/developments/marquet-mary-rhodes/01-hero.jpg", gallery: [
+  { id: "marquet-mary-rhodes", name: "Marquet & Mary", suburb: "Rhodes", subKo: "로즈", developer: "Deicorp", statusKo: "분양 중", statusEn: "Selling Now", availabilityId: "selling-now", startingPrice: 780000, bedsMin: 1, bedsMax: 4, completionLabel: "2028", completionYear: 2028, lastUpdated: "8 Sep 2026", descKo: "로즈 반도, 마르케 스트리트와 메리 스트리트가 만나는 자리에 들어서는 마르케 앤 메리는 디자인 공모전에서 우승한 펜더 카트살리디스가 설계한 고층 타워로, 로즈 센트럴 상업지구와 기차역까지 라네웨이로 바로 연결됩니다. 1999년 설립된 디코프(Deicorp)가 개발하며, 1~4베드룸 아파트와 4개 층의 상가·상업 포디움, 옥상 커뮤널 공간을 갖추고 있습니다.", descEn: "Rising on the Rhodes peninsula at the corner of Marquet and Mary Streets, Marquet & Mary is a high-rise tower designed by award-winning architects Fender Katsalidis, with direct laneway access to the Rhodes Central retail precinct and train station. Developed by Deicorp (established 1999), it offers one- to four-bedroom apartments above a four-level retail and commercial podium topped with a rooftop communal area.", img: "/developments/marquet-mary-rhodes/00-hero-wide.jpg", gallery: [
+    "/developments/marquet-mary-rhodes/00-hero-wide.jpg",
     "/developments/marquet-mary-rhodes/01-hero.jpg",
     "/developments/marquet-mary-rhodes/02-aerial.jpg",
     "/developments/marquet-mary-rhodes/03-lobby.jpg",
@@ -519,7 +520,7 @@ export const DEVELOPMENTS = [
   ] },
 ];
 
-export const FEATURED_DEVELOPMENT = DEVELOPMENTS[0];
+export const FEATURED_DEVELOPMENT = DEVELOPMENTS.find((d) => d.id === "marquet-mary-rhodes");
 
 export const DEV_PRICE_BUCKETS = [
   { id: "0-800", min: 0, max: 800000, label: "$0 – $800K" },

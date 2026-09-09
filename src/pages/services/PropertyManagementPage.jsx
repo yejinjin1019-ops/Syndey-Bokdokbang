@@ -133,7 +133,7 @@ export function PropertyManagementPage() {
       <PageHero
         label={t("서비스 · 부동산 임대관리", "Services · Property Management")}
         titleKo="명확한 소통의 부동산 임대관리"
-        titleEn="Property management, with clearer communication."
+        titleEn="Property management with clearer communication"
         descKo="임대인과 세입자 사이의 소통을 중심에 둡니다. 임대차 진행부터 정기 점검, 유지보수 조율까지, 각 단계를 명확하게 안내해드립니다."
         descEn="Built around clear communication between owners and tenants — from leasing through to routine inspections and maintenance coordination, every step explained clearly."
       />
@@ -149,7 +149,7 @@ export function PropertyManagementPage() {
                 className="font-medium leading-snug"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
               >
-                {t("임대차의 시작부터 끝까지", "From the start of a tenancy to the everyday of it.")}
+                {t("임대차의 시작부터 끝까지", "From the start of a tenancy to the everyday of it")}
               </h2>
             </div>
           </Reveal>
@@ -186,7 +186,7 @@ export function PropertyManagementPage() {
                 className="font-medium leading-snug"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
               >
-                {t("필요한 절차로 바로 이동하세요", "Go straight to the step you need.")}
+                {t("필요한 절차로 바로 이동하세요", "Go straight to the step you need")}
               </h2>
             </div>
           </Reveal>
@@ -227,7 +227,7 @@ export function PropertyManagementPage() {
                 className="font-medium leading-snug"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
               >
-                {t("임대인, 세입자, 그리고 유지보수까지", "For owners, for tenants, and for maintenance.")}
+                {t("임대인 · 세입자 · 유지보수까지", "Owners · Tenants · Maintenance")}
               </h2>
             </div>
           </Reveal>
@@ -284,8 +284,8 @@ export function PropertyManagementPage() {
               fields={FIELDS}
               submitLabelKo="문의 보내기"
               submitLabelEn="Send Enquiry"
-              successTitleKo="문의가 접수되었습니다."
-              successTitleEn="Your enquiry has been received."
+              successTitleKo="문의가 접수되었습니다"
+              successTitleEn="Your enquiry has been received"
               successBodyKo="담당자가 문의 내용을 확인한 후 빠른 시일 내에 연락드립니다."
               successBodyEn="A member of our team will review your enquiry and be in touch soon."
             />

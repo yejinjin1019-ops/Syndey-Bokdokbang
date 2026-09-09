@@ -60,8 +60,8 @@ export function MoveInCarePage() {
     <>
       <PageHero
         label={t("서비스 · 이사 케어", "Services · Move-In Care")}
-        titleKo="집을 찾는 순간부터, 실제로 정착하는 순간까지"
-        titleEn="From your first question to your first key."
+        titleKo={"집을 찾는 순간부터\n실제로 정착하는 순간까지"}
+        titleEn="From your first question to your first key"
         descKo="매물을 찾던 순간의 설렘이 새로운 동네에서의 일상으로 자연스럽게 이어지도록, 시드니 복덕방이 함께합니다."
         descEn="From the excitement of the search to everyday life in a new neighbourhood — we stay with you the whole way."
       />
@@ -91,7 +91,7 @@ export function MoveInCarePage() {
                 className="font-medium leading-snug"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
               >
-                {t("열쇠를 받은 이후에도, 여정은 계속됩니다", "The journey doesn't stop once you have the keys.")}
+                {t("열쇠를 받은 이후에도 여정은 계속됩니다", "The journey doesn't stop once you have the keys")}
               </h2>
             </div>
           </Reveal>

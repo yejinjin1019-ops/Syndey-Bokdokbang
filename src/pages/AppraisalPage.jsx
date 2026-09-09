@@ -44,7 +44,7 @@ export function AppraisalPage() {
     <>
       <PageHero
         label={t("매물 · 무료 감정평가", "Properties · Property Appraisal")}
-        titleKo="지금 소유한 부동산, 얼마일까요?"
+        titleKo="지금 소유한 부동산 얼마일까요?"
         titleEn="What is your property worth today?"
         descKo="현재 보유 부동산의 시장 가치를 전문가가 무료로 감정해드립니다. 매각, 임대, 재융자 계획에 앞서 정확한 정보를 먼저 파악하세요."
         descEn="Get a professional market appraisal at no cost. Know the numbers before you plan to sell, lease, or refinance."
@@ -74,8 +74,8 @@ export function AppraisalPage() {
                 fields={FIELDS}
                 submitLabelKo="무료 감정평가 신청하기"
                 submitLabelEn="Request a Free Appraisal"
-                successTitleKo="신청이 접수되었습니다."
-                successTitleEn="Your appraisal request has been received."
+                successTitleKo="신청이 접수되었습니다"
+                successTitleEn="Your appraisal request has been received"
                 successBodyKo="담당 어드바이저가 영업일 기준 1일 이내에 연락드려 다음 단계를 안내해드립니다."
                 successBodyEn="A dedicated advisor will reach out within 1 business day to walk you through the next steps."
               />

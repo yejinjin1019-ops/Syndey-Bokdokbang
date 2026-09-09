@@ -20,8 +20,8 @@ export function BrandPromise() {
               className="font-medium mb-5 leading-relaxed"
               style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(22px,2.4vw,34px)", lineHeight: 1.72 }}
             >
-              {t("매물의 수보다,", "We don't believe in showing you more.")}<br />
-              {t("더 나은 선택을 하실 수 있도록.", "We believe in helping you choose better.")}
+              {t("중요한 과정이 빠지지 않도록", "We stay across what matters")}<br />
+              {t("다음 단계까지 살펴봅니다", "through every next step")}
             </blockquote>
             <p
               style={{
@@ -32,7 +32,7 @@ export function BrandPromise() {
                 letterSpacing: "0.01em",
               }}
             >
-              {t("시드니 부동산을 바라보는 저희만의 기준입니다.", "A more considered way to look at Sydney property.")}
+              {t("세심하게 살피고 끊김 없이 이어갑니다", "Care · Continuity · Attentiveness")}
             </p>
           </Reveal>
 

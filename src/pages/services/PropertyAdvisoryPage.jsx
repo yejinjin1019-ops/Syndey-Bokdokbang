@@ -63,7 +63,7 @@ export function PropertyAdvisoryPage() {
       <PageHero
         label={t("서비스 · 부동산 어드바이저리", "Services · Property Advisory")}
         titleKo="좋은 조언이 더 나은 결정을 만듭니다"
-        titleEn="Better property decisions start with better advice."
+        titleEn="Better property decisions start with better advice"
         descKo="시드니 복덕방은 매물을 파는 곳이 아니라, 결정을 돕는 곳입니다. 구매를 결정하기 전, 필요한 정보와 관점을 차분히 함께 정리합니다."
         descEn="Sydney Bokdokbang isn't here to sell you a property — we're here to help you decide. Before you buy, we help you think it through, calmly and clearly."
       />
@@ -79,7 +79,7 @@ export function PropertyAdvisoryPage() {
                 className="font-medium leading-snug"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
               >
-                {t("결정을 내리기 전에 필요한 것들", "What you need before you decide.")}
+                {t("결정을 내리기 전에 필요한 것들", "What you need before you decide")}
               </h2>
             </div>
           </Reveal>
@@ -116,7 +116,7 @@ export function PropertyAdvisoryPage() {
                 className="font-medium leading-snug"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
               >
-                {t("서두르지 않고, 단계마다 함께", "No rush — a step at a time, together.")}
+                {t("서두르지 않고 단계마다 함께", "No rush — a step at a time together")}
               </h2>
             </div>
           </Reveal>
@@ -151,7 +151,7 @@ export function PropertyAdvisoryPage() {
               className="font-medium mb-6"
               style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3.2vw,44px)", lineHeight: 1.5 }}
             >
-              {t("결정하기 전, 먼저 상담을 받아보세요", "Before you decide, let's talk it through first.")}
+              {t("결정하기 전 먼저 상담을 받아보세요", "Before you decide let's talk it through first")}
             </h2>
             <p
               className="mb-10"

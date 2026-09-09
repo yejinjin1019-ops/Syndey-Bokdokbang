@@ -38,8 +38,8 @@ export function MaintenanceRequestPage() {
     <>
       <PageHero
         label={t("부동산 임대관리 · 유지보수 요청", "Property Management · Maintenance Request")}
-        titleKo="문제가 생기면, 바로 알려주세요."
-        titleEn="Something's not right? Let us know."
+        titleKo="문제가 생기면 바로 알려주세요"
+        titleEn="Something's not right? Let us know"
         descKo="임대 중인 주택의 유지보수 문제를 신고하세요. 긴급도에 따라 우선순위를 두고 처리합니다."
         descEn="Log a maintenance issue at your rental — we prioritise by urgency and follow up quickly."
       />
@@ -51,8 +51,8 @@ export function MaintenanceRequestPage() {
               fields={FIELDS}
               submitLabelKo="유지보수 요청하기"
               submitLabelEn="Submit Maintenance Request"
-              successTitleKo="요청이 접수되었습니다."
-              successTitleEn="Your maintenance request has been received."
+              successTitleKo="요청이 접수되었습니다"
+              successTitleEn="Your maintenance request has been received"
               successBodyKo="긴급도에 따라 우선순위를 정해 담당자가 빠르게 연락드립니다."
               successBodyEn="We prioritise by urgency, and our team will be in touch shortly."
             />

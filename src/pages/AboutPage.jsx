@@ -63,8 +63,8 @@ export function AboutPage() {
     <>
       <PageHero
         label={t("소개", "About")}
-        titleKo="시드니의 동네 사랑방, 새롭게 다시 짓다"
-        titleEn="A neighbourhood role, redefined for Sydney"
+        titleKo={"시드니의 동네 사랑방\n새롭게 다시 짓다"}
+        titleEn={"A neighbourhood role\nredefined for Sydney"}
         descKo={"복덕방은 원래 집과 사람을 모두 이해했기에 신뢰받던 자리였습니다.\n시드니 복덕방은 그 역할을 지금 이곳에 맞게 다시 만듭니다."}
         descEn={"“Bokdokbang” once meant a place trusted because it understood both homes and people.\nSydney Bokdokbang rebuilds that role for the city we live in now."}
       />
@@ -121,12 +121,12 @@ export function AboutPage() {
                       letterSpacing: "0.01em",
                     }}
                   >
-                    {t("집을 찾는 순간부터, 정착하는 순간까지.", "Your Sydney property journey, thoughtfully guided.")}
+                    {t("집을 찾는 순간부터 정착하는 순간까지", "From your first search to every next step")}
                   </p>
                 </div>
 
                 <Button variant="fill-green" href="/contact" font={body}>
-                  {t("상담 예약하기", "Book a Consultation")} <ArrowRight size={13} />
+                  {t("상담하기", "Book a Consultation")} <ArrowRight size={13} />
                 </Button>
               </Reveal>
             </div>
@@ -146,7 +146,7 @@ export function AboutPage() {
                 className="font-medium mb-5 leading-relaxed"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(22px,2.4vw,34px)", lineHeight: 1.72 }}
               >
-                {t("매물의 수보다,", "We are not here to show you more properties")}<br />
+                {t("매물의 수보다", "We are not here to show you more properties")}<br />
                 {t("더 나은 선택을 할 수 있도록", "We are here to help you choose more carefully")}
               </blockquote>
               <p
@@ -193,7 +193,7 @@ export function AboutPage() {
                 className="font-medium leading-snug"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
               >
-                {t("서두르지 않고, 단계마다 함께", "No rush — a step at a time, together")}
+                {t("서두르지 않고 단계마다 함께", "No rush — a step at a time together")}
               </h2>
             </div>
           </Reveal>
@@ -312,7 +312,7 @@ export function AboutPage() {
               className="font-medium mb-6"
               style={{ fontFamily: display, color: COLORS.ivory, fontSize: "clamp(26px,3.2vw,44px)", lineHeight: 1.5 }}
             >
-              {t("더 나은 선택은, 좋은 대화에서 시작됩니다", "A better choice starts with a good conversation")}
+              {t("더 나은 선택은 좋은 대화에서 시작됩니다", "A better choice starts with a good conversation")}
             </h2>
             <p
               className="mb-10"
@@ -331,7 +331,7 @@ export function AboutPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button variant="outline" href="/contact" font={body}>
-                {t("상담 예약하기", "Book a Consultation")} <ArrowRight size={14} />
+                {t("상담하기", "Book a Consultation")} <ArrowRight size={14} />
               </Button>
             </div>
           </Reveal>

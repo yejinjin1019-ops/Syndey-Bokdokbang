@@ -130,7 +130,7 @@ export function Header() {
             </button>
 
             <Button variant="fill-green" size="sm" href="/contact" font={body} className="hidden md:inline-flex">
-              {t("상담 예약", "Book a Consultation")}
+              {t("상담하기", "Book a Consultation")}
             </Button>
 
             <button
@@ -208,7 +208,7 @@ export function Header() {
             })}
             <div className="pt-5 space-y-3">
               <Button variant="fill-green" href="/contact" font={body} className="w-full" onClick={() => setMobileOpen(false)}>
-                {t("상담 예약", "Book a Consultation")}
+                {t("상담하기", "Book a Consultation")}
               </Button>
               <button
                 onClick={toggleLang}

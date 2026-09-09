@@ -73,8 +73,8 @@ export function Footer() {
             </div>
             <p className="text-[13px] leading-relaxed" style={{ color: DIM_TEXT, fontFamily: body, maxWidth: "260px" }}>
               {t(
-                "매물을 많이 보여드리는 곳이 아니라, 제대로 봐드리는 곳입니다.",
-                "Not the agency that shows you the most listings — the one that shows you the right one."
+                "집을 찾는 순간부터 정착하는 순간까지",
+                "From your first search to every next step"
               )}
             </p>
           </div>

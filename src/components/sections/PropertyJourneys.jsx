@@ -52,7 +52,7 @@ export function PropertyJourneys() {
               className="font-medium"
               style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3vw,42px)", lineHeight: 1.4, letterSpacing: "-0.01em" }}
             >
-              {t("어디서 시작하든, 함께 갑니다.", "Wherever you start, we walk it with you.")}
+              {t("어디서 시작하든 함께 갑니다", "Wherever you start we walk it with you")}
             </h2>
           </div>
         </Reveal>

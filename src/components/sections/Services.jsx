@@ -24,7 +24,7 @@ export function Services() {
                 className="font-medium max-w-lg"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.6vw,38px)", lineHeight: 1.5 }}
               >
-                {t("매매 이후에도 계속되는 케어.", "Support that continues after the sale.")}
+                {t("매매 이후에도 계속되는 케어", "Support that continues after the sale")}
               </h2>
             </div>
             <Link

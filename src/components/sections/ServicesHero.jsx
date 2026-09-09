@@ -19,8 +19,8 @@ export function ServicesHero() {
             className="font-medium mb-6"
             style={{ fontFamily: display, color: COLORS.ivory, fontSize: "clamp(28px,4vw,50px)", lineHeight: 1.42, letterSpacing: "-0.01em" }}
           >
-            {t("첫 질문부터,", "From your first question")}<br />
-            {t("첫 열쇠까지.", "to your first key.")}
+            {t("첫 질문부터", "From your first question")}<br />
+            {t("첫 열쇠까지", "to your first key")}
           </h1>
           <p
             className="mb-10"
@@ -39,7 +39,7 @@ export function ServicesHero() {
             )}
           </p>
           <Button variant="fill-ivory" href="#book-consultation" font={body}>
-            {t("상담 예약하기", "Book a Consultation")} <ArrowRight size={14} />
+            {t("상담하기", "Book a Consultation")} <ArrowRight size={14} />
           </Button>
         </div>
       </div>

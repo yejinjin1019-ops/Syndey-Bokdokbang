@@ -27,7 +27,7 @@ export function PropertiesHero() {
             className="font-medium max-w-2xl mb-6"
             style={{ fontFamily: display, color: COLORS.ivory, fontSize: "clamp(30px,4.4vw,54px)", lineHeight: 1.3, letterSpacing: "-0.01em" }}
           >
-            {t("당신의 다음 시드니 주소를 찾아드립니다.", "Finding your next Sydney address.")}
+            {t("당신의 다음 시드니 주소를 찾아드립니다", "Finding your next Sydney address")}
           </h1>
           <p
             style={{

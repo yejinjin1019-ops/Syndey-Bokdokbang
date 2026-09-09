@@ -20,7 +20,7 @@ export function WhyUs() {
               className="font-medium leading-snug whitespace-pre-line"
               style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3vw,42px)", lineHeight: 1.55 }}
             >
-              {t("한국의 따뜻함으로,\n시드니 부동산 전문성으로.", "Korean Warmth.\nSydney Property Expertise.")}
+              {t("한국의 따뜻함으로\n시드니 부동산 전문성으로", "Korean Warmth\nSydney Property Expertise")}
             </h2>
           </div>
         </Reveal>

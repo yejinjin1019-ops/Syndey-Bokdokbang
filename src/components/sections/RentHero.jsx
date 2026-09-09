@@ -17,8 +17,8 @@ export function RentHero() {
             className="font-medium mb-6"
             style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(28px,4vw,48px)", lineHeight: 1.35, letterSpacing: "-0.01em" }}
           >
-            {t("좋은 집은,", "Find a place that fits")}<br />
-            {t("생활까지 편리해야 하니까.", "the way you live.")}
+            {t("좋은 집은", "Find a place that fits")}<br />
+            {t("생활까지 편리해야 하니까", "the way you live")}
           </h1>
           <p
             style={{

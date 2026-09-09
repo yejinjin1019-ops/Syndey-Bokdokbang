@@ -17,8 +17,8 @@ export function BuyHero() {
             className="font-medium mb-6"
             style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(28px,4vw,48px)", lineHeight: 1.35, letterSpacing: "-0.01em" }}
           >
-            {t("한 번 더 눈이 가는,", "Sydney homes worth")}<br />
-            {t("시드니의 집들.", "a closer look.")}
+            {t("한 번 더 눈이 가는", "Sydney homes worth")}<br />
+            {t("시드니의 집들", "a closer look")}
           </h1>
           <p
             style={{

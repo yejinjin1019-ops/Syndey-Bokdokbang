@@ -15,7 +15,7 @@ export function LegalPage() {
       <section style={{ backgroundColor: COLORS.warm }}>
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 pt-32 md:pt-40 pb-24 text-center">
           <h1 className="text-[22px] mb-4" style={{ fontFamily: display, color: COLORS.ink }}>
-            {t("페이지를 찾을 수 없습니다.", "Page not found.")}
+            {t("페이지를 찾을 수 없습니다", "Page not found")}
           </h1>
           <Link to="/" style={{ color: COLORS.green, fontFamily: body }}>{t("홈으로 돌아가기", "Back to Home")}</Link>
         </div>

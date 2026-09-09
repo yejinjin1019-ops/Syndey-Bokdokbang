@@ -29,7 +29,7 @@ export function PropertyAppraisalCTA() {
               <SectionLabel font={body}>{t("매물 감정평가", "Property Appraisal")}</SectionLabel>
             </div>
             <h2 className="font-medium mb-5" style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,38px)", lineHeight: 1.4 }}>
-              {t("매각을 고민 중인 소유주를 위한 안내입니다.", "For owners considering selling their property.")}
+              {t("매각을 고민 중인 소유주를 위한 안내입니다", "For owners considering selling their property")}
             </h2>
             <p className="text-[14.5px] leading-relaxed mb-8" style={{ color: COLORS.dim, fontFamily: body, maxWidth: "460px" }}>
               {t(

@@ -73,8 +73,8 @@ export function LandlordPortalPage() {
     <>
       <PageHero
         label={t("부동산 임대관리 · 임대인 포털", "Property Management · Landlord Portal")}
-        titleKo="더 선명해지는 부동산 임대관리."
-        titleEn="Property management, with clearer visibility."
+        titleKo="더 선명해지는 부동산 임대관리"
+        titleEn="Property management with clearer visibility"
         descKo="임대료 정산부터 유지보수 현황까지, 소유하신 부동산에 대한 중요한 정보에 체계적으로 접근할 수 있도록 지원해드립니다."
         descEn="From rental statements to maintenance tracking, we help you get organised access to the information that matters for your property."
       />
@@ -122,8 +122,8 @@ export function LandlordPortalPage() {
                 fields={FIELDS}
                 submitLabelKo="포털 접근 요청하기"
                 submitLabelEn="Request Portal Access"
-                successTitleKo="요청이 접수되었습니다."
-                successTitleEn="Your request has been received."
+                successTitleKo="요청이 접수되었습니다"
+                successTitleEn="Your request has been received"
                 successBodyKo="담당 어드바이저가 곧 연락드려 접근 및 지원 방법을 안내해드립니다."
                 successBodyEn="An advisor will be in touch shortly to arrange access and support."
               />

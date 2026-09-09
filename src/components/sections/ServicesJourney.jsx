@@ -20,7 +20,7 @@ export function ServicesJourney() {
               className="font-medium leading-snug"
               style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
             >
-              {t("여섯 단계, 하나의 동행.", "Six stages, one continuous companion.")}
+              {t("여섯 단계 하나의 동행", "Six stages — one continuous companion")}
             </h2>
           </div>
         </Reveal>

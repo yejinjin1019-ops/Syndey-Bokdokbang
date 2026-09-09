@@ -16,8 +16,8 @@ export function ServicesFinalCTA() {
             className="font-medium mb-6"
             style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3.2vw,44px)", lineHeight: 1.5 }}
           >
-            {t("첫 질문을 시작으로,", "Start with a question,")}<br />
-            {t("여정을 함께해요.", "and let's walk the journey together.")}
+            {t("첫 질문을 시작으로", "Start with a question")}<br />
+            {t("여정을 함께해요", "and walk the journey together")}
           </h2>
           <p
             className="mb-10"

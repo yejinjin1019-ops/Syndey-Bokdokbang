@@ -15,8 +15,8 @@ export function GuidesPage() {
     <>
       <PageHero
         label={t("가이드 & 리소스", "Guides & Resources")}
-        titleKo="시드니 정착을 위한 실용 정보."
-        titleEn="Practical guidance for settling in Sydney."
+        titleKo="시드니 정착을 위한 실용 정보"
+        titleEn="Practical guidance for settling in Sydney"
         descKo="지역 가이드, 정착 정보, 매매/임대 절차, 시장 리포트를 한곳에서 확인하세요."
         descEn="Area guides, settlement information, buying/renting process guides, and market reports — all in one place."
       />

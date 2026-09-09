@@ -20,7 +20,7 @@ export function BokdokNetwork() {
               className="font-medium mb-5 leading-snug"
               style={{ fontFamily: display, color: COLORS.ivory, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
             >
-              {t("검증된 파트너들과 함께.", "Backed by a network of vetted partners.")}
+              {t("검증된 파트너들과 함께", "Backed by a network of vetted partners")}
             </h2>
             <p className="text-[14px] leading-relaxed" style={{ color: "rgba(245,241,232,0.68)", fontFamily: body, maxWidth: "520px" }}>
               {t(

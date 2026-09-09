@@ -33,8 +33,8 @@ export function ContactPage() {
     <>
       <PageHero
         label={t("연락처", "Contact")}
-        titleKo="첫 질문을 시작으로, 여정을 함께해요."
-        titleEn="Start with a question, and let's walk the journey together."
+        titleKo={"첫 질문을 시작으로\n여정을 함께해요"}
+        titleEn={"Start with a question\nand walk the journey together"}
         descKo="상담 예약, 매물 문의, 무엇이든 편하게 남겨주세요. 시드니 복덕방이 곧 답변드립니다."
         descEn="Book a consultation, ask about a property, or anything else — leave us a message and we'll respond soon."
       />
@@ -120,8 +120,8 @@ export function ContactPage() {
                 onSubmit={sendContactEnquiry}
                 submitLabelKo="문의 보내기"
                 submitLabelEn="Send Enquiry"
-                successTitleKo="문의가 접수되었습니다."
-                successTitleEn="Your enquiry has been received."
+                successTitleKo="문의가 접수되었습니다"
+                successTitleEn="Your enquiry has been received"
                 successBodyKo="시드니 복덕방 팀이 빠른 시일 내에 연락드리겠습니다."
                 successBodyEn="The Sydney Bokdokbang team will be in touch soon."
               />

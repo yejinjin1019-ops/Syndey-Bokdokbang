@@ -44,8 +44,8 @@ export function Hero() {
             className="font-medium mb-4"
             style={{ fontFamily: display, color: COLORS.ivory, fontSize: "clamp(26px,3.6vw,44px)", lineHeight: 1.5, letterSpacing: "-0.01em" }}
           >
-            {t("집을 찾는 순간부터,", "Your Sydney property journey,")}<br />
-            {t("정착하는 순간까지.", "thoughtfully guided.")}
+            {t("집을 찾는 순간부터", "From your first search")}<br />
+            {t("정착하는 순간까지", "to every next step")}
           </h1>
 
           {/* Subtitle — italic only in English; Korean stays upright */}
@@ -59,7 +59,7 @@ export function Hero() {
               letterSpacing: "0.01em",
             }}
           >
-            {t("한국의 따뜻함으로, 시드니 부동산 전문성으로.", "Korean warmth. Sydney property expertise.")}
+            {t("하나로 이어지는 부동산 여정", "One connected property journey")}
           </p>
 
           {/* CTAs */}
@@ -68,7 +68,7 @@ export function Hero() {
               {t("상담하기", "Book a Consultation")} <ArrowRight size={14} />
             </Button>
             <Button variant="outline" href="#properties" font={body}>
-              {t("매물 둘러보기", "Browse Properties")}
+              {t("매물 둘러보기", "Explore Properties")}
             </Button>
           </div>
         </div>
