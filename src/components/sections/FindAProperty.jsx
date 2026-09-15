@@ -5,38 +5,28 @@ import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
 import { Reveal } from "../ui/Reveal";
 import { SectionLabel } from "../ui/SectionLabel";
-import { PropertyCard } from "../ui/PropertyCard";
-import { PROPERTIES, SALE_PRICE_BUCKETS } from "../../data/properties";
-
-const TABS = [
-  { id: "buy", ko: "매매", en: "Buy" },
-  { id: "rent", ko: "임대", en: "Rent" },
-  { id: "new", ko: "신규개발", en: "New Developments" },
-];
+import { DevelopmentCard } from "../ui/DevelopmentCard";
+import { DEVELOPMENTS, DEV_PRICE_BUCKETS } from "../../data/developments";
 
 export function FindAProperty() {
   const { lang, t } = useLanguage();
   const { display, body } = getThemeFonts(lang);
 
-  const [tab, setTab] = useState("new");
   const [suburbQuery, setSuburbQuery] = useState("");
-  const [propertyType, setPropertyType] = useState("any");
   const [priceBucket, setPriceBucket] = useState("any");
   const [bedrooms, setBedrooms] = useState("any");
   const resultsRef = useRef(null);
 
-  const filtered = PROPERTIES.filter((p) => {
-    if (p.category !== tab) return false;
+  const filtered = DEVELOPMENTS.filter((d) => {
     if (suburbQuery.trim()) {
       const q = suburbQuery.trim().toLowerCase();
-      const hit = p.suburb.toLowerCase().includes(q) || p.subKo.includes(suburbQuery.trim());
+      const hit = d.suburb.toLowerCase().includes(q) || d.subKo.includes(suburbQuery.trim());
       if (!hit) return false;
     }
-    if (propertyType !== "any" && p.type !== propertyType) return false;
-    if (bedrooms !== "any" && p.beds < Number(bedrooms)) return false;
+    if (bedrooms !== "any" && d.bedsMax < Number(bedrooms)) return false;
     if (priceBucket !== "any") {
-      const bucket = SALE_PRICE_BUCKETS.find((b) => b.id === priceBucket);
-      if (bucket && !(p.priceValue >= bucket.min && p.priceValue < bucket.max)) return false;
+      const bucket = DEV_PRICE_BUCKETS.find((b) => b.id === priceBucket);
+      if (bucket && !(d.startingPrice >= bucket.min && d.startingPrice < bucket.max)) return false;
     }
     return true;
   });
@@ -56,27 +46,6 @@ export function FindAProperty() {
           </h2>
         </Reveal>
 
-        <Reveal delay={80}>
-          <div className="flex gap-0 mb-5 border-b" style={{ borderColor: COLORS.stone }}>
-            {TABS.map(({ id, ko, en }) => (
-              <button
-                key={id}
-                onClick={() => { setTab(id); setPriceBucket("any"); }}
-                className="px-5 py-3 text-[13px] transition-all duration-200 -mb-px"
-                style={{
-                  fontFamily: body,
-                  color: tab === id ? COLORS.green : COLORS.dim,
-                  borderBottom: tab === id ? `2px solid ${COLORS.green}` : "2px solid transparent",
-                  fontWeight: tab === id ? 600 : 400,
-                  letterSpacing: "0.015em",
-                }}
-              >
-                {t(ko, en)}
-              </button>
-            ))}
-          </div>
-        </Reveal>
-
         <Reveal delay={160}>
           <div className="flex flex-col md:flex-row gap-2.5 mb-14">
             <div className="flex-1 relative">
@@ -91,24 +60,13 @@ export function FindAProperty() {
               />
             </div>
             <select
-              value={propertyType}
-              onChange={(e) => setPropertyType(e.target.value)}
-              className="px-4 py-3.5 text-[13.5px] outline-none appearance-none md:min-w-[150px]"
-              style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, fontFamily: body, color: COLORS.dim }}
-            >
-              <option value="any">{t("매물 유형", "Property type")}</option>
-              <option value="Apartment">{t("아파트", "Apartment")}</option>
-              <option value="House">{t("주택", "House")}</option>
-              <option value="Townhouse">{t("타운하우스", "Townhouse")}</option>
-            </select>
-            <select
               value={priceBucket}
               onChange={(e) => setPriceBucket(e.target.value)}
               className="px-4 py-3.5 text-[13.5px] outline-none appearance-none md:min-w-[150px]"
               style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, fontFamily: body, color: COLORS.dim }}
             >
               <option value="any">{t("가격", "Price")}</option>
-              {SALE_PRICE_BUCKETS.map((b) => (
+              {DEV_PRICE_BUCKETS.map((b) => (
                 <option key={b.id} value={b.id}>{b.label}</option>
               ))}
             </select>
@@ -141,11 +99,9 @@ export function FindAProperty() {
             </p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
-              {filtered.map((property, i) => (
-                <Reveal key={property.id} delay={(i % 3) * 70}>
-                  <Link to="/new-developments" style={{ textDecoration: "none", color: "inherit" }}>
-                    <PropertyCard property={property} t={t} font={body} />
-                  </Link>
+              {filtered.map((dev, i) => (
+                <Reveal key={dev.id} delay={(i % 3) * 70}>
+                  <DevelopmentCard dev={dev} t={t} display={display} body={body} />
                 </Reveal>
               ))}
             </div>

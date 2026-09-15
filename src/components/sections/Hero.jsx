@@ -13,10 +13,10 @@ export function Hero() {
       {/* Photo */}
       <div className="relative overflow-hidden bg-stone-300" style={{ minHeight: "clamp(260px, 58vw, 100svh)" }}>
         <img
-          src="https://images.unsplash.com/photo-1523428096881-5bd79d043006?w=1600&h=1040&fit=crop&auto=format&q=85"
-          alt={t("황금빛 노을의 시드니 하버와 오페라하우스", "Sydney harbour with Opera House at golden hour")}
+          src="https://images.unsplash.com/photo-1624204386084-dd8c05e32226?w=1600&h=1040&fit=crop&auto=format&q=85"
+          alt={t("분홍빛 노을에 물든 아파트 건물 발코니", "An apartment building's balconies glowing in a pink sunset")}
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "center 55%" }}
+          style={{ objectPosition: "center 50%" }}
           fetchPriority="high"
         />
         <div

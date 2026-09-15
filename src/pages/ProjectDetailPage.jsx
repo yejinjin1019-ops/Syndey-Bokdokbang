@@ -6,12 +6,14 @@ import { Reveal } from "../components/ui/Reveal";
 import { SectionLabel } from "../components/ui/SectionLabel";
 import { Button } from "../components/ui/Button";
 import { DEVELOPMENTS } from "../data/developments";
+import { APPLIANCE_BRANDS } from "../data/applianceBrands";
 
 export function ProjectDetailPage() {
   const { id } = useParams();
   const { lang, t } = useLanguage();
   const { display, body } = getThemeFonts(lang);
   const dev = DEVELOPMENTS.find((d) => d.id === id);
+  const appliances = APPLIANCE_BRANDS[id];
 
   if (!dev) {
     return (
@@ -83,6 +85,27 @@ export function ProjectDetailPage() {
                 ))}
               </div>
             </div>
+
+            {appliances?.length > 0 && (
+              <div className="mb-10">
+                <h2 className="text-[13px] tracking-wide uppercase mb-5" style={{ color: COLORS.dim, fontFamily: body }}>
+                  {t("가전 브랜드", "Kitchen Appliances")}
+                </h2>
+                <div className="divide-y" style={{ borderColor: COLORS.stone }}>
+                  {appliances.map((a) => (
+                    <div key={a.itemEn} className="flex items-center justify-between py-3.5" style={{ borderColor: COLORS.stone }}>
+                      <span className="text-[14px]" style={{ color: COLORS.ink, fontFamily: body }}>{t(a.itemKo, a.itemEn)}</span>
+                      <span className="text-[13.5px] text-right" style={{ color: COLORS.dim, fontFamily: body, maxWidth: "260px" }}>
+                        {a.brand}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-[11.5px] mt-3" style={{ color: COLORS.dim, fontFamily: body }}>
+                  {t("시행사 자료 기준이며 변경될 수 있습니다.", "Per developer documentation — subject to change.")}
+                </p>
+              </div>
+            )}
           </Reveal>
 
           <Reveal delay={100}>

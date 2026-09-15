@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { useScrollState } from "../../hooks/useScrollState";
 import { COLORS, getThemeFonts } from "../../lib/theme";
 import { Button } from "../ui/Button";
+import { CONTACT_INFO } from "../../data/contactInfo";
 
 export function Header() {
   const { lang, toggleLang, t } = useLanguage();
@@ -133,6 +134,14 @@ export function Header() {
               {t("상담하기", "Book a Consultation")}
             </Button>
 
+            <a
+              href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
+              className="hidden lg:flex items-center gap-1.5 text-[13px]"
+              style={{ color: scrolled ? COLORS.dim : "rgba(245,241,232,0.8)", fontFamily: body, textDecoration: "none" }}
+            >
+              <Phone size={12} style={{ color: COLORS.green }} /> {CONTACT_INFO.phoneDisplay}
+            </a>
+
             <button
               onClick={() => setMobileOpen((v) => !v)}
               className="lg:hidden p-1"
@@ -207,6 +216,13 @@ export function Header() {
               );
             })}
             <div className="pt-5 space-y-3">
+              <a
+                href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
+                className="flex items-center justify-center gap-2 w-full py-2.5 text-[14px]"
+                style={{ color: COLORS.ink, fontFamily: body, textDecoration: "none" }}
+              >
+                <Phone size={14} style={{ color: COLORS.green }} /> {CONTACT_INFO.phoneDisplay}
+              </a>
               <Button variant="fill-green" href="/contact" font={body} className="w-full" onClick={() => setMobileOpen(false)}>
                 {t("상담하기", "Book a Consultation")}
               </Button>

@@ -31,14 +31,6 @@ export function DevelopmentCard({ dev, t, display, body }) {
           alt={dev.name}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute top-4 left-4">
-          <span
-            className="text-[9.5px] tracking-[0.16em] uppercase px-2.5 py-1"
-            style={{ backgroundColor: COLORS.yellow, color: COLORS.ink, fontFamily: body }}
-          >
-            {t(dev.statusKo, dev.statusEn)}
-          </span>
-        </div>
         <div className="absolute bottom-4 right-4">
           <span
             className="text-[9.5px] tracking-[0.16em] uppercase px-2.5 py-1"

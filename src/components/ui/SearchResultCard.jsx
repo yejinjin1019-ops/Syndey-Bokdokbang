@@ -1,12 +1,6 @@
 import { ArrowRight, Bed, Bath, Car } from "lucide-react";
 import { COLORS, FONT_EN_DISPLAY } from "../../lib/theme";
 
-const CATEGORY_LABEL = {
-  buy: { ko: "매매", en: "Buy" },
-  rent: { ko: "임대", en: "Rent" },
-  new: { ko: "신규개발", en: "New Development" },
-};
-
 /** Large editorial listing card shared by the /properties Find a Property
  * results — normalises BUY_LISTINGS / RENT_LISTINGS / PROPERTIES into one
  * Photo · Suburb · Address · Price · Beds · Baths · Parking layout. */
@@ -14,7 +8,6 @@ export function SearchResultCard({ listing, category, t, font }) {
   const { suburb, subKo, address, beds, baths, parking, img } = listing;
   const isRent = category === "rent";
   const price = isRent ? listing.rentValue : listing.priceValue;
-  const label = CATEGORY_LABEL[category];
 
   return (
     <div className="group cursor-pointer">
@@ -24,14 +17,6 @@ export function SearchResultCard({ listing, category, t, font }) {
           alt={address}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute top-4 left-4">
-          <span
-            className="text-[9.5px] tracking-[0.16em] uppercase px-2.5 py-1"
-            style={{ backgroundColor: COLORS.yellow, color: COLORS.ink, fontFamily: font }}
-          >
-            {t(label.ko, label.en)}
-          </span>
-        </div>
       </div>
 
       <div className="text-[9.5px] tracking-[0.16em] uppercase mb-1.5" style={{ color: COLORS.dim, fontFamily: font }}>
