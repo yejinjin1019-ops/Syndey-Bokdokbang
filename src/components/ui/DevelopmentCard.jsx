@@ -44,7 +44,7 @@ export function DevelopmentCard({ dev, t, display, body }) {
       <div className="text-[9.5px] tracking-[0.16em] uppercase mb-1.5" style={{ color: COLORS.dim, fontFamily: body }}>
         {t(dev.subKo, dev.suburb)}
       </div>
-      <h3 className="text-[21px] md:text-[23px] mb-5 italic" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.ink }}>
+      <h3 className="text-[21px] md:text-[23px] mb-5 italic font-bold" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.ink }}>
         {dev.name}
       </h3>
 

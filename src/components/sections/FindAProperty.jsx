@@ -41,7 +41,7 @@ export function FindAProperty() {
           <div className="mb-7">
             <SectionLabel font={body}>{t("매물 찾기", "Find a Property")}</SectionLabel>
           </div>
-          <h2 className="font-medium mb-10" style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3vw,40px)", letterSpacing: "-0.01em" }}>
+          <h2 className="font-bold mb-10" style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3vw,40px)", letterSpacing: "-0.01em" }}>
             {t("당신에게 맞는 집을 찾아드립니다", "Find Your Next Sydney Property")}
           </h2>
         </Reveal>

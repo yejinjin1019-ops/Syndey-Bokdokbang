@@ -17,10 +17,10 @@ export function BrandPromise() {
               <SectionLabel font={body}>{t("시드니 복덕방이 드리는 약속", "Our Promise")}</SectionLabel>
             </div>
             <blockquote
-              className="font-medium mb-5 leading-relaxed"
-              style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(22px,2.4vw,34px)", lineHeight: 1.72 }}
+              className="font-medium mb-5 leading-relaxed whitespace-nowrap"
+              style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(18px,2.7vw,42px)", lineHeight: 1.6 }}
             >
-              {t("중요한 과정이 빠지지 않도록", "We stay across what matters")}<br />
+              {t("중요한 과정이 빠지지 않도록", "We stay across what matters,")}<br />
               {t("다음 단계까지 살펴봅니다", "through every next step")}
             </blockquote>
             <p

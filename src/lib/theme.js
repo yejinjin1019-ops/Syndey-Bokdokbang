@@ -10,13 +10,12 @@ export const COLORS = {
 };
 
 // Korean fonts are kept fixed regardless of language (PRD §7).
-export const FONT_KO_DISPLAY = '"Black Han Sans", "Malgun Gothic", sans-serif';
+export const FONT_KO_DISPLAY = '"Noto Serif KR", "Malgun Gothic", serif';
 export const FONT_KO_BODY = 'Pretendard, "Helvetica Neue", Helvetica, Arial, sans-serif';
 
-// English fonts per brand refresh: Big Shoulders Display (poster-weight 900
-// display face, rendered uppercase — see fonts.css) + Neue Haas Grotesk Text
-// (body/nav/UI, commercial font — falls back to Helvetica Neue).
-export const FONT_EN_DISPLAY = '"Big Shoulders Display", "Arial Narrow", sans-serif';
+// English fonts per brand refresh: Playfair Display (display) + Neue Haas
+// Grotesk Text (body/nav/UI, commercial font — falls back to Helvetica Neue).
+export const FONT_EN_DISPLAY = '"Playfair Display", Georgia, serif';
 export const FONT_EN_BODY = '"Neue Haas Grotesk Text", "Helvetica Neue", Helvetica, Arial, sans-serif';
 
 /**

@@ -34,7 +34,7 @@ export function Button({
   className = "",
   children,
 }) {
-  const classes = `inline-flex items-center justify-center gap-2.5 font-semibold transition-opacity hover:opacity-85 ${SIZE_CLASSES[size]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2.5 font-semibold whitespace-nowrap transition-opacity hover:opacity-85 ${SIZE_CLASSES[size]} ${className}`;
   const style = {
     ...VARIANT_STYLES[variant],
     fontFamily: font,

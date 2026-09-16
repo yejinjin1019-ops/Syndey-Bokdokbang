@@ -36,7 +36,7 @@ export function NewDevelopments() {
                 {t("주목 프로젝트", "Featured Project")} · {dev.suburb}
               </div>
               <h2
-                className="font-medium mb-4 leading-tight italic"
+                className="font-bold mb-4 leading-tight italic"
                 style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.ivory, fontSize: "clamp(32px,3.5vw,52px)" }}
               >
                 {dev.name}

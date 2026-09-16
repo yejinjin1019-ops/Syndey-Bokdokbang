@@ -27,6 +27,10 @@ import { ContactPage } from "./pages/ContactPage";
 import { GuidesPage } from "./pages/GuidesPage";
 import { GuideDetailPage } from "./pages/GuideDetailPage";
 import { LegalPage } from "./pages/LegalPage";
+import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
+import { TermsPage } from "./pages/TermsPage";
+import { DisclaimerPage } from "./pages/DisclaimerPage";
+import { LicenceInformationPage } from "./pages/LicenceInformationPage";
 
 export default function App() {
   return (
@@ -66,6 +70,10 @@ export default function App() {
             <Route path="/guides" element={<GuidesPage />} />
             <Route path="/guides/:slug" element={<GuideDetailPage />} />
 
+            <Route path="/legal/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/legal/terms" element={<TermsPage />} />
+            <Route path="/legal/disclaimer" element={<DisclaimerPage />} />
+            <Route path="/legal/licence" element={<LicenceInformationPage />} />
             <Route path="/legal/:slug" element={<LegalPage />} />
           </Routes>
           <Footer />

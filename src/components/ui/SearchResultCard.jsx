@@ -22,7 +22,7 @@ export function SearchResultCard({ listing, category, t, font }) {
       <div className="text-[9.5px] tracking-[0.16em] uppercase mb-1.5" style={{ color: COLORS.dim, fontFamily: font }}>
         {t(subKo, suburb)}
       </div>
-      <h3 className="text-[16px] md:text-[18px] mb-3 leading-snug" style={{ fontFamily: font, color: COLORS.ink, fontWeight: 500 }}>
+      <h3 className="text-[16px] md:text-[18px] mb-3 leading-snug" style={{ fontFamily: font, color: COLORS.ink, fontWeight: 700 }}>
         {address}
       </h3>
 

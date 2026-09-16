@@ -52,8 +52,9 @@ export function Header() {
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="flex items-center justify-between h-[62px] md:h-[68px]">
 
-          {/* Logo — full official brand name only, no eyebrow label */}
-          <Link to="/" style={{ textDecoration: "none" }}>
+          {/* Logo — mark + full official brand name */}
+          <Link to="/" className="flex items-center gap-2.5" style={{ textDecoration: "none" }}>
+            <img src="/logo.svg" alt="Sydney Bokdokbang" className="h-8 w-8 md:h-9 md:w-9" />
             <div
               className="text-[14px] font-medium leading-none"
               style={{ fontFamily: display, color: COLORS.ink, letterSpacing: "0.03em" }}
