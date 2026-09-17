@@ -20,6 +20,7 @@ export const COLORS = {
   tangerine: "#FF6B35",
   blue: "#3984FF",
   lime: "#C8F135",
+  limeLight: "#EEF6C6", // pale Lime tint — section backgrounds (e.g. Services)
 
   // Legacy aliases kept so any untouched call site still resolves to an
   // on-brand colour (vivid/clay predate this palette).
