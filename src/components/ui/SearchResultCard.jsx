@@ -1,6 +1,5 @@
 import { ArrowRight, Bed, Bath, Car } from "lucide-react";
 import { COLORS } from "../../lib/theme";
-import { ViewIndicator } from "./ViewIndicator";
 
 /** Large editorial listing card shared by the /properties Find a Property
  * results — normalises BUY_LISTINGS / RENT_LISTINGS / PROPERTIES into one
@@ -16,9 +15,8 @@ export function SearchResultCard({ listing, category, t, font }) {
         <img
           src={img}
           alt={address}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]"
         />
-        <ViewIndicator font={font} />
       </div>
 
       <div className="text-[9.5px] tracking-[0.16em] uppercase mb-1.5" style={{ color: COLORS.dim, fontFamily: font }}>

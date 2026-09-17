@@ -17,8 +17,8 @@ export function PropertyAppraisalCTA() {
           <Reveal>
             <div className="overflow-hidden" style={{ aspectRatio: "4/3", backgroundColor: COLORS.stone, border: `1px solid ${COLORS.stone}` }}>
               <img
-                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&h=1050&fit=crop&auto=format"
-                alt="Sydney home considered for sale"
+                src="/brand/cta-apartment-facade.png"
+                alt="Warm afternoon light on a Sydney apartment facade"
                 className="w-full h-full object-cover"
               />
             </div>

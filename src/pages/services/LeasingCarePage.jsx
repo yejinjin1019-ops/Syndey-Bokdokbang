@@ -104,8 +104,8 @@ export function LeasingCarePage() {
             <Reveal>
               <div className="overflow-hidden" style={{ aspectRatio: "4/3", backgroundColor: COLORS.stone }}>
                 <img
-                  src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1400&h=1000&fit=crop&auto=format"
-                  alt={t("임대 준비가 된 조용한 거실", "A calm, lease-ready living space")}
+                  src="/brand/cta-apartment-facade.png"
+                  alt={t("따뜻한 오후 햇살 속 시드니 아파트 외관", "A Sydney apartment facade in warm afternoon light")}
                   className="w-full h-full object-cover"
                 />
               </div>

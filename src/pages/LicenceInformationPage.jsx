@@ -26,7 +26,7 @@ const LICENCE_VERIFICATION_URL = "https://verify.licence.nsw.gov.au/details/Prop
 function SectionHeading({ n, title, body }) {
   return (
     <div className="flex items-baseline gap-4 mb-4">
-      <span className="text-[12px] flex-shrink-0" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.yellow, letterSpacing: "0.04em" }}>
+      <span className="text-[12px] flex-shrink-0" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.tangerine, letterSpacing: "0.04em" }}>
         {n}
       </span>
       <h2 className="font-semibold" style={{ fontFamily: body, color: COLORS.green, fontSize: "clamp(17px,1.8vw,21px)" }}>
@@ -83,7 +83,7 @@ export function LicenceInformationPage() {
                 <ul className="flex flex-col gap-2 mt-1">
                   {NSW_LAWS.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-[15.5px]" style={{ color: COLORS.dim, fontFamily: body, lineHeight: 1.75 }}>
-                      <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: COLORS.yellow }} />
+                      <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: COLORS.tangerine }} />
                       {item}
                     </li>
                   ))}

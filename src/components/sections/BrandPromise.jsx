@@ -60,8 +60,8 @@ export function BrandPromise() {
             <div className="relative">
               <div className="aspect-[4/3] overflow-hidden bg-stone-200" style={{ border: `1px solid ${COLORS.stone}` }}>
                 <img
-                  src="https://images.unsplash.com/photo-1748052132071-f60d147207f7?w=960&h=720&fit=crop&auto=format"
-                  alt={t("따뜻한 자연광과 목재 계단이 있는 인테리어", "Warm interior with natural light and timber staircase")}
+                  src="https://images.unsplash.com/photo-1662038271111-5b1c0b4157e8?w=960&h=720&fit=crop&auto=format&q=85"
+                  alt={t("창가의 나무 테이블 위 따뜻한 커피 한 잔", "A warm cup of coffee on a wooden table by a sunlit window")}
                   className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-[1.03]"
                 />
               </div>

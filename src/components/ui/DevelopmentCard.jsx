@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { COLORS, FONT_EN_DISPLAY } from "../../lib/theme";
-import { ViewIndicator } from "./ViewIndicator";
 
 function Stat({ label, value, body }) {
   return (
@@ -31,7 +30,7 @@ export function DevelopmentCard({ dev, t, body }) {
         <img
           src={dev.img}
           alt={dev.name}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]"
         />
         <div className="absolute bottom-4 right-4">
           <span
@@ -41,7 +40,6 @@ export function DevelopmentCard({ dev, t, body }) {
             {dev.developer}
           </span>
         </div>
-        <ViewIndicator font={body} />
       </div>
 
       <div className="text-[9.5px] tracking-[0.16em] uppercase mb-1.5 font-semibold" style={{ color: COLORS.dim, fontFamily: body }}>

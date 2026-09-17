@@ -71,7 +71,7 @@ export function MoveInCarePage() {
           <Reveal>
             <div className="overflow-hidden" style={{ aspectRatio: "21/9", backgroundColor: COLORS.stone }}>
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&h=800&fit=crop&auto=format"
+                src="https://images.unsplash.com/photo-1706200234277-3586cd003ba3?w=1800&h=800&fit=crop&auto=format&q=85"
                 alt={t("따뜻한 햇살이 드는 시드니의 새 집 거실", "A sunlit living room in a new Sydney home")}
                 className="w-full h-full object-cover"
               />
@@ -120,8 +120,8 @@ export function MoveInCarePage() {
             <Reveal>
               <div className="overflow-hidden" style={{ aspectRatio: "4/3", backgroundColor: COLORS.stone }}>
                 <img
-                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=900&fit=crop&auto=format"
-                  alt={t("정원이 있는 조용한 시드니 동네", "A quiet, leafy Sydney neighbourhood street")}
+                  src="/brand/about-interior-sunlight.png"
+                  alt={t("정원이 있는 조용한 시드니 동네", "Warm afternoon light in a quiet interior")}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -191,8 +191,8 @@ export function MoveInCarePage() {
             <Reveal delay={100}>
               <div className="overflow-hidden" style={{ aspectRatio: "4/3", backgroundColor: "rgba(245,241,232,0.1)" }}>
                 <img
-                  src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&h=900&fit=crop&auto=format"
-                  alt={t("새로운 보금자리에서 함께 시간을 보내는 가족", "A family settling into their new Sydney home")}
+                  src="https://images.unsplash.com/photo-1662038271111-5b1c0b4157e8?w=1200&h=900&fit=crop&auto=format&q=85"
+                  alt={t("새로운 보금자리에서 함께 시간을 보내는 가족", "Settling in over coffee by a sunlit window")}
                   className="w-full h-full object-cover"
                 />
               </div>

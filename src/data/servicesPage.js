@@ -16,7 +16,7 @@ export const FLAGSHIP_SERVICES = [
     titleKo: "숫자가 아닌 상황에 맞는 조언", titleEn: "Advice fit to your situation — not just the numbers",
     descKo: "매물 수보다 적합도를 우선합니다. 목표, 예산, 라이프스타일을 함께 검토하며 시드니 시장을 있는 그대로 설명해드립니다.",
     descEn: "We prioritise fit over volume. We review your goals, budget, and lifestyle together, and explain the Sydney market exactly as it is.",
-    img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&h=700&fit=crop&auto=format",
+    img: "https://images.unsplash.com/photo-1662038271111-5b1c0b4157e8?w=900&h=700&fit=crop&auto=format&q=85",
     to: "/services/property-advisory",
   },
   {
@@ -25,7 +25,7 @@ export const FLAGSHIP_SERVICES = [
     titleKo: "임차부터 유지보수까지 한눈에", titleEn: "Tenancy to maintenance — all in clear view",
     descKo: "세입자 신청, 유지보수 요청, 임대인 리포트까지 — 부동산 임대관리의 모든 절차를 체계적으로 지원합니다.",
     descEn: "Tenant applications, maintenance requests, landlord reporting — the full property management workflow, organised and supported.",
-    img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&h=700&fit=crop&auto=format",
+    img: "/brand/journey-apartment-entrance.png",
     to: "/services/property-management",
   },
   {
@@ -34,7 +34,7 @@ export const FLAGSHIP_SERVICES = [
     titleKo: "계약 이후에도 끝나지 않는 지원", titleEn: "Support that doesn't end at the contract",
     descKo: "잔금 처리, 법무 서류, 등기 이전까지 — 복잡한 정착 과정의 매 단계를 대신 챙기고 명확하게 설명해드립니다.",
     descEn: "Settlement funds, legal paperwork, title transfer — we manage every stage of the process and explain it clearly along the way.",
-    img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&h=700&fit=crop&auto=format",
+    img: "https://images.unsplash.com/photo-1706200234277-3586cd003ba3?w=900&h=700&fit=crop&auto=format&q=85",
     to: "/services/settlement-care",
   },
   {
@@ -43,7 +43,7 @@ export const FLAGSHIP_SERVICES = [
     titleKo: "임대인과 세입자 모두를 위한 관리", titleEn: "Management built for landlords and tenants alike",
     descKo: "세입자 심사부터 정기 점검, 임대료 관리까지. 투자 부동산이 안정적으로 운영되도록 지속적으로 관리합니다.",
     descEn: "Tenant screening, routine inspections, rent management. We keep your investment property running smoothly, month after month.",
-    img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&h=700&fit=crop&auto=format",
+    img: "/brand/cta-apartment-facade.png",
     to: "/services/leasing-care",
   },
   {
@@ -52,7 +52,7 @@ export const FLAGSHIP_SERVICES = [
     titleKo: "새 집에서의 첫 발걸음 함께합니다", titleEn: "Your first steps in your new home — supported",
     descKo: "인터넷 연결, 유틸리티 설정, 지역 안내까지 — 이사 후 정착의 모든 순간에 함께합니다.",
     descEn: "Internet, utilities, local orientation — we're with you through every moment of settling into a new home.",
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&h=700&fit=crop&auto=format",
+    img: "https://images.unsplash.com/photo-1783566523334-4a36a5dcb086?w=900&h=700&fit=crop&auto=format&q=85",
     to: "/services/move-in-care",
   },
 ];

@@ -295,7 +295,7 @@ export function TermsPage() {
             <Reveal key={s.n} delay={Math.min(i * 20, 200)}>
               <div className="py-9 md:py-10" style={{ borderTop: i === 0 ? "none" : `1px solid ${COLORS.stone}` }}>
                 <div className="flex items-baseline gap-4 mb-4">
-                  <span className="text-[12px] flex-shrink-0" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.yellow, letterSpacing: "0.04em" }}>
+                  <span className="text-[12px] flex-shrink-0" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.tangerine, letterSpacing: "0.04em" }}>
                     {s.n}
                   </span>
                   <h2 className="font-semibold" style={{ fontFamily: body, color: COLORS.green, fontSize: "clamp(17px,1.8vw,21px)" }}>
@@ -313,7 +313,7 @@ export function TermsPage() {
                     <ul className="flex flex-col gap-2 mt-1">
                       {(s.list ?? (lang === "ko" ? s.listKo : s.listEn)).map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-[15.5px]" style={{ color: COLORS.dim, fontFamily: body, lineHeight: 1.75 }}>
-                          <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: COLORS.yellow }} />
+                          <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: COLORS.tangerine }} />
                           {item}
                         </li>
                       ))}

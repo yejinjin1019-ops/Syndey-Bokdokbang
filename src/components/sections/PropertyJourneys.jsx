@@ -10,7 +10,7 @@ const JOURNEYS = [
   {
     id: "buy",
     to: "/buy",
-    img: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&h=1500&fit=crop&auto=format",
+    img: "/brand/journey-apartment-entrance.png",
     labelKo: "매매", labelEn: "Buy",
     titleKo: "자리 잡은 시드니의 집들", titleEn: "Established Sydney Homes",
     descKo: "시드니 전역의 매매 주택과 아파트를 위한 여정입니다.",
@@ -19,7 +19,7 @@ const JOURNEYS = [
   {
     id: "rent",
     to: "/rent",
-    img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&h=1500&fit=crop&auto=format",
+    img: "https://images.unsplash.com/photo-1760093930078-139439ec40e1?w=1200&h=1500&fit=crop&auto=format&q=85",
     labelKo: "임대", labelEn: "Rent",
     titleKo: "지금 입주 가능한 임대 매물", titleEn: "Available Rental Properties",
     descKo: "지금 임대 가능한 매물들을 위한 여정입니다.",

@@ -1,6 +1,5 @@
 import { ArrowRight, Bed, Bath, Car } from "lucide-react";
 import { COLORS } from "../../lib/theme";
-import { ViewIndicator } from "./ViewIndicator";
 
 /** Large editorial listing card for the BUY page — architectural photography,
  * generous whitespace, restrained Auction / Open for Inspection labels. */
@@ -19,7 +18,7 @@ export function BuyListingCard({ listing, t, font }) {
         <img
           src={img}
           alt={address}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]"
         />
         <div className="absolute top-4 left-4 flex gap-2">
           {auction && (
@@ -39,7 +38,6 @@ export function BuyListingCard({ listing, t, font }) {
             </span>
           )}
         </div>
-        <ViewIndicator font={font} />
       </div>
 
       <div className="flex items-start justify-between gap-4 mb-2">

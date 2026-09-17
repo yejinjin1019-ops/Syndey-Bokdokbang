@@ -1,6 +1,5 @@
 import { Bed, Bath, Car } from "lucide-react";
 import { COLORS } from "../../lib/theme";
-import { ViewIndicator } from "./ViewIndicator";
 
 /** Compact, fast-to-scan listing card for the RENT page — practical over
  * ornamental, but keeps the same editorial photography and quiet labels as BUY. */
@@ -13,7 +12,7 @@ export function RentListingCard({ listing, t, font }) {
         <img
           src={img}
           alt={address}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]"
         />
         {inspection?.status === "open" && (
           <div className="absolute top-4 left-4">
@@ -25,7 +24,6 @@ export function RentListingCard({ listing, t, font }) {
             </span>
           </div>
         )}
-        <ViewIndicator font={font} />
       </div>
 
       <div className="flex items-start justify-between gap-4 mb-2">

@@ -79,12 +79,17 @@ export function Hero() {
 
       {/* Photo — revealed by a sliding Bokdokbang Green panel */}
       <div ref={photoRef} className="relative overflow-hidden order-1 md:order-2 bg-stone-300" style={{ minHeight: "clamp(320px, 46vw, 100svh)" }}>
-        <img
-          src="https://images.unsplash.com/photo-1599352318473-abbc53b44a9a?w=1600&h=1600&fit=crop&auto=format&q=85"
-          alt={t("분홍빛 노을 아래 시드니 오페라하우스와 하버 브리지", "Sydney Opera House and Harbour Bridge under a dramatic pink sunset")}
+        <video
+          src="/brand/hero-loop.mp4"
+          poster="/brand/cta-apartment-facade.png"
+          aria-label={t("아침 햇살 속 시드니 아파트 발코니", "Morning light on a Sydney apartment balcony")}
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "62% 55%" }}
-          fetchPriority="high"
+          style={{ objectPosition: "50% 40%" }}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
         />
         <div
           className="absolute inset-0"

@@ -75,8 +75,8 @@ export function AboutPage() {
 
           <Reveal className="relative overflow-hidden bg-stone-300" style={{ minHeight: "clamp(320px, 46vw, 640px)" }}>
             <img
-              src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1400&h=1600&fit=crop&auto=format&q=85"
-              alt={t("시드니 주택가의 조용한 골목 풍경", "A quiet residential street in a Sydney neighbourhood")}
+              src="/brand/about-shopfront-corner.png"
+              alt={t("따뜻한 아침 햇살이 비치는 시드니 동네 상점 모퉁이", "A local Sydney shopfront corner in warm morning light")}
               className="absolute inset-0 w-full h-full object-cover"
             />
           </Reveal>
@@ -169,8 +169,8 @@ export function AboutPage() {
               <div className="relative">
                 <div className="aspect-[4/3] overflow-hidden bg-stone-200">
                   <img
-                    src="https://images.unsplash.com/photo-1524293581917-878a6d017c71?w=960&h=720&fit=crop&auto=format&q=85"
-                    alt={t("시드니 시내와 항구가 보이는 현대적인 건물 전경", "Modern Sydney skyline overlooking the harbour")}
+                    src="https://images.unsplash.com/photo-1785900601027-652bef93efa0?w=960&h=720&fit=crop&auto=format&q=85"
+                    alt={t("가로수가 늘어선 시드니 동네 거리와 차양", "A tree-lined Sydney street with a long awning")}
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
                 </div>
@@ -260,8 +260,8 @@ export function AboutPage() {
               <div className="relative order-2 lg:order-1">
                 <div className="aspect-[4/3] overflow-hidden bg-stone-200">
                   <img
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=960&h=720&fit=crop&auto=format&q=85"
-                    alt={t("시드니 주택가의 현대적인 건축물", "Contemporary residential architecture in a Sydney suburb")}
+                    src="/brand/about-interior-sunlight.png"
+                    alt={t("따뜻한 햇살이 비치는 실내 풍경", "Warm afternoon sunlight in a quiet interior")}
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
                 </div>
