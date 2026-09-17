@@ -132,7 +132,7 @@ export function SettlementCarePage() {
         titleKo="계약부터 열쇠까지 놓치는 것 없이"
         titleEn="From contract to keys without losing track of the details"
         descKo="계약 체결 후 잔금일까지, 챙겨야 할 일정과 서류가 한꺼번에 몰리는 시기입니다. 시드니 복덕방이 전체 일정을 정리하고, 관련 전문가들과의 소통을 조율해드립니다."
-        descEn="Between exchanging contracts and settlement day, tasks and paperwork pile up fast. Sydney Bokdokbang keeps the timeline organised and coordinates communication with everyone involved."
+        descEn="Between exchanging contracts and settlement day, tasks and paperwork pile up fast. SBB keeps the timeline organised and coordinates communication with everyone involved."
       />
 
       <section style={{ backgroundColor: COLORS.warm }}>
@@ -174,7 +174,7 @@ export function SettlementCarePage() {
               <p className="text-[13.5px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body, maxWidth: "560px" }}>
                 {t(
                   "법무, 대출, 점검과 같은 서비스는 관련 법률에 따라 등록된 독립적인 전문가가 직접 제공하는 규제 서비스입니다. 시드니 복덕방은 신뢰할 수 있는 파트너와의 연결과 일정 조율을 지원합니다.",
-                  "Legal, finance, and inspection are regulated services provided directly by independent, licensed professionals. Sydney Bokdokbang helps connect you with trusted partners and coordinates the schedule around them."
+                  "Legal, finance, and inspection are regulated services provided directly by independent, licensed professionals. SBB helps connect you with trusted partners and coordinates the schedule around them."
                 )}
               </p>
             </div>
@@ -226,7 +226,7 @@ export function SettlementCarePage() {
               )}
             </p>
             <Button variant="fill-green" href="/contact" font={body}>
-              {t("시드니 복덕방과 정착 상담하기", "Talk to Sydney Bokdokbang About Settlement")} <ArrowRight size={14} />
+              {t("시드니 복덕방과 정착 상담하기", "Talk to SBB About Settlement")} <ArrowRight size={14} />
             </Button>
           </Reveal>
         </div>

@@ -101,7 +101,7 @@ export function Header() {
               className="text-[16px] md:text-[18px] font-semibold leading-none"
               style={{ fontFamily: display, color: COLORS.headerOlive, letterSpacing: "0.01em" }}
             >
-              {t("시드니 복덕방", "Sydney Bokdokbang")}
+              {t("시드니 복덕방", "SBB")}
             </div>
           </Link>
 

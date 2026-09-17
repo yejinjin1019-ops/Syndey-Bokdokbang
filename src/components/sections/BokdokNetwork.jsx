@@ -25,7 +25,7 @@ export function BokdokNetwork() {
             <p className="text-[14px] leading-relaxed" style={{ color: "rgba(245,241,232,0.68)", fontFamily: body, maxWidth: "520px" }}>
               {t(
                 "법무, 대출, 점검, 이사와 같은 부속 서비스는 시드니 복덕방이 검증한 외부 전문 파트너와 함께 제공될 수 있습니다.",
-                "Supporting services such as legal, finance, inspection, and moving may involve vetted external partners that Sydney Bokdokbang has carefully selected."
+                "Supporting services such as legal, finance, inspection, and moving may involve vetted external partners that SBB has carefully selected."
               )}
             </p>
           </div>

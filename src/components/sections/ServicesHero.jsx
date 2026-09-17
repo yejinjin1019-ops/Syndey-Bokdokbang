@@ -35,7 +35,7 @@ export function ServicesHero() {
           >
             {t(
               "시드니 복덕방은 매물을 찾아드리는 것에서 멈추지 않습니다. 상담부터 이사 후 정착까지, 여정의 모든 단계를 함께 걷습니다.",
-              "Sydney Bokdokbang's role doesn't end at finding a listing. We support the full property journey — from first consult to settling into your new home."
+              "SBB's role doesn't end at finding a listing. We support the full property journey — from first consult to settling into your new home."
             )}
           </p>
           <Button variant="fill-ivory" href="#book-consultation" font={body}>

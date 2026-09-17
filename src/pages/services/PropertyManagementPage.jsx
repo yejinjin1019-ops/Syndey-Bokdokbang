@@ -245,7 +245,7 @@ export function PropertyManagementPage() {
                 items={MAINTENANCE_ITEMS}
                 note={{
                   ko: "실제 수리는 공인된 협력 업체가 진행하며, 시드니 복덕방은 접수와 조율, 진행 상황 공유를 담당합니다.",
-                  en: "Repairs themselves are carried out by licensed partner tradespeople — Sydney Bokdokbang handles the logging, coordination, and progress updates.",
+                  en: "Repairs themselves are carried out by licensed partner tradespeople — SBB handles the logging, coordination, and progress updates.",
                 }}
                 t={t} display={display} body={body}
               />

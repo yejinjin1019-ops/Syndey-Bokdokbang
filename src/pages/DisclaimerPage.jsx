@@ -19,7 +19,7 @@ const SECTIONS = [
       "거래를 진행하기 전에 본인의 결정에 중요한 정보를 확인해 주시기 바랍니다.",
     ],
     paragraphsEn2: [
-      "Sydney Bokdokbang takes reasonable care when presenting this information but does not independently verify every item.",
+      "SBB takes reasonable care when presenting this information but does not independently verify every item.",
       "We encourage users to confirm information that is material to their decision before entering into a transaction.",
     ],
   },
@@ -37,7 +37,7 @@ const SECTIONS = [
     ],
     paragraphsEn2: [
       "A property appearing on the website does not mean it is still available.",
-      "Users should contact Sydney Bokdokbang for the most current information.",
+      "Users should contact SBB for the most current information.",
     ],
   },
   {
@@ -123,7 +123,7 @@ const SECTIONS = [
       "이용자는 본인의 목표, 재정 상황 및 위험 감수 성향을 고려해야 합니다.",
     ],
     paragraphsEn2: [
-      "Sydney Bokdokbang does not guarantee future property values, rental income, capital growth or investment performance.",
+      "SBB does not guarantee future property values, rental income, capital growth or investment performance.",
       "Users should consider their own objectives, financial circumstances and risk tolerance.",
     ],
   },
@@ -150,7 +150,7 @@ const SECTIONS = [
       "시장 상황과 실제 거래 결과는 감정평가와 다를 수 있습니다.",
     ],
     paragraphsEn: [
-      "Any market appraisal, estimated selling range or rental estimate provided by Sydney Bokdokbang is an opinion based on available information and market conditions at the relevant time.",
+      "Any market appraisal, estimated selling range or rental estimate provided by SBB is an opinion based on available information and market conditions at the relevant time.",
       "Unless expressly stated otherwise, an appraisal is not a formal valuation prepared by a registered or qualified valuer.",
       "Market conditions and actual transaction outcomes may differ from an appraisal.",
     ],
@@ -165,7 +165,7 @@ const SECTIONS = [
     ],
     paragraphsEn: [
       "Some information displayed on this website may originate from developers, vendors, property owners, agents, government sources, mapping services or other third parties.",
-      "Sydney Bokdokbang may reproduce or summarise this information for convenience, but users should refer to the original source where information is material to their decision.",
+      "SBB may reproduce or summarise this information for convenience, but users should refer to the original source where information is material to their decision.",
     ],
   },
 ];
@@ -223,7 +223,7 @@ export function DisclaimerPage() {
         titleKo="면책 조항"
         titleEn="Disclaimer"
         descKo="시드니 복덕방이 웹사이트에서 제공하는 정보는 고객이 매물, 신규 개발 및 시드니 부동산 시장을 이해하는 데 도움을 드리기 위한 것입니다. 콘텐츠 작성 시 합리적인 주의를 기울이고 있으나, 부동산 관련 결정은 해당 거래와 관련된 정보를 확인한 후, 필요한 경우 독립적인 전문가의 자문을 받아 내리시기 바랍니다."
-        descEn="Information provided by Sydney Bokdokbang on this website is intended to assist clients in understanding properties, developments and the Sydney property market. While reasonable care is taken when preparing content, property decisions should be made after verifying information relevant to the particular transaction and, where appropriate, obtaining independent professional advice."
+        descEn="Information provided by SBB on this website is intended to assist clients in understanding properties, developments and the Sydney property market. While reasonable care is taken when preparing content, property decisions should be made after verifying information relevant to the particular transaction and, where appropriate, obtaining independent professional advice."
       />
 
       <section style={{ backgroundColor: COLORS.ivory, borderTop: `1px solid ${COLORS.stone}` }}>

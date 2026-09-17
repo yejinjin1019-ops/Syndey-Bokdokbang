@@ -47,7 +47,7 @@ export function LicenceInformationPage() {
         titleKo="라이선스 정보"
         titleEn="Licence Information"
         descKo="시드니 복덕방은 뉴사우스웨일스주에서 사업을 운영하는 호주 법인 Bokdokbang Pty Ltd의 상호명입니다."
-        descEn="Sydney Bokdokbang is the trading name of Bokdokbang Pty Ltd, an Australian company operating in New South Wales."
+        descEn="SBB is the trading name of Bokdokbang Pty Ltd, an Australian company operating in New South Wales."
       />
 
       <section style={{ backgroundColor: COLORS.ivory, borderTop: `1px solid ${COLORS.stone}` }}>
@@ -108,7 +108,7 @@ export function LicenceInformationPage() {
                 <p className="text-[16px]" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.75 }}>
                   {t(
                     "위 정보는 시드니 복덕방을 운영하는 법인에 부여된 법인 라이선스 정보입니다.",
-                    "This is the corporate licence information associated with the legal entity operating Sydney Bokdokbang."
+                    "This is the corporate licence information associated with the legal entity operating SBB."
                   )}
                 </p>
               </div>
@@ -169,7 +169,7 @@ export function LicenceInformationPage() {
                 <p className="text-[15.5px] mt-5" style={{ color: COLORS.dim, fontFamily: body, lineHeight: 1.75 }}>
                   {t(
                     "시드니 복덕방은 고객을 마주하는 상호명이며, Bokdokbang Pty Ltd는 그 바탕이 되는 법인입니다.",
-                    "Sydney Bokdokbang is the customer-facing trading name, and Bokdokbang Pty Ltd is the underlying legal entity."
+                    "SBB is the customer-facing trading name, and Bokdokbang Pty Ltd is the underlying legal entity."
                   )}
                 </p>
               </div>
@@ -184,7 +184,7 @@ export function LicenceInformationPage() {
                 <p className="text-[16px] mb-5" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.75 }}>
                   {t(
                     "시드니 복덕방의 라이선스 또는 사업자 등록과 관련한 문의는 아래 연락처로 접수해 주시기 바랍니다.",
-                    "For enquiries specifically relating to Sydney Bokdokbang's licence or business registration, please contact us using the details below."
+                    "For enquiries specifically relating to SBB's licence or business registration, please contact us using the details below."
                   )}
                 </p>
                 <div className="flex flex-col gap-1.5 text-[14.5px]" style={{ color: COLORS.ink, fontFamily: body }}>

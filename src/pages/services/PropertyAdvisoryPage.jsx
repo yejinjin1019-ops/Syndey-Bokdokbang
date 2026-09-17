@@ -65,7 +65,7 @@ export function PropertyAdvisoryPage() {
         titleKo="좋은 조언이 더 나은 결정을 만듭니다"
         titleEn="Better property decisions start with better advice"
         descKo="시드니 복덕방은 매물을 파는 곳이 아니라, 결정을 돕는 곳입니다. 구매를 결정하기 전, 필요한 정보와 관점을 차분히 함께 정리합니다."
-        descEn="Sydney Bokdokbang isn't here to sell you a property — we're here to help you decide. Before you buy, we help you think it through, calmly and clearly."
+        descEn="SBB isn't here to sell you a property — we're here to help you decide. Before you buy, we help you think it through, calmly and clearly."
       />
 
       <section style={{ backgroundColor: COLORS.warm }}>

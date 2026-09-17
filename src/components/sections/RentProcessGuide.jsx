@@ -65,7 +65,7 @@ export function RentProcessGuide() {
           >
             {t(
               "호주의 임대 절차는 한국과 다릅니다. 시드니 복덕방이 한국어로 단계별 과정을 안내해 드립니다.",
-              "The Australian rental process works differently from Korea's. Sydney Bokdokbang walks Korean-speaking newcomers through each step."
+              "The Australian rental process works differently from Korea's. SBB walks Korean-speaking newcomers through each step."
             )}
           </p>
         </Reveal>

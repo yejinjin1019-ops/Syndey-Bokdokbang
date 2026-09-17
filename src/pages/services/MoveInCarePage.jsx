@@ -183,7 +183,7 @@ export function MoveInCarePage() {
               <p className="text-[12px] leading-relaxed" style={{ color: "rgba(245,241,232,0.5)", fontFamily: body, maxWidth: "460px" }}>
                 {t(
                   "비자, 세무, 금융 관련 사항은 해당 분야의 자격을 갖춘 전문가와 상담하시기를 권장드리며, 시드니 복덕방은 방향을 안내해드릴 수 있습니다.",
-                  "For visa, tax, and financial matters, we recommend consulting a qualified professional in that field — Sydney Bokdokbang can help point you in the right direction."
+                  "For visa, tax, and financial matters, we recommend consulting a qualified professional in that field — SBB can help point you in the right direction."
                 )}
               </p>
             </Reveal>

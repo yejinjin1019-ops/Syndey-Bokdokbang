@@ -66,7 +66,7 @@ export function AboutPage() {
         titleKo={"시드니의 동네 사랑방\n새롭게 다시 짓다"}
         titleEn={"A neighbourhood role\nredefined for Sydney"}
         descKo={"복덕방은 원래 집과 사람을 모두 이해했기에 신뢰받던 자리였습니다.\n시드니 복덕방은 그 역할을 지금 이곳에 맞게 다시 만듭니다."}
-        descEn={"“Bokdokbang” once meant a place trusted because it understood both homes and people.\nSydney Bokdokbang rebuilds that role for the city we live in now."}
+        descEn={"“Bokdokbang” once meant a place trusted because it understood both homes and people.\nSBB rebuilds that role for the city we live in now."}
       />
 
       {/* Our Story — editorial split: photography + Rice Ivory content panel */}
@@ -85,7 +85,7 @@ export function AboutPage() {
             <div className="px-8 md:px-14 lg:px-16 py-16 md:py-24 max-w-[560px]">
               <Reveal>
                 <div className="mb-7">
-                  <SectionLabel font={body}>{t("시드니 복덕방 소개", "About Sydney Bokdokbang")}</SectionLabel>
+                  <SectionLabel font={body}>{t("시드니 복덕방 소개", "About SBB")}</SectionLabel>
                 </div>
 
                 <h2
@@ -99,7 +99,7 @@ export function AboutPage() {
                   <p className="text-[14.5px] leading-relaxed whitespace-pre-line" style={{ color: COLORS.ink, fontFamily: body }}>
                     {t(
                       "복덕방은 원래 동네에서 집과 사람을 가장 잘 아는 곳이었습니다.\n시드니 복덕방은 그 역할을 지금의 시드니에서 이어갑니다.",
-                      "Sydney Bokdokbang brings the trusted neighbourhood role of 복덕방 into today's Sydney — combining Korean-speaking guidance with local property expertise."
+                      "SBB brings the trusted neighbourhood role of 복덕방 into today's Sydney — combining Korean-speaking guidance with local property expertise."
                     )}
                   </p>
                   <p className="text-[14.5px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body }}>

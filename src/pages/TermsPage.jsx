@@ -36,7 +36,7 @@ const SECTIONS = [
       "웹사이트에 게재된 정보는 일반적인 정보 제공을 목적으로 하며, 사전 통보 없이 변경될 수 있습니다.",
     ],
     paragraphsEn: [
-      "This website provides information about Sydney Bokdokbang, available properties, new developments, property services, market information, and ways to contact us or make an enquiry.",
+      "This website provides information about SBB, available properties, new developments, property services, market information, and ways to contact us or make an enquiry.",
       "Information on this website is provided for general informational purposes and may change without notice.",
     ],
   },
@@ -51,7 +51,7 @@ const SECTIONS = [
     ],
     paragraphsEn: [
       "Property listings, prices, availability, dimensions, floorplans, photographs, descriptions, inclusions, completion dates and other property information may be supplied by property owners, developers, agents or other third parties.",
-      "Sydney Bokdokbang takes reasonable care when presenting property information, but users should independently verify information that is important to their decision before entering into any transaction.",
+      "SBB takes reasonable care when presenting property information, but users should independently verify information that is important to their decision before entering into any transaction.",
       "We do not guarantee that information on this website is complete, current or error-free.",
     ],
   },
@@ -67,7 +67,7 @@ const SECTIONS = [
     paragraphsEn: [
       "Property prices, price guides, rental amounts, incentives and availability may change without notice.",
       "A property appearing on the website does not guarantee that it remains available.",
-      "Users should contact Sydney Bokdokbang to confirm current information.",
+      "Users should contact SBB to confirm current information.",
     ],
   },
   {
@@ -134,7 +134,7 @@ const SECTIONS = [
       "이용자는 해당 서비스를 이용하기 전에 각 제공업체의 자체 약관을 검토하고 동의해야 합니다.",
     ],
     paragraphsEn: [
-      "Sydney Bokdokbang may introduce or refer clients to independent third-party professionals such as solicitors, conveyancers, mortgage brokers, inspectors, property managers, maintenance providers or moving services.",
+      "SBB may introduce or refer clients to independent third-party professionals such as solicitors, conveyancers, mortgage brokers, inspectors, property managers, maintenance providers or moving services.",
       "Unless expressly stated otherwise, these providers are independent businesses.",
       "Users should review and agree to each provider's own terms before engaging their services.",
     ],
@@ -149,7 +149,7 @@ const SECTIONS = [
     ],
     paragraphsEn: [
       "This website may contain links to third-party websites, property platforms, maps, developer websites or external services.",
-      "Sydney Bokdokbang is not responsible for the content, availability, privacy practices or terms of independent third-party websites.",
+      "SBB is not responsible for the content, availability, privacy practices or terms of independent third-party websites.",
     ],
   },
   {
@@ -161,7 +161,7 @@ const SECTIONS = [
       "제3자의 매물 사진, 평면도, 투시도 및 기타 자료는 각 권리자의 권리에 따릅니다.",
     ],
     paragraphsEn: [
-      "Website content, branding, copy, graphics, layouts and original materials belonging to Sydney Bokdokbang must not be copied, reproduced, modified or commercially used without permission, except where permitted by law.",
+      "Website content, branding, copy, graphics, layouts and original materials belonging to SBB must not be copied, reproduced, modified or commercially used without permission, except where permitted by law.",
       "Third-party property photography, floorplans, renders and other materials remain subject to the rights of their respective owners.",
     ],
   },
@@ -197,7 +197,7 @@ const SECTIONS = [
       "당사는 웹사이트가 중단 없이 또는 오류 없이 운영된다는 것을 보장하지 않습니다.",
     ],
     paragraphsEn: [
-      "Sydney Bokdokbang may update, suspend or change parts of the website without notice.",
+      "SBB may update, suspend or change parts of the website without notice.",
       "We do not guarantee uninterrupted or error-free website operation.",
     ],
   },
@@ -209,7 +209,7 @@ const SECTIONS = [
       "관련 법령이 허용하는 범위 내에서, 시드니 복덕방은 이용자가 부동산 관련 결정에 중요한 정보를 스스로 확인하지 않은 채 웹사이트의 일반 정보에만 의존하여 발생한 손실에 대해 책임을 지지 않습니다.",
     ],
     paragraphsEn: [
-      "To the extent permitted by law, Sydney Bokdokbang is not responsible for loss resulting solely from reliance on general website information where users have not independently verified information relevant to a property decision.",
+      "To the extent permitted by law, SBB is not responsible for loss resulting solely from reliance on general website information where users have not independently verified information relevant to a property decision.",
     ],
     quoteKo: "본 이용약관의 어떠한 조항도 호주 소비자법(Australian Consumer Law) 또는 기타 관련 법령에 따라 법적으로 배제할 수 없는 권리나 구제 수단을 배제, 제한 또는 변경하지 않습니다.",
     quoteEn: "Nothing in these Terms & Conditions excludes, restricts or modifies any right or remedy that cannot lawfully be excluded under the Australian Consumer Law or other applicable legislation.",
@@ -219,7 +219,7 @@ const SECTIONS = [
     titleKo: "개인정보",
     titleEn: "Privacy",
     paragraphsKo: ["웹사이트를 통해 제출된 개인정보는 시드니 복덕방의 개인정보처리방침에 따라 처리됩니다."],
-    paragraphsEn: ["Personal information submitted through this website is handled in accordance with the Sydney Bokdokbang Privacy Policy."],
+    paragraphsEn: ["Personal information submitted through this website is handled in accordance with the SBB Privacy Policy."],
     linkTo: "/legal/privacy-policy",
     linkKo: "개인정보처리방침 보기",
     linkEn: "View Privacy Policy",
@@ -243,7 +243,7 @@ const SECTIONS = [
     titleKo: "약관 변경",
     titleEn: "Changes to These Terms",
     paragraphsKo: ["시드니 복덕방은 웹사이트, 서비스 또는 관련 법적 요건이 변경되는 경우 본 이용약관을 업데이트할 수 있습니다."],
-    paragraphsEn: ["Sydney Bokdokbang may update these Terms & Conditions when the website, services or applicable requirements change."],
+    paragraphsEn: ["SBB may update these Terms & Conditions when the website, services or applicable requirements change."],
     metaKo: "최종 업데이트: 2026년 9월 16일",
     metaEn: "Last Updated: 16 September 2026",
   },
@@ -268,7 +268,7 @@ export function TermsPage() {
         titleKo="이용약관"
         titleEn="Terms & Conditions"
         descKo="본 이용약관은 시드니 복덕방 웹사이트와 웹사이트를 통해 제공되는 정보, 매물, 문의 및 서비스의 이용을 규율합니다. 시드니 복덕방은 Bokdokbang Pty Ltd가 운영합니다."
-        descEn="These Terms & Conditions govern the use of the Sydney Bokdokbang website and the information, property listings, enquiries and services made available through it. Sydney Bokdokbang is operated by Bokdokbang Pty Ltd."
+        descEn="These Terms & Conditions govern the use of the SBB website and the information, property listings, enquiries and services made available through it. SBB is operated by Bokdokbang Pty Ltd."
       />
 
       <section style={{ backgroundColor: COLORS.ivory, borderTop: `1px solid ${COLORS.stone}` }}>

@@ -14,7 +14,7 @@ export function WhyUs() {
         <Reveal>
           <div className="max-w-2xl mb-16">
             <div className="mb-5">
-              <SectionLabel font={body}>{t("왜 시드니 복덕방인가요", "Why Sydney Bokdokbang")}</SectionLabel>
+              <SectionLabel font={body}>{t("왜 시드니 복덕방인가요", "Why SBB")}</SectionLabel>
             </div>
             <h2
               className="font-medium leading-snug whitespace-pre-line"

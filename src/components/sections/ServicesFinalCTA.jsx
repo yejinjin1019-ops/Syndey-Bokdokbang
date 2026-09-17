@@ -32,7 +32,7 @@ export function ServicesFinalCTA() {
           >
             {t(
               "지금 부동산 상담을 예약하고 시드니 복덕방과 함께 다음 단계를 계획해보세요.",
-              "Book a property consultation and plan your next step with Sydney Bokdokbang."
+              "Book a property consultation and plan your next step with SBB."
             )}
           </p>
           <Button variant="fill-green" href="/contact" font={body}>

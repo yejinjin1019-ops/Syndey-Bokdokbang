@@ -59,7 +59,7 @@ const SECTIONS = [
     ],
     paragraphsEn: [
       "Where necessary, information may be shared with landlords, property owners, developers, solicitors, conveyancers, mortgage brokers, building inspectors, property managers, maintenance providers, and technology or service providers who support our operations.",
-      "Sydney Bokdokbang does not sell personal information.",
+      "SBB does not sell personal information.",
     ],
   },
   {
@@ -92,7 +92,7 @@ const SECTIONS = [
       "이용자는 언제든지 본인의 개인정보에 대한 열람 또는 정정을 요청할 수 있으며, 아래 연락처를 통해 문의해 주시기 바랍니다.",
     ],
     paragraphsEn: [
-      "You may request access to, or correction of, your personal information at any time by contacting Sydney Bokdokbang using the details below.",
+      "You may request access to, or correction of, your personal information at any time by contacting SBB using the details below.",
     ],
   },
   {

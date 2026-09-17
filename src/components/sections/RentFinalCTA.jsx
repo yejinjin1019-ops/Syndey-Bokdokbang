@@ -32,7 +32,7 @@ export function RentFinalCTA() {
           >
             {t(
               "마음에 드는 매물을 찾으셨다면 신청서를 접수하시거나, 시드니 복덕방에 직접 문의해 보세요.",
-              "Ready to move forward on a listing? Submit your application, or reach out to Sydney Bokdokbang directly."
+              "Ready to move forward on a listing? Submit your application, or reach out to SBB directly."
             )}
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-3.5">
@@ -40,7 +40,7 @@ export function RentFinalCTA() {
               {t("매물 신청하기", "Apply for Property")} <ArrowRight size={14} />
             </Button>
             <Button variant="fill-green" href="/contact" font={body}>
-              <MessageCircle size={14} /> {t("시드니 복덕방에 문의하기", "Ask Sydney Bokdokbang")}
+              <MessageCircle size={14} /> {t("시드니 복덕방에 문의하기", "Ask SBB")}
             </Button>
           </div>
         </Reveal>

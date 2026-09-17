@@ -32,7 +32,7 @@ export function BuyHero() {
           >
             {t(
               "시드니 복덕방이 엄선한 매매 매물입니다. 지역, 예산, 라이프스타일에 맞춰 편안하게 둘러보세요.",
-              "A curated selection of resale properties across Sydney, hand-picked by Sydney Bokdokbang. Browse at your own pace, by suburb, budget, and lifestyle."
+              "A curated selection of resale properties across Sydney, hand-picked by SBB. Browse at your own pace, by suburb, budget, and lifestyle."
             )}
           </p>
         </div>

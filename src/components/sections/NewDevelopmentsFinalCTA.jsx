@@ -32,7 +32,7 @@ export function NewDevelopmentsFinalCTA() {
           >
             {t(
               "분양가, 완공 시점, 계약 절차까지 — 결정하기 전에 시드니 복덕방과 먼저 상담하세요.",
-              "Pricing, timelines, and the contract process — talk it through with Sydney Bokdokbang before you decide."
+              "Pricing, timelines, and the contract process — talk it through with SBB before you decide."
             )}
           </p>
           <Button variant="fill-green" href="/contact" font={body}>

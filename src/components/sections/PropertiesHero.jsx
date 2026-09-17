@@ -50,7 +50,7 @@ export function PropertiesHero() {
           >
             {t(
               "매매, 임대, 신규 분양까지 — 시드니 복덕방이 모든 여정을 함께합니다.",
-              "Buy, rent, or explore new developments — Sydney Bokdokbang guides every step of the way."
+              "Buy, rent, or explore new developments — SBB guides every step of the way."
             )}
           </p>
         </div>

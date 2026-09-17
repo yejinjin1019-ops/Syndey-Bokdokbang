@@ -23,7 +23,7 @@ function describeListing(listing, kind, t) {
   if (kind === "buy") {
     return t(
       `${suburbKoPhrase(listing, t)} 위치한 ${listing.beds}침실 ${typeLabel}. 침실 ${listing.beds}개, 욕실 ${listing.baths ?? "-"}개, 주차 ${listing.parking}대 규모로, 시드니 복덕방이 직접 확인한 매물입니다.`,
-      `A ${listing.beds}-bedroom ${typeLabel.toLowerCase()} in ${suburbLabel}, with ${listing.beds} bedrooms, ${listing.baths ?? "-"} bathrooms, and ${listing.parking} parking spaces — inspected and vetted by Sydney Bokdokbang.`
+      `A ${listing.beds}-bedroom ${typeLabel.toLowerCase()} in ${suburbLabel}, with ${listing.beds} bedrooms, ${listing.baths ?? "-"} bathrooms, and ${listing.parking} parking spaces — inspected and vetted by SBB.`
     );
   }
   return t(

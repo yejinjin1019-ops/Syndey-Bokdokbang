@@ -17,7 +17,7 @@ export function AboutFinalCTA() {
           <div className="grid md:grid-cols-[1fr_1.15fr] gap-16 md:gap-24 items-center">
             <Reveal>
               <div className="mb-8">
-                <SectionLabel font={body}>{t("시드니 복덕방 소개", "About Sydney Bokdokbang")}</SectionLabel>
+                <SectionLabel font={body}>{t("시드니 복덕방 소개", "About SBB")}</SectionLabel>
               </div>
               <h2
                 className="font-medium mb-6 leading-snug whitespace-pre-line"

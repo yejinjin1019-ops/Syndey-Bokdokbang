@@ -92,7 +92,7 @@ export function ContactPage() {
 
               <div className="overflow-hidden" style={{ border: `1px solid ${COLORS.stone}`, aspectRatio: "4/3" }}>
                 <iframe
-                  title={t("시드니 복덕방 오피스 위치", "Sydney Bokdokbang office location")}
+                  title={t("시드니 복덕방 오피스 위치", "SBB office location")}
                   src={CONTACT_INFO.mapEmbedSrc}
                   className="w-full h-full"
                   style={{ border: 0 }}
@@ -123,7 +123,7 @@ export function ContactPage() {
                 successTitleKo="문의가 접수되었습니다"
                 successTitleEn="Your enquiry has been received"
                 successBodyKo="시드니 복덕방 팀이 빠른 시일 내에 연락드리겠습니다."
-                successBodyEn="The Sydney Bokdokbang team will be in touch soon."
+                successBodyEn="The SBB team will be in touch soon."
               />
             </Reveal>
           </div>
