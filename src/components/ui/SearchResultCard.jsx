@@ -1,5 +1,6 @@
 import { ArrowRight, Bed, Bath, Car } from "lucide-react";
-import { COLORS, FONT_EN_DISPLAY } from "../../lib/theme";
+import { COLORS } from "../../lib/theme";
+import { ViewIndicator } from "./ViewIndicator";
 
 /** Large editorial listing card shared by the /properties Find a Property
  * results — normalises BUY_LISTINGS / RENT_LISTINGS / PROPERTIES into one
@@ -11,12 +12,13 @@ export function SearchResultCard({ listing, category, t, font }) {
 
   return (
     <div className="group cursor-pointer">
-      <div className="relative overflow-hidden mb-5" style={{ aspectRatio: "4/3", backgroundColor: COLORS.stone }}>
+      <div className="relative overflow-hidden mb-5" style={{ aspectRatio: "4/5", backgroundColor: COLORS.stone }}>
         <img
           src={img}
           alt={address}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
+        <ViewIndicator font={font} />
       </div>
 
       <div className="text-[9.5px] tracking-[0.16em] uppercase mb-1.5" style={{ color: COLORS.dim, fontFamily: font }}>
@@ -38,7 +40,7 @@ export function SearchResultCard({ listing, category, t, font }) {
             <Car size={14} /> {parking}
           </span>
         </div>
-        <div className="text-[16px] md:text-[17px] font-medium whitespace-nowrap" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.green }}>
+        <div className="text-[16px] md:text-[17px] font-bold whitespace-nowrap" style={{ fontFamily: font, color: COLORS.green }}>
           ${price.toLocaleString()}
           {isRent && <span className="text-[11px] font-normal" style={{ color: COLORS.dim }}>/{t("주", "wk")}</span>}
         </div>
@@ -48,7 +50,7 @@ export function SearchResultCard({ listing, category, t, font }) {
         className="flex items-center gap-1.5 text-[12px] font-medium pt-3.5"
         style={{ color: COLORS.green, fontFamily: font, borderTop: `1px solid ${COLORS.stone}` }}
       >
-        {t("매물 보기", "View Property")} <ArrowRight size={13} />
+        <span className="border-b border-transparent group-hover:border-current transition-colors">{t("매물 보기", "View Property")}</span> <ArrowRight size={13} />
       </div>
     </div>
   );

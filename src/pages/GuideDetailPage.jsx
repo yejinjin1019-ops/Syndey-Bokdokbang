@@ -37,16 +37,16 @@ export function GuideDetailPage() {
         </Reveal>
 
         <Reveal delay={60}>
-          <div className="max-w-2xl">
+          <div className="max-w-[680px]">
             {category && (
-              <div className="mb-6">
+              <div className="mb-7">
                 <SectionLabel font={body}>{t(category.labelKo, category.labelEn)}</SectionLabel>
               </div>
             )}
-            <h1 className="font-medium mb-8" style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3.4vw,42px)", lineHeight: 1.4 }}>
+            <h1 className="font-medium mb-9 pb-9" style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(28px,3.8vw,46px)", lineHeight: 1.3, letterSpacing: "-0.01em", borderBottom: `1px solid ${COLORS.stone}` }}>
               {t(guide.titleKo, guide.titleEn)}
             </h1>
-            <p className="text-[15px] leading-relaxed" style={{ color: COLORS.ink, fontFamily: body }}>
+            <p className="text-[16px]" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.85 }}>
               {t(guide.bodyKo, guide.bodyEn)}
             </p>
           </div>

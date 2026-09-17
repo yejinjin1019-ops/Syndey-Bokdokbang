@@ -3,10 +3,12 @@ import { Phone, MessageSquare, Mail } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
 import { CONTACT_INFO } from "../../data/contactInfo";
+import { Reveal } from "../ui/Reveal";
+import { RevealRule } from "../ui/RevealRule";
 
-const DIM_TEXT = "rgba(245,241,232,0.68)";
-const FAINT_TEXT = "rgba(245,241,232,0.45)";
-const HAIRLINE = "rgba(245,241,232,0.14)";
+const DIM_TEXT = "rgba(255,246,229,0.68)";
+const FAINT_TEXT = "rgba(255,246,229,0.45)";
+const HAIRLINE = "rgba(255,246,229,0.16)";
 
 const EXPLORE_LINKS = [
   { ko: "홈", en: "Home", to: "/" },
@@ -37,14 +39,14 @@ const LEGAL_LINKS = [
 function FooterColumn({ title, links, body }) {
   return (
     <div>
-      <div className="text-[11px] tracking-[0.14em] uppercase mb-5" style={{ color: FAINT_TEXT, fontFamily: body }}>{title}</div>
-      <div className="flex flex-col gap-3">
+      <div className="text-[11px] font-semibold tracking-[0.14em] uppercase mb-6" style={{ color: COLORS.yellow, fontFamily: body }}>{title}</div>
+      <div className="flex flex-col gap-3.5">
         {links.map((l, i) => (
           <Link
             key={`${l.to}-${i}`}
             to={l.to}
-            className="text-[13px] transition-opacity hover:opacity-70"
-            style={{ color: COLORS.ivory, fontFamily: body, textDecoration: "none" }}
+            className="text-[13.5px] transition-opacity hover:opacity-70 w-fit"
+            style={{ color: COLORS.warm, fontFamily: body, textDecoration: "none" }}
           >
             {l.label}
           </Link>
@@ -65,13 +67,22 @@ export function Footer() {
 
   return (
     <footer style={{ backgroundColor: COLORS.green }}>
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-20">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-16">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-20 md:py-28">
+
+        {/* A thin rule marks the opening of the magazine's final page */}
+        <RevealRule color={HAIRLINE} className="mb-14 md:mb-16" />
+
+        {/* Brand moment */}
+        <Reveal className="flex items-center gap-3.5 mb-14 md:mb-16">
+          <img src="/logo.svg" alt="" className="h-11 w-11 md:h-14 md:w-14" />
+          <div className="text-[22px] md:text-[28px] font-semibold" style={{ fontFamily: display, color: COLORS.warm, letterSpacing: "0.01em" }}>
+            {CONTACT_INFO.tradingName}
+          </div>
+        </Reveal>
+
+        <Reveal delay={110} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-12 mb-16 md:mb-20">
           <div>
-            <div className="text-[15px] font-medium mb-4" style={{ fontFamily: display, color: COLORS.ivory }}>
-              {CONTACT_INFO.tradingName}
-            </div>
-            <p className="text-[13px] leading-relaxed" style={{ color: DIM_TEXT, fontFamily: body, maxWidth: "260px" }}>
+            <p className="text-[15px] leading-relaxed" style={{ color: COLORS.warm, fontFamily: body, maxWidth: "260px", fontStyle: lang === "ko" ? "normal" : "italic" }}>
               {t(
                 "집을 찾는 순간부터 정착하는 순간까지",
                 "From your first search to every next step"
@@ -80,21 +91,21 @@ export function Footer() {
           </div>
 
           <div>
-            <div className="text-[11px] tracking-[0.14em] uppercase mb-5" style={{ color: FAINT_TEXT, fontFamily: body }}>
+            <div className="text-[11px] font-semibold tracking-[0.14em] uppercase mb-6" style={{ color: COLORS.yellow, fontFamily: body }}>
               {t("문의하기", "Get in Touch")}
             </div>
-            <div className="flex flex-col gap-3">
-              <div className="text-[13px]" style={{ color: COLORS.ivory, fontFamily: body }}>
+            <div className="flex flex-col gap-3.5">
+              <div className="text-[13.5px]" style={{ color: COLORS.warm, fontFamily: body }}>
                 {CONTACT_INFO.tradingName}
               </div>
-              <p className="text-[13px] leading-relaxed" style={{ color: DIM_TEXT, fontFamily: body, maxWidth: "240px" }}>
+              <p className="text-[13.5px] leading-relaxed" style={{ color: DIM_TEXT, fontFamily: body, maxWidth: "240px" }}>
                 {CONTACT_INFO.address}
               </p>
               <div className="flex items-center gap-3">
                 <a
                   href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
-                  className="flex items-center gap-2 text-[13px] transition-opacity hover:opacity-70"
-                  style={{ color: COLORS.ivory, fontFamily: body, textDecoration: "none" }}
+                  className="flex items-center gap-2 text-[13.5px] transition-opacity hover:opacity-70"
+                  style={{ color: COLORS.warm, fontFamily: body, textDecoration: "none" }}
                 >
                   <Phone size={13} style={{ color: COLORS.yellow }} /> {CONTACT_INFO.phoneDisplay}
                 </a>
@@ -109,8 +120,8 @@ export function Footer() {
               </div>
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
-                className="flex items-center gap-2 text-[13px] transition-opacity hover:opacity-70"
-                style={{ color: COLORS.ivory, fontFamily: body, textDecoration: "none" }}
+                className="flex items-center gap-2 text-[13.5px] transition-opacity hover:opacity-70"
+                style={{ color: COLORS.warm, fontFamily: body, textDecoration: "none" }}
               >
                 <Mail size={13} style={{ color: COLORS.yellow }} /> {CONTACT_INFO.email}
               </a>
@@ -119,25 +130,26 @@ export function Footer() {
 
           <FooterColumn title={t("둘러보기", "Explore")} links={explore} body={body} />
           <FooterColumn title={t("서비스", "Services")} links={services} body={body} />
-        </div>
+        </Reveal>
 
-        <div
-          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 pb-5 text-[11.5px]"
+        <Reveal
+          delay={190}
+          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 pb-6 text-[12px]"
           style={{ borderTop: `1px solid ${HAIRLINE}`, color: DIM_TEXT, fontFamily: body }}
         >
           <span>© {year} {CONTACT_INFO.tradingName}</span>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
             {legal.map((l) => (
               <Link key={l.to} to={l.to} className="hover:opacity-70 transition-opacity" style={{ color: DIM_TEXT, textDecoration: "none" }}>
                 {l.label}
               </Link>
             ))}
           </div>
-        </div>
+        </Reveal>
 
-        <div className="text-[10.5px] tracking-wide" style={{ color: FAINT_TEXT, fontFamily: body }}>
+        <Reveal delay={230} className="text-[11px] tracking-wide" style={{ color: FAINT_TEXT, fontFamily: body }}>
           {CONTACT_INFO.legalName} · {CONTACT_INFO.abn} · {CONTACT_INFO.licence}
-        </div>
+        </Reveal>
       </div>
     </footer>
   );

@@ -8,14 +8,14 @@ export function RentHero() {
 
   return (
     <section style={{ backgroundColor: COLORS.ivory }}>
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10 pt-32 md:pt-40 pb-14 md:pb-18">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10 pt-36 md:pt-44 pb-16 md:pb-20">
         <div className="max-w-2xl">
-          <div className="mb-7">
+          <div className="mb-8">
             <SectionLabel font={body}>{t("매물 · 임대", "Properties · Rent")}</SectionLabel>
           </div>
           <h1
-            className="font-medium mb-6"
-            style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(28px,4vw,48px)", lineHeight: 1.35, letterSpacing: "-0.01em" }}
+            className="font-semibold mb-6"
+            style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(34px,5vw,56px)", lineHeight: 1.16, letterSpacing: "-0.01em" }}
           >
             {t("좋은 집은", "Find a place that fits")}<br />
             {t("생활까지 편리해야 하니까", "the way you live")}
@@ -36,6 +36,7 @@ export function RentHero() {
             )}
           </p>
         </div>
+        <div className="mt-12 md:mt-16 h-px w-full" style={{ backgroundColor: COLORS.stone }} />
       </div>
     </section>
   );

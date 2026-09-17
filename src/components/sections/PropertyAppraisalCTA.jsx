@@ -12,10 +12,10 @@ export function PropertyAppraisalCTA() {
 
   return (
     <section style={{ backgroundColor: COLORS.ivory }}>
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-20 md:py-28">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-24 md:py-32">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <Reveal>
-            <div className="overflow-hidden" style={{ aspectRatio: "4/3", backgroundColor: COLORS.stone }}>
+            <div className="overflow-hidden" style={{ aspectRatio: "4/3", backgroundColor: COLORS.stone, border: `1px solid ${COLORS.stone}` }}>
               <img
                 src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&h=1050&fit=crop&auto=format"
                 alt="Sydney home considered for sale"
@@ -25,13 +25,13 @@ export function PropertyAppraisalCTA() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="mb-5">
+            <div className="mb-6">
               <SectionLabel font={body}>{t("매물 감정평가", "Property Appraisal")}</SectionLabel>
             </div>
-            <h2 className="font-medium mb-5" style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,38px)", lineHeight: 1.4 }}>
+            <h2 className="font-semibold mb-6" style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(28px,3.6vw,48px)", lineHeight: 1.2, letterSpacing: "-0.01em" }}>
               {t("매각을 고민 중인 소유주를 위한 안내입니다", "For owners considering selling their property")}
             </h2>
-            <p className="text-[14.5px] leading-relaxed mb-8" style={{ color: COLORS.dim, fontFamily: body, maxWidth: "460px" }}>
+            <p className="text-[15px] leading-relaxed mb-9" style={{ color: COLORS.dim, fontFamily: body, maxWidth: "460px" }}>
               {t(
                 "현재 보유한 부동산의 시장 가치를 무료로 감정해드립니다. 매각을 계획 중이시라면, 정확한 숫자부터 함께 확인해보세요.",
                 "Get a clear, no-cost read on what your property is worth today. If you're weighing a sale, start with the numbers."

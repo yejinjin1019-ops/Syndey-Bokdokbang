@@ -22,7 +22,7 @@ export function Services() {
               </div>
               <h2
                 className="font-medium max-w-lg"
-                style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.6vw,38px)", lineHeight: 1.5 }}
+                style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,2.8vw,42px)", lineHeight: 1.45 }}
               >
                 {t("매매 이후에도 계속되는 케어", "Support that continues after the sale")}
               </h2>
@@ -40,14 +40,20 @@ export function Services() {
         <div className="grid md:grid-cols-2 border" style={{ borderColor: COLORS.stone }}>
           {SERVICES.map((service, i) => (
             <Reveal key={service.labelEn} delay={i * 100}>
-              <div className="flex flex-col sm:flex-row h-full" style={{ borderRight: i === 0 ? `1px solid ${COLORS.stone}` : "none" }}>
-                <div className="sm:w-5/12 overflow-hidden bg-stone-200" style={{ minHeight: "200px" }}>
+              <div className="group flex flex-col sm:flex-row h-full" style={{ borderRight: i === 0 ? `1px solid ${COLORS.stone}` : "none" }}>
+                <div className="relative sm:w-5/12 overflow-hidden bg-stone-200" style={{ minHeight: "200px" }}>
                   <img
                     src={service.img}
                     alt={t(service.labelKo, service.labelEn)}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                     style={{ minHeight: "200px" }}
                   />
+                  <span
+                    className="absolute top-4 left-4 text-[12px] font-semibold px-2.5 py-1"
+                    style={{ fontFamily: display, color: COLORS.warm, backgroundColor: "rgba(25,26,23,0.55)" }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
                 <div className="p-7 lg:p-9 flex flex-col justify-center sm:w-7/12">
                   <div className="flex items-center gap-3 mb-4">

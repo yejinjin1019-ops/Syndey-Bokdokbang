@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
@@ -10,7 +9,8 @@ const NAV_ITEMS = [
   { to: "/legal/licence", ko: "라이선스 정보", en: "Licence Information" },
 ];
 
-/** Discreet nav bar shared across dedicated legal pages. */
+/** Discreet nav bar shared across dedicated legal pages — quiet, pill-less
+ * tabs with a thin underline marking the active page. */
 export function LegalPageNav() {
   const { lang, t } = useLanguage();
   const { body } = getThemeFonts(lang);
@@ -19,25 +19,26 @@ export function LegalPageNav() {
   return (
     <div style={{ backgroundColor: COLORS.ivory, borderTop: `1px solid ${COLORS.stone}` }}>
       <div className="max-w-[760px] mx-auto px-5 md:px-10">
-        <nav className="flex flex-wrap items-center gap-3 py-6">
-          {NAV_ITEMS.map((item, i) => {
+        <nav className="flex flex-wrap items-center gap-x-7 gap-y-1 py-6">
+          {NAV_ITEMS.map((item) => {
             const active = pathname === item.to;
             return (
-              <Fragment key={item.to}>
-                {i > 0 && <span style={{ color: COLORS.stone }}>|</span>}
-                <Link
-                  to={item.to}
-                  className="text-[12.5px] transition-opacity hover:opacity-70"
-                  style={{
-                    fontFamily: body,
-                    color: active ? COLORS.green : COLORS.dim,
-                    fontWeight: active ? 600 : 400,
-                    textDecoration: "none",
-                  }}
-                >
-                  {t(item.ko, item.en)}
-                </Link>
-              </Fragment>
+              <Link
+                key={item.to}
+                to={item.to}
+                className="text-[12.5px] pb-1.5 transition-colors duration-150"
+                style={{
+                  fontFamily: body,
+                  color: active ? COLORS.green : COLORS.dim,
+                  fontWeight: active ? 600 : 400,
+                  textDecoration: "none",
+                  borderBottom: `2px solid ${active ? COLORS.green : "transparent"}`,
+                }}
+                onMouseEnter={(e) => { if (!active) e.currentTarget.style.color = COLORS.ink; }}
+                onMouseLeave={(e) => { if (!active) e.currentTarget.style.color = COLORS.dim; }}
+              >
+                {t(item.ko, item.en)}
+              </Link>
             );
           })}
         </nav>

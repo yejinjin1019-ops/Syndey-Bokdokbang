@@ -23,13 +23,13 @@ const NSW_LAWS = ["Property and Stock Agents Act 2002 (NSW)", "Property and Stoc
 
 const LICENCE_VERIFICATION_URL = "https://verify.licence.nsw.gov.au/details/Property%20-%20Corporation/1-4I7GCMU";
 
-function SectionHeading({ n, title, display }) {
+function SectionHeading({ n, title, body }) {
   return (
     <div className="flex items-baseline gap-4 mb-4">
       <span className="text-[12px] flex-shrink-0" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.yellow, letterSpacing: "0.04em" }}>
         {n}
       </span>
-      <h2 className="font-medium" style={{ fontFamily: display, color: COLORS.green, fontSize: "clamp(17px,1.8vw,21px)" }}>
+      <h2 className="font-semibold" style={{ fontFamily: body, color: COLORS.green, fontSize: "clamp(17px,1.8vw,21px)" }}>
         {title}
       </h2>
     </div>
@@ -61,7 +61,7 @@ export function LicenceInformationPage() {
                   <div className="text-[10.5px] tracking-[0.12em] uppercase mb-1.5" style={{ color: COLORS.dim, fontFamily: body }}>
                     {t(f.labelKo, f.labelEn)}
                   </div>
-                  <div className="text-[14.5px]" style={{ color: COLORS.ink, fontFamily: body }}>
+                  <div className="text-[15px]" style={{ color: COLORS.ink, fontFamily: body }}>
                     {f.value}
                   </div>
                 </div>
@@ -72,9 +72,9 @@ export function LicenceInformationPage() {
           {/* 01 — NSW Real Estate Licensing */}
           <Reveal>
             <div className="py-9 md:py-10" style={{ borderTop: `1px solid ${COLORS.stone}` }}>
-              <SectionHeading n="01" display={display} title={t("뉴사우스웨일스주 부동산 라이선스", "NSW Real Estate Licensing")} />
+              <SectionHeading n="01" body={body} title={t("뉴사우스웨일스주 부동산 라이선스", "NSW Real Estate Licensing")} />
               <div className="flex flex-col gap-3 md:pl-9">
-                <p className="text-[14.5px] leading-relaxed" style={{ color: COLORS.ink, fontFamily: body }}>
+                <p className="text-[16px]" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.75 }}>
                   {t(
                     "Bokdokbang Pty Ltd는 뉴사우스웨일스주에서 사업을 운영하며, 회사의 부동산 관련 활동은 관련 뉴사우스웨일스주 부동산 법령 및 규제 요건의 적용을 받습니다.",
                     "Bokdokbang Pty Ltd operates in New South Wales, and its real estate activities are subject to applicable NSW property legislation and regulatory requirements."
@@ -82,7 +82,7 @@ export function LicenceInformationPage() {
                 </p>
                 <ul className="flex flex-col gap-2 mt-1">
                   {NSW_LAWS.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-[14px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body }}>
+                    <li key={item} className="flex items-start gap-2.5 text-[15.5px]" style={{ color: COLORS.dim, fontFamily: body, lineHeight: 1.75 }}>
                       <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: COLORS.yellow }} />
                       {item}
                     </li>
@@ -95,7 +95,7 @@ export function LicenceInformationPage() {
           {/* 02 — Corporate Licence, prominent card */}
           <Reveal>
             <div className="py-9 md:py-10" style={{ borderTop: `1px solid ${COLORS.stone}` }}>
-              <SectionHeading n="02" display={display} title={t("법인 라이선스", "Corporate Licence")} />
+              <SectionHeading n="02" body={body} title={t("법인 라이선스", "Corporate Licence")} />
               <div className="md:pl-9">
                 <div className="px-7 py-8 md:px-9 md:py-9 mb-5 text-center" style={{ backgroundColor: COLORS.green }}>
                   <div className="text-[19px] md:text-[22px] font-medium mb-2" style={{ fontFamily: display, color: COLORS.ivory }}>
@@ -105,7 +105,7 @@ export function LicenceInformationPage() {
                     {CONTACT_INFO.licence}
                   </div>
                 </div>
-                <p className="text-[14.5px] leading-relaxed" style={{ color: COLORS.ink, fontFamily: body }}>
+                <p className="text-[16px]" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.75 }}>
                   {t(
                     "위 정보는 시드니 복덕방을 운영하는 법인에 부여된 법인 라이선스 정보입니다.",
                     "This is the corporate licence information associated with the legal entity operating Sydney Bokdokbang."
@@ -118,9 +118,9 @@ export function LicenceInformationPage() {
           {/* 03 — Licence Verification */}
           <Reveal>
             <div className="py-9 md:py-10" style={{ borderTop: `1px solid ${COLORS.stone}` }}>
-              <SectionHeading n="03" display={display} title={t("라이선스 확인", "Licence Verification")} />
+              <SectionHeading n="03" body={body} title={t("라이선스 확인", "Licence Verification")} />
               <div className="flex flex-col gap-3 md:pl-9">
-                <p className="text-[14.5px] leading-relaxed" style={{ color: COLORS.ink, fontFamily: body }}>
+                <p className="text-[16px]" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.75 }}>
                   {t(
                     "라이선스 정보는 뉴사우스웨일스주 정부(Fair Trading)의 공식 공개 등록부를 통해 별도로 확인하실 수 있습니다.",
                     "Licence details may be independently verified through the official NSW Government / Fair Trading public register."
@@ -142,7 +142,7 @@ export function LicenceInformationPage() {
           {/* 04 — Our Business Identity */}
           <Reveal>
             <div className="py-9 md:py-10" style={{ borderTop: `1px solid ${COLORS.stone}` }}>
-              <SectionHeading n="04" display={display} title={t("사업체 정보 구조", "Our Business Identity")} />
+              <SectionHeading n="04" body={body} title={t("사업체 정보 구조", "Our Business Identity")} />
               <div className="md:pl-9">
                 <div className="flex flex-col items-center text-center py-8 px-6" style={{ backgroundColor: COLORS.warm, border: `1px solid ${COLORS.stone}` }}>
                   <div className="text-[20px] md:text-[24px] font-medium mb-1.5" style={{ fontFamily: display, color: COLORS.ink }}>
@@ -166,7 +166,7 @@ export function LicenceInformationPage() {
                     <span>{CONTACT_INFO.licence}</span>
                   </div>
                 </div>
-                <p className="text-[14px] leading-relaxed mt-5" style={{ color: COLORS.dim, fontFamily: body }}>
+                <p className="text-[15.5px] mt-5" style={{ color: COLORS.dim, fontFamily: body, lineHeight: 1.75 }}>
                   {t(
                     "시드니 복덕방은 고객을 마주하는 상호명이며, Bokdokbang Pty Ltd는 그 바탕이 되는 법인입니다.",
                     "Sydney Bokdokbang is the customer-facing trading name, and Bokdokbang Pty Ltd is the underlying legal entity."
@@ -179,15 +179,15 @@ export function LicenceInformationPage() {
           {/* 05 — Licensing Enquiries */}
           <Reveal>
             <div className="py-9 md:py-10" style={{ borderTop: `1px solid ${COLORS.stone}` }}>
-              <SectionHeading n="05" display={display} title={t("라이선스 관련 문의", "Licensing Enquiries")} />
+              <SectionHeading n="05" body={body} title={t("라이선스 관련 문의", "Licensing Enquiries")} />
               <div className="md:pl-9">
-                <p className="text-[14.5px] leading-relaxed mb-5" style={{ color: COLORS.ink, fontFamily: body }}>
+                <p className="text-[16px] mb-5" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.75 }}>
                   {t(
                     "시드니 복덕방의 라이선스 또는 사업자 등록과 관련한 문의는 아래 연락처로 접수해 주시기 바랍니다.",
                     "For enquiries specifically relating to Sydney Bokdokbang's licence or business registration, please contact us using the details below."
                   )}
                 </p>
-                <div className="flex flex-col gap-1.5 text-[14px]" style={{ color: COLORS.ink, fontFamily: body }}>
+                <div className="flex flex-col gap-1.5 text-[14.5px]" style={{ color: COLORS.ink, fontFamily: body }}>
                   <span className="font-medium" style={{ fontFamily: display, color: COLORS.green, fontSize: "15px", marginBottom: "4px" }}>
                     {CONTACT_INFO.tradingName}
                   </span>

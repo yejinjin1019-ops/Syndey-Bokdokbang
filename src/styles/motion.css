@@ -1,0 +1,68 @@
+/* Sydney Bokdokbang motion system — editorial, restrained, print-inspired.
+   Signature easing: a confident, slow-settling curve (never linear/elastic). */
+:root {
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Arrow micro-interaction — any lucide ArrowRight inside a hoverable group
+   (Button's `group/btn` or a card/link's `group`) nudges forward on hover. */
+.group\/btn svg.lucide-arrow-right,
+.group svg.lucide-arrow-right {
+  transition: transform 220ms var(--ease-editorial);
+}
+.group\/btn:hover svg.lucide-arrow-right,
+.group:hover svg.lucide-arrow-right {
+  transform: translateX(4px);
+}
+
+/* Button press feedback — tactile, not bouncy. Declared as one explicit
+   list (not the `transition` shorthand) so it doesn't clobber the
+   background-color/color/border-color transition already set by Button's
+   own `transition-colors` utility class — unlayered rules like this one
+   always win over Tailwind's layered utilities regardless of source order. */
+.group\/btn {
+  transition-property: background-color, color, border-color, transform;
+  transition-duration: 200ms, 200ms, 200ms, 100ms;
+  transition-timing-function: var(--ease-editorial);
+}
+.group\/btn:active {
+  transform: scale(0.98);
+}
+
+/* Small circular "VIEW" hover indicator over property photography.
+   Hidden entirely on touch devices (no hover capability). */
+.view-indicator {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 250ms var(--ease-editorial), transform 250ms var(--ease-editorial);
+}
+.group:hover .view-indicator {
+  opacity: 1;
+  transform: scale(1);
+}
+@media (hover: none) {
+  .view-indicator {
+    display: none !important;
+  }
+}
+
+/* One-time header logo entrance on initial page load. */
+@keyframes header-logo-enter {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.header-logo-enter {
+  animation: header-logo-enter 600ms var(--ease-editorial) both;
+}
+
+/* Respect the user's motion preference: neutralise transitions/animations
+   sitewide rather than removing functionality. Content remains fully
+   accessible; only the motion is suppressed. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

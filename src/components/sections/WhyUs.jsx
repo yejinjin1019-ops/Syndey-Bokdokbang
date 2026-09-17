@@ -18,7 +18,7 @@ export function WhyUs() {
             </div>
             <h2
               className="font-medium leading-snug whitespace-pre-line"
-              style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3vw,42px)", lineHeight: 1.55 }}
+              style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(28px,3.4vw,46px)", lineHeight: 1.5 }}
             >
               {t("한국의 따뜻함으로\n시드니 부동산 전문성으로", "Korean Warmth\nSydney Property Expertise")}
             </h2>
@@ -33,7 +33,15 @@ export function WhyUs() {
               className="border-r border-b p-8 lg:p-10"
               style={{ borderColor: COLORS.stone }}
             >
-              <div className="w-5 h-px mb-6" style={{ backgroundColor: COLORS.yellow }} />
+              <div className="flex items-center justify-between mb-6">
+                <span
+                  className="font-semibold"
+                  style={{ fontFamily: display, color: COLORS.green, fontSize: "13px", letterSpacing: "0.02em" }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="w-5 h-px" style={{ backgroundColor: COLORS.yellow }} />
+              </div>
               <h3 className="text-[17px] md:text-[19px] font-medium mb-3" style={{ fontFamily: display, color: COLORS.ink }}>
                 {t(item.titleKo, item.titleEn)}
               </h3>

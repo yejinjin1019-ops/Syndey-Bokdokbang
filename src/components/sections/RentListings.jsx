@@ -4,12 +4,14 @@ import { Search, MapPin, Map as MapIcon, List as ListIcon } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
 import { Reveal } from "../ui/Reveal";
+import { Button } from "../ui/Button";
 import { RentListingCard } from "../ui/RentListingCard";
 import { RENT_LISTINGS, RENT_PRICE_BUCKETS } from "../../data/rentListings";
 
 const SELECT_STYLE = (body) => ({
   backgroundColor: COLORS.warm,
   border: `1px solid ${COLORS.stone}`,
+  borderRadius: "8px",
   fontFamily: body,
   color: COLORS.dim,
 });
@@ -61,7 +63,7 @@ export function RentListings() {
       {/* Sticky search / filter bar */}
       <div
         className="sticky top-[62px] md:top-[68px] z-30"
-        style={{ backgroundColor: "rgba(250,249,245,0.97)", backdropFilter: "blur(10px)", borderTop: `1px solid ${COLORS.stone}`, borderBottom: `1px solid ${COLORS.stone}` }}
+        style={{ backgroundColor: "rgba(255,246,229,0.97)", backdropFilter: "blur(10px)", borderTop: `1px solid ${COLORS.stone}`, borderBottom: `1px solid ${COLORS.stone}` }}
       >
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-4">
           <div className="flex flex-col lg:flex-row gap-2.5">
@@ -105,12 +107,9 @@ export function RentListings() {
               <option value="now">{t("즉시 입주", "Available Now")}</option>
               <option value="30">{t("30일 이내", "Within 30 Days")}</option>
             </select>
-            <button
-              className="flex items-center justify-center gap-2 px-6 py-2.5 text-[13px] font-semibold transition-opacity hover:opacity-85"
-              style={{ backgroundColor: COLORS.green, color: COLORS.ivory, fontFamily: body, letterSpacing: "0.03em" }}
-            >
+            <Button variant="fill-green" font={body} className="whitespace-nowrap">
               <Search size={13} /> {t("검색", "Search")}
-            </button>
+            </Button>
           </div>
 
           <div className="flex items-center justify-between mt-3.5">
@@ -129,18 +128,18 @@ export function RentListings() {
               </label>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-1" style={{ border: `1px solid ${COLORS.stone}` }}>
+              <div className="flex items-center" style={{ border: `1px solid ${COLORS.stone}`, borderRadius: "8px", overflow: "hidden" }}>
                 <button
                   onClick={() => setView("list")}
                   className="flex items-center gap-1.5 px-3 py-1.5 text-[12px] transition-colors"
-                  style={{ backgroundColor: view === "list" ? COLORS.green : "transparent", color: view === "list" ? COLORS.ivory : COLORS.dim, fontFamily: body }}
+                  style={{ backgroundColor: view === "list" ? COLORS.green : "transparent", color: view === "list" ? COLORS.warm : COLORS.dim, fontFamily: body }}
                 >
                   <ListIcon size={12} /> {t("목록", "List")}
                 </button>
                 <button
                   onClick={() => setView("map")}
                   className="flex items-center gap-1.5 px-3 py-1.5 text-[12px] transition-colors"
-                  style={{ backgroundColor: view === "map" ? COLORS.green : "transparent", color: view === "map" ? COLORS.ivory : COLORS.dim, fontFamily: body }}
+                  style={{ backgroundColor: view === "map" ? COLORS.green : "transparent", color: view === "map" ? COLORS.warm : COLORS.dim, fontFamily: body }}
                 >
                   <MapIcon size={12} /> {t("지도", "Map")}
                 </button>
@@ -155,7 +154,7 @@ export function RentListings() {
       </div>
 
       {/* Results */}
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-14 md:py-20">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-28">
         <div className={view === "map" ? "grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10" : ""}>
           <div>
             {filtered.length === 0 ? (
@@ -176,7 +175,7 @@ export function RentListings() {
           </div>
 
           {view === "map" && (
-            <div className="hidden lg:block sticky top-[168px] h-[520px]" style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}` }}>
+            <div className="hidden lg:block sticky top-[168px] h-[520px]" style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, borderRadius: "10px" }}>
               <div className="w-full h-full flex flex-col items-center justify-center gap-3">
                 <MapIcon size={22} style={{ color: COLORS.dim }} />
                 <p className="text-[12.5px] text-center px-8" style={{ color: COLORS.dim, fontFamily: body }}>

@@ -78,33 +78,34 @@ export function PropertyDetailPage() {
           </Link>
         </Reveal>
 
+        {/* Hero photo — full-width, architectural-editorial scale */}
+        <Reveal>
+          <div className="overflow-hidden mb-10 md:mb-14" style={{ aspectRatio: "16/9", backgroundColor: COLORS.stone }}>
+            <img src={listing.img} alt={listing.address} className="w-full h-full object-cover" />
+          </div>
+        </Reveal>
+
         <div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 md:gap-16">
           <div>
-            <Reveal>
-              <div className="overflow-hidden mb-8" style={{ aspectRatio: "4/3", backgroundColor: COLORS.stone }}>
-                <img src={listing.img} alt={listing.address} className="w-full h-full object-cover" />
-              </div>
-            </Reveal>
-
-            <Reveal delay={80}>
-              <div className="mb-2">
+            <Reveal delay={60}>
+              <div className="mb-3">
                 <SectionLabel font={body}>{t(listing.subKo, listing.suburb)}</SectionLabel>
               </div>
-              <h1 className="font-medium mb-5 mt-4" style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,3vw,38px)", lineHeight: 1.35 }}>
+              <h1 className="font-medium mb-6" style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(28px,3.8vw,48px)", lineHeight: 1.2, letterSpacing: "-0.01em" }}>
                 {listing.address}
               </h1>
-              <div className="flex items-center gap-6 mb-8 pb-8" style={{ borderBottom: `1px solid ${COLORS.stone}` }}>
+              <div className="flex items-center gap-6 md:gap-8 mb-8 pb-8" style={{ borderBottom: `1px solid ${COLORS.stone}` }}>
                 <span className="flex items-center gap-2 text-[14px]" style={{ color: COLORS.dim, fontFamily: body }}>
-                  <Bed size={16} /> {listing.beds} {t("침실", "Beds")}
+                  <Bed size={16} style={{ color: COLORS.green }} /> {listing.beds} {t("침실", "Beds")}
                 </span>
                 <span className="flex items-center gap-2 text-[14px]" style={{ color: COLORS.dim, fontFamily: body }}>
-                  <Bath size={16} /> {listing.baths ?? "-"} {t("욕실", "Baths")}
+                  <Bath size={16} style={{ color: COLORS.green }} /> {listing.baths ?? "-"} {t("욕실", "Baths")}
                 </span>
                 <span className="flex items-center gap-2 text-[14px]" style={{ color: COLORS.dim, fontFamily: body }}>
-                  <Car size={16} /> {listing.parking} {t("주차", "Parking")}
+                  <Car size={16} style={{ color: COLORS.green }} /> {listing.parking} {t("주차", "Parking")}
                 </span>
               </div>
-              <p className="text-[15px] leading-relaxed mb-10" style={{ color: COLORS.ink, fontFamily: body, maxWidth: "560px" }}>
+              <p className="text-[15.5px] leading-relaxed mb-10" style={{ color: COLORS.ink, fontFamily: body, maxWidth: "620px" }}>
                 {describeListing(listing, kind, t)}
               </p>
 
@@ -127,10 +128,10 @@ export function PropertyDetailPage() {
 
           <Reveal delay={140}>
             <div className="lg:sticky lg:top-[100px] p-7 md:p-8" style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}` }}>
-              <div className="text-[22px] font-medium mb-1" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.green }}>
+              <div className="text-[26px] md:text-[30px] font-semibold mb-1.5" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.green, letterSpacing: "-0.01em" }}>
                 {priceDisplay}
               </div>
-              <div className="text-[12.5px] mb-7" style={{ color: COLORS.dim, fontFamily: body }}>
+              <div className="text-[12.5px] mb-7 pb-7" style={{ color: COLORS.dim, fontFamily: body, borderBottom: `1px solid ${COLORS.stone}` }}>
                 {kind === "buy"
                   ? (listing.auction
                     ? t(`경매 ${listing.auctionDateKo}`, `Auction ${listing.auctionDateEn}`)

@@ -1,6 +1,11 @@
 @import './styles/fonts.css';
 @import './styles/tailwind.css';
 @import './styles/theme.css';
+@import './styles/motion.css';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;

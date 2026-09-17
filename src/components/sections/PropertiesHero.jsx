@@ -17,15 +17,23 @@ export function PropertiesHero() {
         />
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(23,61,50,0.55) 0%, rgba(23,61,50,0.2) 42%, rgba(23,61,50,0.8) 100%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(25,26,23,0.5) 0%, rgba(25,26,23,0.4) 40%, rgba(25,26,23,0.88) 100%)" }}
         />
         <div className="relative h-full max-w-[1400px] mx-auto px-5 md:px-10 flex flex-col justify-end pt-32 pb-16 md:pb-24">
           <div className="mb-6">
             <SectionLabel font={body} dark>{t("매물", "Properties")}</SectionLabel>
           </div>
           <h1
-            className="font-medium max-w-2xl mb-6"
-            style={{ fontFamily: display, color: COLORS.ivory, fontSize: "clamp(30px,4.4vw,54px)", lineHeight: 1.3, letterSpacing: "-0.01em" }}
+            className="font-semibold max-w-2xl mb-6"
+            style={{
+              fontFamily: display,
+              color: COLORS.warm,
+              fontSize: "clamp(32px,5vw,60px)",
+              lineHeight: 1.18,
+              letterSpacing: "-0.01em",
+              wordBreak: "keep-all",
+              textShadow: "0 2px 16px rgba(25,26,23,0.35)",
+            }}
           >
             {t("당신의 다음 시드니 주소를 찾아드립니다", "Finding your next Sydney address")}
           </h1>
@@ -33,10 +41,11 @@ export function PropertiesHero() {
             style={{
               fontFamily: lang === "ko" ? FONT_KO_BODY : FONT_EN_DISPLAY,
               fontStyle: lang === "ko" ? "normal" : "italic",
-              color: "rgba(245,241,232,0.82)",
+              color: "rgba(255,246,229,0.85)",
               fontSize: "clamp(14.5px,1.3vw,18px)",
               lineHeight: 1.7,
               maxWidth: "560px",
+              wordBreak: "keep-all",
             }}
           >
             {t(

@@ -1,5 +1,6 @@
 import { Bed, Bath, Car } from "lucide-react";
-import { COLORS, FONT_EN_DISPLAY } from "../../lib/theme";
+import { COLORS } from "../../lib/theme";
+import { ViewIndicator } from "./ViewIndicator";
 
 /** Compact, fast-to-scan listing card for the RENT page — practical over
  * ornamental, but keeps the same editorial photography and quiet labels as BUY. */
@@ -8,11 +9,11 @@ export function RentListingCard({ listing, t, font }) {
 
   return (
     <div className="group cursor-pointer">
-      <div className="relative overflow-hidden mb-4" style={{ aspectRatio: "4/3", backgroundColor: COLORS.stone }}>
+      <div className="relative overflow-hidden mb-4" style={{ aspectRatio: "4/5", backgroundColor: COLORS.stone }}>
         <img
           src={img}
           alt={address}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
         {inspection?.status === "open" && (
           <div className="absolute top-4 left-4">
@@ -24,6 +25,7 @@ export function RentListingCard({ listing, t, font }) {
             </span>
           </div>
         )}
+        <ViewIndicator font={font} />
       </div>
 
       <div className="flex items-start justify-between gap-4 mb-2">
@@ -35,7 +37,7 @@ export function RentListingCard({ listing, t, font }) {
             {address}
           </h3>
         </div>
-        <div className="text-[16px] md:text-[18px] font-medium whitespace-nowrap" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.green }}>
+        <div className="text-[16px] md:text-[18px] font-bold whitespace-nowrap" style={{ fontFamily: font, color: COLORS.green }}>
           ${rentValue}<span className="text-[12px] font-normal" style={{ color: COLORS.dim }}>/{t("주", "wk")}</span>
         </div>
       </div>

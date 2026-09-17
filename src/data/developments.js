@@ -73,7 +73,7 @@ export const DEVELOPMENTS = [
     "/developments/rhodes-central-tower-e/06-bathroom.jpg",
     "/developments/rhodes-central-tower-e/07-balcony.jpg",
   ], stats: [
-    { labelKo: "완공 예정", labelEn: "Completion", value: "2025" },
+    { labelKo: "완공", labelEn: "Completion", value: "Completed 2025" },
     { labelKo: "시작가", labelEn: "From", value: "$690,000" },
     { labelKo: "유형", labelEn: "Type", value: "1B · 2B · 3B · PH" },
   ], unitMix: [
@@ -92,7 +92,7 @@ export const DEVELOPMENTS = [
     "/developments/rhodes-central-oasis/07-bathroom.jpg",
     "/developments/rhodes-central-oasis/08-cinema.jpg",
   ], stats: [
-    { labelKo: "완공 예정", labelEn: "Completion", value: "Early 2025" },
+    { labelKo: "완공", labelEn: "Completion", value: "Completed 2025" },
     { labelKo: "시작가", labelEn: "From", value: "$649,000" },
     { labelKo: "유형", labelEn: "Type", value: "1B · 2B · 3B · 4B" },
   ], unitMix: [
@@ -182,7 +182,7 @@ export const DEVELOPMENTS = [
     "/developments/este-little-bay/07-bedroom.jpg",
     "/developments/este-little-bay/08-ensuite.jpg",
   ], stats: [
-    { labelKo: "완공 예정", labelEn: "Completion", value: "Aug 2026" },
+    { labelKo: "완공", labelEn: "Completion", value: "Completed Aug 2026" },
     { labelKo: "시작가", labelEn: "From", value: "$1,460,000" },
     { labelKo: "유형", labelEn: "Type", value: "1B · 2B · 3B · 4B" },
   ], unitMix: [
@@ -303,7 +303,7 @@ export const DEVELOPMENTS = [
     "/developments/la-vera-macquarie-park/07-balcony.jpg",
     "/developments/la-vera-macquarie-park/08-rooftop-bbq.jpg",
   ], stats: [
-    { labelKo: "완공 예정", labelEn: "Completion", value: "Q1 2026" },
+    { labelKo: "완공", labelEn: "Completion", value: "Completed Q1 2026" },
     { labelKo: "시작가", labelEn: "From", value: "$770,000" },
     { labelKo: "유형", labelEn: "Type", value: "1B · 2B · 3B · 4B" },
   ], unitMix: [
@@ -377,7 +377,7 @@ export const DEVELOPMENTS = [
     "/developments/midtown-macpark/06-bathroom.jpg",
     "/developments/midtown-macpark/07-balcony.jpg",
   ], stats: [
-    { labelKo: "완공 예정", labelEn: "Completion", value: "Q2 2026" },
+    { labelKo: "완공", labelEn: "Completion", value: "Completed Q2 2026" },
     { labelKo: "시작가", labelEn: "From", value: "$760,000" },
     { labelKo: "유형", labelEn: "Type", value: "1B · 2B · 3B" },
   ], unitMix: [
@@ -394,7 +394,7 @@ export const DEVELOPMENTS = [
     "/developments/narthcote-collective-naremburn/06-bathroom.jpg",
     "/developments/narthcote-collective-naremburn/07-dining.jpg",
   ], stats: [
-    { labelKo: "완공 예정", labelEn: "Completion", value: "Completed 2026" },
+    { labelKo: "완공", labelEn: "Completion", value: "Completed 2026" },
     { labelKo: "시작가", labelEn: "From", value: "$1,160,000" },
     { labelKo: "유형", labelEn: "Type", value: "1B · 2B · 3B" },
   ], unitMix: [
@@ -410,7 +410,7 @@ export const DEVELOPMENTS = [
     "/developments/river-oaks-oakville/05-oxley233.jpg",
     "/developments/river-oaks-oakville/06-aurora172.jpg",
   ], stats: [
-    { labelKo: "완공 예정", labelEn: "Completion", value: "Q4 2024" },
+    { labelKo: "완공", labelEn: "Completion", value: "Completed Q4 2024" },
     { labelKo: "시작가", labelEn: "From", value: "$750,000" },
     { labelKo: "유형", labelEn: "Type", value: "3B · 4B · 5B" },
   ], unitMix: [

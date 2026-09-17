@@ -18,7 +18,7 @@ export function ServicesJourney() {
             </div>
             <h2
               className="font-medium leading-snug"
-              style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
+              style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3vw,44px)", lineHeight: 1.45 }}
             >
               {t("여섯 단계 하나의 동행", "Six stages — one continuous companion")}
             </h2>
@@ -33,11 +33,13 @@ export function ServicesJourney() {
               className="border-r border-b p-8 lg:p-10"
               style={{ borderColor: COLORS.stone }}
             >
-              <div
-                className="mb-6"
-                style={{ fontFamily: display, color: COLORS.yellow, fontSize: "clamp(30px,2.6vw,40px)", lineHeight: 1 }}
-              >
-                {step.n}
+              <div className="flex items-center gap-3 mb-6">
+                <span
+                  style={{ fontFamily: display, color: COLORS.green, fontSize: "clamp(30px,2.6vw,40px)", lineHeight: 1 }}
+                >
+                  {step.n}
+                </span>
+                <div className="w-5 h-px mt-1" style={{ backgroundColor: COLORS.yellow }} />
               </div>
               <h3 className="text-[17px] md:text-[19px] font-medium mb-3" style={{ fontFamily: display, color: COLORS.ink }}>
                 {t(step.titleKo, step.titleEn)}

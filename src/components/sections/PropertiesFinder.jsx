@@ -5,6 +5,7 @@ import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
 import { Reveal } from "../ui/Reveal";
 import { SectionLabel } from "../ui/SectionLabel";
+import { Button } from "../ui/Button";
 import { SearchResultCard } from "../ui/SearchResultCard";
 import { BUY_LISTINGS, BUY_PRICE_BUCKETS } from "../../data/buyListings";
 import { RENT_LISTINGS, RENT_PRICE_BUCKETS } from "../../data/rentListings";
@@ -90,7 +91,7 @@ export function PropertiesFinder() {
                 style={{
                   fontFamily: body,
                   color: tab === id ? COLORS.green : COLORS.dim,
-                  borderBottom: tab === id ? `2px solid ${COLORS.green}` : "2px solid transparent",
+                  borderBottom: tab === id ? `2px solid ${COLORS.vivid}` : "2px solid transparent",
                   fontWeight: tab === id ? 600 : 400,
                   letterSpacing: "0.015em",
                 }}
@@ -111,14 +112,14 @@ export function PropertiesFinder() {
                 onChange={(e) => setSuburbQuery(e.target.value)}
                 placeholder={t("지역 입력 (예: 채스우드)", "Enter suburb or postcode")}
                 className="w-full pl-10 pr-4 py-3.5 text-[13.5px] outline-none"
-                style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, fontFamily: body, color: COLORS.ink }}
+                style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, borderRadius: "10px", fontFamily: body, color: COLORS.ink }}
               />
             </div>
             <select
               value={propertyType}
               onChange={(e) => setPropertyType(e.target.value)}
               className="px-4 py-3.5 text-[13.5px] outline-none appearance-none md:min-w-[150px]"
-              style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, fontFamily: body, color: COLORS.dim }}
+              style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, borderRadius: "10px", fontFamily: body, color: COLORS.dim }}
             >
               <option value="any">{t("매물 유형", "Property type")}</option>
               <option value="Apartment">{t("아파트", "Apartment")}</option>
@@ -129,7 +130,7 @@ export function PropertiesFinder() {
               value={priceBucket}
               onChange={(e) => setPriceBucket(e.target.value)}
               className="px-4 py-3.5 text-[13.5px] outline-none appearance-none md:min-w-[160px]"
-              style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, fontFamily: body, color: COLORS.dim }}
+              style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, borderRadius: "10px", fontFamily: body, color: COLORS.dim }}
             >
               <option value="any">{t("가격", "Price")}</option>
               {source.buckets.map((b) => (
@@ -140,7 +141,7 @@ export function PropertiesFinder() {
               value={bedrooms}
               onChange={(e) => setBedrooms(e.target.value)}
               className="px-4 py-3.5 text-[13.5px] outline-none appearance-none md:min-w-[130px]"
-              style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, fontFamily: body, color: COLORS.dim }}
+              style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, borderRadius: "10px", fontFamily: body, color: COLORS.dim }}
             >
               <option value="any">{t("침실 수", "Bedrooms")}</option>
               <option value="1">1+</option>
@@ -148,13 +149,9 @@ export function PropertiesFinder() {
               <option value="3">3+</option>
               <option value="4">4+</option>
             </select>
-            <button
-              onClick={handleSearch}
-              className="flex items-center justify-center gap-2.5 px-7 py-3.5 text-[13.5px] font-semibold transition-opacity hover:opacity-85"
-              style={{ backgroundColor: COLORS.green, color: COLORS.ivory, fontFamily: body, letterSpacing: "0.04em" }}
-            >
+            <Button variant="fill-green" font={body} onClick={handleSearch} className="whitespace-nowrap">
               <Search size={14} /> {t("검색", "Search")}
-            </button>
+            </Button>
           </div>
         </Reveal>
 

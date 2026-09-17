@@ -22,31 +22,31 @@ export function GuidesPage() {
       />
 
       <section style={{ backgroundColor: COLORS.warm }}>
-        <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-14 md:py-20 flex flex-col gap-20 md:gap-24">
-          {GUIDE_CATEGORIES.map((cat) => {
+        <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-14 md:py-20 flex flex-col">
+          {GUIDE_CATEGORIES.map((cat, ci) => {
             const items = GUIDES.filter((g) => g.category === cat.id);
             return (
-              <div key={cat.id}>
+              <div key={cat.id} className={ci > 0 ? "mt-16 md:mt-20 pt-16 md:pt-20" : ""} style={ci > 0 ? { borderTop: `1px solid ${COLORS.stone}` } : undefined}>
                 <Reveal>
-                  <div className="mb-3">
+                  <div className="mb-4">
                     <SectionLabel font={body}>{t(cat.labelKo, cat.labelEn)}</SectionLabel>
                   </div>
-                  <p className="text-[14px] mb-9" style={{ color: COLORS.dim, fontFamily: body, maxWidth: "560px" }}>
+                  <p className="text-[14.5px] mb-10" style={{ color: COLORS.dim, fontFamily: body, maxWidth: "560px", lineHeight: 1.65 }}>
                     {t(cat.descKo, cat.descEn)}
                   </p>
                 </Reveal>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
                   {items.map((g, i) => (
                     <Reveal key={g.slug} delay={i * 70}>
                       <Link to={`/guides/${g.slug}`} className="group block" style={{ textDecoration: "none" }}>
-                        <h3 className="text-[16px] mb-2 leading-snug" style={{ fontFamily: display, color: COLORS.ink, fontWeight: 500 }}>
+                        <h3 className="text-[17px] mb-2.5 leading-snug" style={{ fontFamily: display, color: COLORS.ink, fontWeight: 600 }}>
                           {t(g.titleKo, g.titleEn)}
                         </h3>
-                        <p className="text-[13.5px] leading-relaxed mb-3" style={{ color: COLORS.dim, fontFamily: body }}>
+                        <p className="text-[13.5px] leading-relaxed mb-4" style={{ color: COLORS.dim, fontFamily: body }}>
                           {t(g.excerptKo, g.excerptEn)}
                         </p>
-                        <div className="flex items-center gap-1.5 text-[12.5px] font-medium" style={{ color: COLORS.green, fontFamily: body }}>
-                          {t("읽어보기", "Read more")} <ArrowRight size={12} />
+                        <div className="flex items-center gap-1.5 text-[12.5px] font-semibold" style={{ color: COLORS.green, fontFamily: body }}>
+                          <span className="border-b border-transparent group-hover:border-current">{t("읽어보기", "Read more")}</span> <ArrowRight size={12} />
                         </div>
                       </Link>
                     </Reveal>

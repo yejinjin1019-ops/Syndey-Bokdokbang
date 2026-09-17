@@ -1,5 +1,6 @@
 import { ArrowRight, Bed, Bath, Car } from "lucide-react";
-import { COLORS, FONT_EN_DISPLAY } from "../../lib/theme";
+import { COLORS } from "../../lib/theme";
+import { ViewIndicator } from "./ViewIndicator";
 
 /** Large editorial listing card for the BUY page — architectural photography,
  * generous whitespace, restrained Auction / Open for Inspection labels. */
@@ -14,42 +15,43 @@ export function BuyListingCard({ listing, t, font }) {
 
   return (
     <div className="group cursor-pointer">
-      <div className="relative overflow-hidden mb-5" style={{ aspectRatio: "4/3", backgroundColor: COLORS.stone }}>
+      <div className="relative overflow-hidden mb-5" style={{ aspectRatio: "4/5", backgroundColor: COLORS.stone }}>
         <img
           src={img}
           alt={address}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
         <div className="absolute top-4 left-4 flex gap-2">
           {auction && (
             <span
-              className="text-[9.5px] tracking-[0.16em] uppercase px-2.5 py-1"
-              style={{ backgroundColor: COLORS.green, color: COLORS.ivory, fontFamily: font }}
+              className="text-[9.5px] tracking-[0.16em] uppercase px-2.5 py-1 font-semibold"
+              style={{ backgroundColor: COLORS.green, color: COLORS.warm, fontFamily: font }}
             >
               {t("경매", "Auction")}
             </span>
           )}
           {inspection?.status === "open" && (
             <span
-              className="text-[9.5px] tracking-[0.16em] uppercase px-2.5 py-1"
+              className="text-[9.5px] tracking-[0.16em] uppercase px-2.5 py-1 font-semibold"
               style={{ backgroundColor: COLORS.yellow, color: COLORS.ink, fontFamily: font }}
             >
               {t("공개 오픈 하우스", "Open for Inspection")}
             </span>
           )}
         </div>
+        <ViewIndicator font={font} />
       </div>
 
       <div className="flex items-start justify-between gap-4 mb-2">
         <div>
-          <div className="text-[9.5px] tracking-[0.16em] uppercase mb-1.5" style={{ color: COLORS.dim, fontFamily: font }}>
+          <div className="text-[9.5px] tracking-[0.16em] uppercase mb-1.5 font-semibold" style={{ color: COLORS.dim, fontFamily: font }}>
             {t(subKo, suburb)}
           </div>
-          <h3 className="text-[17px] md:text-[19px] leading-snug" style={{ fontFamily: font, color: COLORS.ink, fontWeight: 700 }}>
+          <h3 className="text-[18px] md:text-[21px] leading-snug" style={{ fontFamily: font, color: COLORS.ink, fontWeight: 700 }}>
             {address}
           </h3>
         </div>
-        <div className="text-[17px] md:text-[19px] font-medium whitespace-nowrap" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.green }}>
+        <div className="text-[17px] md:text-[19px] font-bold whitespace-nowrap" style={{ fontFamily: font, color: COLORS.green }}>
           {priceDisplay}
         </div>
       </div>
@@ -74,8 +76,8 @@ export function BuyListingCard({ listing, t, font }) {
             ? t(`다음 오픈: ${inspection.nextKo}`, `Next inspection: ${inspection.nextEn}`)
             : t("예약 방문 가능", "Inspection by appointment")}
         </span>
-        <span className="flex items-center gap-1.5 font-medium whitespace-nowrap" style={{ color: COLORS.green }}>
-          {t("매물 보기", "View Property")} <ArrowRight size={12} />
+        <span className="flex items-center gap-1.5 font-semibold whitespace-nowrap transition-colors group-hover:text-current" style={{ color: COLORS.green, fontFamily: font }}>
+          <span className="border-b border-transparent group-hover:border-current">{t("매물 보기", "View Property")}</span> <ArrowRight size={12} />
         </span>
       </div>
     </div>

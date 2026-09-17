@@ -9,8 +9,8 @@ export function Reveal({ children, delay = 0, className = "", style = {} }) {
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "none" : "translateY(22px)",
-        transition: `opacity 0.65s ease ${delay}ms, transform 0.65s ease ${delay}ms`,
+        transform: visible ? "none" : "translateY(24px)",
+        transition: `opacity 0.7s var(--ease-editorial) ${delay}ms, transform 0.7s var(--ease-editorial) ${delay}ms`,
         ...style,
       }}
     >

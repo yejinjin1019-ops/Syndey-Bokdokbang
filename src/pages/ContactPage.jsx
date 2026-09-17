@@ -43,17 +43,17 @@ export function ContactPage() {
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-14 md:py-20">
           <div className="grid lg:grid-cols-[1fr_1.1fr] gap-14 md:gap-20">
             <Reveal>
-              <div className="flex flex-col gap-8 mb-10">
-                <div>
-                  <div className="text-[17px] font-medium mb-2" style={{ fontFamily: display, color: COLORS.ink }}>
+              <div className="flex flex-col mb-10">
+                <div className="pb-6 mb-6" style={{ borderBottom: `1px solid ${COLORS.stone}` }}>
+                  <div className="text-[19px] font-semibold mb-2" style={{ fontFamily: display, color: COLORS.ink }}>
                     {CONTACT_INFO.tradingName}
                   </div>
                   <p className="text-[14px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body }}>
                     {CONTACT_INFO.address}
                   </p>
                 </div>
-                <div>
-                  <div className="text-[12px] tracking-wide uppercase mb-2" style={{ color: COLORS.dim, fontFamily: body }}>{t("전화", "Phone")}</div>
+                <div className="pb-6 mb-6" style={{ borderBottom: `1px solid ${COLORS.stone}` }}>
+                  <div className="text-[11px] tracking-[0.14em] uppercase mb-2.5 font-semibold" style={{ color: COLORS.dim, fontFamily: body }}>{t("전화", "Phone")}</div>
                   <div className="flex items-center gap-4">
                     <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`} className="flex items-center gap-2.5 text-[15px]" style={{ color: COLORS.ink, fontFamily: body, textDecoration: "none" }}>
                       <Phone size={16} style={{ color: COLORS.green }} /> {CONTACT_INFO.phoneDisplay}
@@ -68,20 +68,20 @@ export function ContactPage() {
                     </a>
                   </div>
                 </div>
-                <div>
-                  <div className="text-[12px] tracking-wide uppercase mb-2" style={{ color: COLORS.dim, fontFamily: body }}>{t("이메일", "Email")}</div>
+                <div className="pb-6 mb-6" style={{ borderBottom: `1px solid ${COLORS.stone}` }}>
+                  <div className="text-[11px] tracking-[0.14em] uppercase mb-2.5 font-semibold" style={{ color: COLORS.dim, fontFamily: body }}>{t("이메일", "Email")}</div>
                   <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-2.5 text-[15px]" style={{ color: COLORS.ink, fontFamily: body, textDecoration: "none" }}>
                     <Mail size={16} style={{ color: COLORS.green }} /> {CONTACT_INFO.email}
                   </a>
                 </div>
-                <div>
-                  <div className="text-[12px] tracking-wide uppercase mb-2" style={{ color: COLORS.dim, fontFamily: body }}>{t("카카오톡", "KakaoTalk")}</div>
+                <div className="pb-6 mb-6" style={{ borderBottom: `1px solid ${COLORS.stone}` }}>
+                  <div className="text-[11px] tracking-[0.14em] uppercase mb-2.5 font-semibold" style={{ color: COLORS.dim, fontFamily: body }}>{t("카카오톡", "KakaoTalk")}</div>
                   <a href={CONTACT_INFO.kakaoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-[15px]" style={{ color: COLORS.ink, fontFamily: body, textDecoration: "none" }}>
                     <MessageCircle size={16} style={{ color: COLORS.green }} /> @{CONTACT_INFO.kakaoId}
                   </a>
                 </div>
                 <div>
-                  <div className="text-[12px] tracking-wide uppercase mb-2 flex items-center gap-2" style={{ color: COLORS.dim, fontFamily: body }}>
+                  <div className="text-[11px] tracking-[0.14em] uppercase mb-2.5 flex items-center gap-2 font-semibold" style={{ color: COLORS.dim, fontFamily: body }}>
                     <Clock size={13} /> {t("운영 시간", "Hours")}
                   </div>
                   <p className="text-[13.5px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body }}>

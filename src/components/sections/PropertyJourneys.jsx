@@ -69,7 +69,7 @@ export function PropertyJourneys() {
                   />
                   <div
                     className="absolute inset-0"
-                    style={{ background: "linear-gradient(to top, rgba(23,61,50,0.9) 0%, rgba(23,61,50,0.25) 48%, rgba(23,61,50,0) 68%)" }}
+                    style={{ background: "linear-gradient(to top, rgba(35,108,27,0.92) 0%, rgba(35,108,27,0.28) 48%, rgba(35,108,27,0) 68%)" }}
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-7">
                     <div className="text-[9.5px] tracking-[0.22em] uppercase mb-3" style={{ color: "rgba(245,241,232,0.6)", fontFamily: body }}>

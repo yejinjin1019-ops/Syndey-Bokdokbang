@@ -8,6 +8,7 @@ import { DEVELOPMENTS, DEV_PRICE_BUCKETS, DEV_COMPLETION_OPTIONS, DEV_AVAILABILI
 const SELECT_STYLE = (body) => ({
   backgroundColor: COLORS.warm,
   border: `1px solid ${COLORS.stone}`,
+  borderRadius: "8px",
   fontFamily: body,
   color: COLORS.dim,
 });
@@ -52,7 +53,7 @@ export function NewDevelopmentsGrid() {
 
   return (
     <section style={{ backgroundColor: COLORS.warm }}>
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-24">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-28">
 
         <Reveal>
           <div className="flex flex-wrap gap-2.5 mb-3.5">

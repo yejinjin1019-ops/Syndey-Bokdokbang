@@ -49,7 +49,7 @@ export function RentProcessGuide() {
           </div>
           <h2
             className="font-medium mb-5"
-            style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(22px,2.6vw,34px)", lineHeight: 1.45 }}
+            style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,38px)", lineHeight: 1.4 }}
           >
             {t("호주에서 처음 집을 구하시나요?", "Renting in Sydney for the first time?")}
           </h2>

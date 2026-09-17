@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../i18n/translations";
 import { COLORS, getThemeFonts, FONT_EN_DISPLAY } from "../lib/theme";
 import { PageHero } from "../components/ui/PageHero";
+import { LegalPageNav } from "../components/ui/LegalPageNav";
 import { Reveal } from "../components/ui/Reveal";
 import { CONTACT_INFO } from "../data/contactInfo";
 
@@ -280,7 +281,7 @@ export function TermsPage() {
               <div className="text-[13px] mb-5" style={{ color: COLORS.dim, fontFamily: body }}>
                 {t(`상호명: ${CONTACT_INFO.tradingName}`, `Trading as ${CONTACT_INFO.tradingName}`)}
               </div>
-              <div className="flex flex-col gap-1.5 text-[13px]" style={{ color: COLORS.ink, fontFamily: body }}>
+              <div className="flex flex-col gap-1.5 text-[14.5px]" style={{ color: COLORS.ink, fontFamily: body }}>
                 <span>{CONTACT_INFO.abn}</span>
                 <span>{CONTACT_INFO.licence}</span>
                 <span>{CONTACT_INFO.address}</span>
@@ -297,13 +298,13 @@ export function TermsPage() {
                   <span className="text-[12px] flex-shrink-0" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.yellow, letterSpacing: "0.04em" }}>
                     {s.n}
                   </span>
-                  <h2 className="font-medium" style={{ fontFamily: display, color: COLORS.green, fontSize: "clamp(17px,1.8vw,21px)" }}>
+                  <h2 className="font-semibold" style={{ fontFamily: body, color: COLORS.green, fontSize: "clamp(17px,1.8vw,21px)" }}>
                     {t(s.titleKo, s.titleEn)}
                   </h2>
                 </div>
                 <div className="flex flex-col gap-3 md:pl-9">
                   {(lang === "ko" ? s.paragraphsKo : s.paragraphsEn).map((p, pi) => (
-                    <p key={pi} className="text-[14.5px] leading-relaxed" style={{ color: COLORS.ink, fontFamily: body }}>
+                    <p key={pi} className="text-[16px]" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.75 }}>
                       {p}
                     </p>
                   ))}
@@ -311,7 +312,7 @@ export function TermsPage() {
                   {(s.listKo || s.list) && (
                     <ul className="flex flex-col gap-2 mt-1">
                       {(s.list ?? (lang === "ko" ? s.listKo : s.listEn)).map((item) => (
-                        <li key={item} className="flex items-start gap-2.5 text-[14px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body }}>
+                        <li key={item} className="flex items-start gap-2.5 text-[15.5px]" style={{ color: COLORS.dim, fontFamily: body, lineHeight: 1.75 }}>
                           <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: COLORS.yellow }} />
                           {item}
                         </li>
@@ -321,7 +322,7 @@ export function TermsPage() {
 
                   {(s.quoteKo || s.quoteEn) && (
                     <div className="mt-1 px-5 py-4" style={{ backgroundColor: COLORS.warm, border: `1px solid ${COLORS.stone}` }}>
-                      <p className="text-[13.5px] leading-relaxed italic" style={{ color: COLORS.dim, fontFamily: body }}>
+                      <p className="text-[15px] italic" style={{ color: COLORS.dim, fontFamily: body, lineHeight: 1.75 }}>
                         {t(s.quoteKo, s.quoteEn)}
                       </p>
                     </div>
@@ -338,7 +339,7 @@ export function TermsPage() {
                   )}
 
                   {s.contact && (
-                    <div className="flex flex-col gap-1.5 text-[14px] mt-1" style={{ color: COLORS.ink, fontFamily: body }}>
+                    <div className="flex flex-col gap-1.5 text-[14.5px] mt-1" style={{ color: COLORS.ink, fontFamily: body }}>
                       <span>{CONTACT_INFO.tradingName}</span>
                       <span>{CONTACT_INFO.legalName}</span>
                       <span>{CONTACT_INFO.address}</span>
@@ -358,6 +359,8 @@ export function TermsPage() {
           ))}
         </div>
       </section>
+
+      <LegalPageNav />
     </>
   );
 }

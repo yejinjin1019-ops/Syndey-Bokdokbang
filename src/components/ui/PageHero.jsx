@@ -12,19 +12,19 @@ export function PageHero({ label, titleKo, titleEn, descKo, descEn, dark = false
   const { display, body } = getThemeFonts(lang);
 
   return (
-    <section style={{ backgroundColor: dark ? COLORS.green : COLORS.ivory }}>
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10 pt-32 md:pt-40 pb-14 md:pb-20">
-        <div className="max-w-2xl">
-          <div className="mb-7">
+    <section style={{ backgroundColor: dark ? COLORS.green : COLORS.warm }}>
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10 pt-36 md:pt-48 pb-16 md:pb-24">
+        <div className="max-w-3xl">
+          <div className="mb-8">
             <SectionLabel font={body} dark={dark}>{label}</SectionLabel>
           </div>
           <h1
-            className="font-medium mb-6 whitespace-pre-line"
+            className="font-semibold mb-7 whitespace-pre-line"
             style={{
               fontFamily: display,
-              color: dark ? COLORS.ivory : COLORS.ink,
-              fontSize: "clamp(28px,4vw,48px)",
-              lineHeight: 1.35,
+              color: dark ? COLORS.warm : COLORS.ink,
+              fontSize: "clamp(34px,5vw,64px)",
+              lineHeight: 1.12,
               letterSpacing: "-0.01em",
             }}
           >
@@ -36,8 +36,8 @@ export function PageHero({ label, titleKo, titleEn, descKo, descEn, dark = false
               style={{
                 fontFamily: lang === "ko" ? FONT_KO_BODY : FONT_EN_DISPLAY,
                 fontStyle: lang === "ko" ? "normal" : "italic",
-                color: dark ? "rgba(245,241,232,0.7)" : COLORS.dim,
-                fontSize: "clamp(14.5px,1.3vw,18px)",
+                color: dark ? "rgba(255,246,229,0.72)" : COLORS.dim,
+                fontSize: "clamp(15px,1.3vw,19px)",
                 lineHeight: 1.7,
                 maxWidth: "480px",
               }}

@@ -11,21 +11,22 @@ export function RentFinalCTA() {
   return (
     <section style={{ backgroundColor: COLORS.warm, borderTop: `1px solid ${COLORS.stone}` }}>
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-24 md:py-32">
-        <Reveal className="max-w-2xl mx-auto text-center flex flex-col items-center">
+        <Reveal className="max-w-[820px] mx-auto text-center flex flex-col items-center">
+          <div className="w-10 h-[2px] mb-7" style={{ backgroundColor: COLORS.green }} />
           <h2
-            className="font-medium mb-6"
-            style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3.2vw,44px)", lineHeight: 1.5 }}
+            className="font-semibold mb-7"
+            style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(32px,4.5vw,56px)", lineHeight: 1.15, letterSpacing: "-0.01em" }}
           >
             {t("임대가", "New to")}<br />
             {t("처음이신가요?", "renting?")}
           </h2>
           <p
-            className="mb-10"
+            className="mb-11"
             style={{
               fontFamily: lang === "ko" ? FONT_KO_BODY : FONT_EN_DISPLAY,
               fontStyle: lang === "ko" ? "normal" : "italic",
               color: COLORS.dim,
-              fontSize: "clamp(14.5px,1.2vw,17px)",
+              fontSize: "clamp(15px,1.3vw,19px)",
               maxWidth: "460px",
             }}
           >

@@ -2,30 +2,30 @@
 
 :root {
   --font-size: 16px;
-  --background: #FAF9F5;
-  --foreground: #232522;
-  --card: #F5F1E8;
-  --card-foreground: #232522;
-  --popover: #FAF9F5;
-  --popover-foreground: #232522;
-  --primary: #173D32;
-  --primary-foreground: #F5F1E8;
-  --secondary: #F5F1E8;
-  --secondary-foreground: #232522;
-  --muted: #EAE7E0;
-  --muted-foreground: #706D65;
-  --accent: #E4B834;
-  --accent-foreground: #232522;
+  --background: #FFF6E5;
+  --foreground: #191A17;
+  --card: #FBF0D6;
+  --card-foreground: #191A17;
+  --popover: #FFF6E5;
+  --popover-foreground: #191A17;
+  --primary: #236C1B;
+  --primary-foreground: #FFF6E5;
+  --secondary: #FBF0D6;
+  --secondary-foreground: #191A17;
+  --muted: #F5E6C3;
+  --muted-foreground: rgba(25,26,23,0.68);
+  --accent: #FBE148;
+  --accent-foreground: #191A17;
   --destructive: #c0392b;
-  --destructive-foreground: #FAF9F5;
-  --border: #DDD8CE;
-  --input: #F5F1E8;
-  --input-background: #F5F1E8;
-  --switch-background: #DDD8CE;
+  --destructive-foreground: #FFF6E5;
+  --border: rgba(25,26,23,0.16);
+  --input: #FBF0D6;
+  --input-background: #FBF0D6;
+  --switch-background: rgba(25,26,23,0.16);
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #173D32;
-  --radius: 0.125rem;
+  --ring: #236C1B;
+  --radius: 0.5rem;
 }
 
 @theme inline {

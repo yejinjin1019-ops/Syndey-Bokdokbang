@@ -2,6 +2,7 @@ import { useLanguage } from "../i18n/translations";
 import { COLORS, getThemeFonts } from "../lib/theme";
 import { PageHero } from "../components/ui/PageHero";
 import { Reveal } from "../components/ui/Reveal";
+import { SectionLabel } from "../components/ui/SectionLabel";
 import { LeadForm } from "../components/ui/LeadForm";
 
 const FIELDS = [
@@ -54,14 +55,18 @@ export function AppraisalPage() {
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-24">
           <div className="grid lg:grid-cols-[1fr_1.2fr] gap-14 md:gap-20">
             <Reveal>
-              <h2 className="text-[13px] tracking-wide uppercase mb-7" style={{ color: COLORS.dim, fontFamily: body }}>
-                {t("진행 절차", "What happens next")}
-              </h2>
-              <div className="flex flex-col gap-8">
-                {STEPS.map((s) => (
-                  <div key={s.n} className="flex gap-5">
-                    <span className="text-[20px] font-medium" style={{ fontFamily: display, color: COLORS.green }}>{s.n}</span>
-                    <p className="text-[14px] leading-relaxed pt-1" style={{ color: COLORS.ink, fontFamily: body }}>
+              <div className="mb-8">
+                <SectionLabel font={body}>{t("진행 절차", "What happens next")}</SectionLabel>
+              </div>
+              <div className="flex flex-col">
+                {STEPS.map((s, i) => (
+                  <div
+                    key={s.n}
+                    className="flex gap-6 py-6"
+                    style={{ borderTop: i > 0 ? `1px solid ${COLORS.stone}` : "none" }}
+                  >
+                    <span className="text-[26px] font-medium shrink-0" style={{ fontFamily: display, color: COLORS.green }}>{s.n}</span>
+                    <p className="text-[14.5px] leading-relaxed pt-1.5" style={{ color: COLORS.ink, fontFamily: body }}>
                       {t(s.ko, s.en)}
                     </p>
                   </div>

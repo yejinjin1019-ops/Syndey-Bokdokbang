@@ -20,7 +20,7 @@ export function FlagshipServices() {
             </div>
             <h2
               className="font-medium leading-snug"
-              style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)", lineHeight: 1.5 }}
+              style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,3vw,44px)", lineHeight: 1.45 }}
             >
               {t("여정의 각 단계마다 전담 케어", "A dedicated service for every stage of the journey")}
             </h2>
@@ -36,7 +36,7 @@ export function FlagshipServices() {
                 className="grid md:grid-cols-2 gap-10 md:gap-16 items-center"
               >
                 <Reveal className={reversed ? "md:order-2" : ""}>
-                  <div className="aspect-[4/3] overflow-hidden bg-stone-200">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-stone-200" style={{ border: `1px solid ${COLORS.stone}` }}>
                     <img
                       src={service.img}
                       alt={t(service.titleKo, service.titleEn)}
@@ -47,6 +47,12 @@ export function FlagshipServices() {
 
                 <Reveal delay={120} className={reversed ? "md:order-1" : ""}>
                   <div className="flex items-center gap-3 mb-5">
+                    <span
+                      className="font-semibold"
+                      style={{ fontFamily: display, color: COLORS.green, fontSize: "13px", letterSpacing: "0.02em" }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     <div className="w-6 h-px" style={{ backgroundColor: COLORS.yellow }} />
                     <span className="text-[9.5px] tracking-[0.22em] uppercase" style={{ color: COLORS.dim, fontFamily: body }}>
                       {t(service.labelKo, service.labelEn)}

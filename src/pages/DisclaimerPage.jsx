@@ -186,13 +186,13 @@ function SectionShell({ n, title, children, first }) {
 }
 
 function SectionHeading({ n, title }) {
-  const { display } = getThemeFonts(useLanguage().lang);
+  const { body } = getThemeFonts(useLanguage().lang);
   return (
     <div className="flex items-baseline gap-4 mb-4">
       <span className="text-[12px] flex-shrink-0" style={{ fontFamily: FONT_EN_DISPLAY, color: COLORS.yellow, letterSpacing: "0.04em" }}>
         {n}
       </span>
-      <h2 className="font-medium" style={{ fontFamily: display, color: COLORS.green, fontSize: "clamp(17px,1.8vw,21px)" }}>
+      <h2 className="font-semibold" style={{ fontFamily: body, color: COLORS.green, fontSize: "clamp(17px,1.8vw,21px)" }}>
         {title}
       </h2>
     </div>
@@ -203,7 +203,7 @@ function BulletList({ items, body }) {
   return (
     <ul className="flex flex-col gap-2 mt-1">
       {items.map((item) => (
-        <li key={item} className="flex items-start gap-2.5 text-[14px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body }}>
+        <li key={item} className="flex items-start gap-2.5 text-[15.5px]" style={{ color: COLORS.dim, fontFamily: body, lineHeight: 1.75 }}>
           <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: COLORS.yellow }} />
           {item}
         </li>
@@ -232,14 +232,14 @@ export function DisclaimerPage() {
             <Reveal key={s.n} delay={Math.min(i * 20, 200)}>
               <SectionShell n={s.n} title={t(s.titleKo, s.titleEn)} first={i === 0}>
                 {(lang === "ko" ? s.paragraphsKo : s.paragraphsEn).map((p, pi) => (
-                  <p key={`p1-${pi}`} className="text-[14.5px] leading-relaxed" style={{ color: COLORS.ink, fontFamily: body }}>
+                  <p key={`p1-${pi}`} className="text-[16px]" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.75 }}>
                     {p}
                   </p>
                 ))}
                 {s.listKo && <BulletList items={lang === "ko" ? s.listKo : s.listEn} body={body} />}
                 {s.paragraphsKo2 &&
                   (lang === "ko" ? s.paragraphsKo2 : s.paragraphsEn2).map((p, pi) => (
-                    <p key={`p2-${pi}`} className="text-[14.5px] leading-relaxed" style={{ color: COLORS.ink, fontFamily: body }}>
+                    <p key={`p2-${pi}`} className="text-[16px]" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.75 }}>
                       {p}
                     </p>
                   ))}
@@ -257,7 +257,7 @@ export function DisclaimerPage() {
                     {t(VERIFICATION_QUOTE_KO, VERIFICATION_QUOTE_EN)}
                   </p>
                 </div>
-                <p className="text-[14px] leading-relaxed mt-4" style={{ color: COLORS.dim, fontFamily: body }}>
+                <p className="text-[15.5px] mt-4" style={{ color: COLORS.dim, fontFamily: body, lineHeight: 1.75 }}>
                   {t(
                     "필요한 확인의 범위는 매물 및 고객님의 상황에 따라 달라질 수 있습니다.",
                     "The extent of verification required will depend on the property and your circumstances."
@@ -273,7 +273,7 @@ export function DisclaimerPage() {
               <SectionHeading n="12" title={t("호주 소비자법", "Australian Consumer Law")} />
               <div className="md:pl-9">
                 <div className="px-5 py-4" style={{ backgroundColor: COLORS.warm, border: `1px solid ${COLORS.stone}` }}>
-                  <p className="text-[13.5px] leading-relaxed italic" style={{ color: COLORS.dim, fontFamily: body }}>
+                  <p className="text-[15px] italic" style={{ color: COLORS.dim, fontFamily: body, lineHeight: 1.75 }}>
                     {t(ACL_QUOTE_KO, ACL_QUOTE_EN)}
                   </p>
                 </div>
@@ -286,7 +286,7 @@ export function DisclaimerPage() {
             <div className="py-9 md:py-10" style={{ borderTop: `1px solid ${COLORS.stone}` }}>
               <SectionHeading n="13" title={t("정보 업데이트", "Information Updates")} />
               <div className="flex flex-col gap-3 md:pl-9">
-                <p className="text-[14.5px] leading-relaxed" style={{ color: COLORS.ink, fontFamily: body }}>
+                <p className="text-[16px]" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.75 }}>
                   {t("매물 및 시장 정보는 게시 이후 시점이 지나면 최신 정보가 아닐 수 있습니다.", "Property and market information may become outdated after publication.")}
                 </p>
                 <p className="text-[13px] mt-1" style={{ color: COLORS.dim, fontFamily: body }}>
@@ -299,18 +299,18 @@ export function DisclaimerPage() {
           {/* Contact */}
           <Reveal>
             <div className="py-9 md:py-10" style={{ borderTop: `1px solid ${COLORS.stone}` }}>
-              <h2 className="font-medium mb-4" style={{ fontFamily: display, color: COLORS.green, fontSize: "clamp(17px,1.8vw,21px)" }}>
+              <h2 className="font-semibold mb-4" style={{ fontFamily: body, color: COLORS.green, fontSize: "clamp(17px,1.8vw,21px)" }}>
                 {t("문의처", "Contact")}
               </h2>
               <div className="md:pl-9">
-                <p className="text-[14.5px] leading-relaxed mb-5" style={{ color: COLORS.ink, fontFamily: body }}>
+                <p className="text-[16px] mb-5" style={{ color: COLORS.ink, fontFamily: body, lineHeight: 1.75 }}>
                   {t(
                     "웹사이트에 게재된 정보에 대해 궁금한 점이 있으시면 아래 연락처로 문의해 주시기 바랍니다.",
                     "For clarification about information published on this website, please contact us using the details below."
                   )}
                 </p>
                 <div className="p-7 md:p-8" style={{ backgroundColor: COLORS.warm, border: `1px solid ${COLORS.stone}` }}>
-                  <div className="flex flex-col gap-1.5 text-[13.5px]" style={{ color: COLORS.ink, fontFamily: body }}>
+                  <div className="flex flex-col gap-1.5 text-[14.5px]" style={{ color: COLORS.ink, fontFamily: body }}>
                     <span className="font-medium" style={{ fontFamily: display, color: COLORS.green, fontSize: "15px", marginBottom: "4px" }}>
                       {CONTACT_INFO.tradingName}
                     </span>

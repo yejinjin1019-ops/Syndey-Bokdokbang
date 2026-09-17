@@ -19,15 +19,23 @@ export function NewDevelopmentsHero() {
         />
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(23,61,50,0.6) 0%, rgba(23,61,50,0.25) 42%, rgba(23,61,50,0.82) 100%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(25,26,23,0.5) 0%, rgba(25,26,23,0.4) 40%, rgba(25,26,23,0.88) 100%)" }}
         />
         <div className="relative h-full max-w-[1400px] mx-auto px-5 md:px-10 flex flex-col justify-end pt-32 pb-16 md:pb-24">
           <div className="mb-6">
             <SectionLabel font={body} dark>{t("매물 · 신규개발", "Properties · New Developments")}</SectionLabel>
           </div>
           <h1
-            className="font-medium max-w-2xl mb-6"
-            style={{ fontFamily: display, color: COLORS.ivory, fontSize: "clamp(30px,4.4vw,54px)", lineHeight: 1.3, letterSpacing: "-0.01em" }}
+            className="font-semibold max-w-2xl mb-6"
+            style={{
+              fontFamily: display,
+              color: COLORS.warm,
+              fontSize: "clamp(32px,5vw,60px)",
+              lineHeight: 1.18,
+              letterSpacing: "-0.01em",
+              wordBreak: "keep-all",
+              textShadow: "0 2px 16px rgba(25,26,23,0.35)",
+            }}
           >
             {t("시드니 신규 개발 프로젝트", "New Sydney Developments")}
           </h1>
@@ -35,10 +43,11 @@ export function NewDevelopmentsHero() {
             style={{
               fontFamily: lang === "ko" ? FONT_KO_BODY : FONT_EN_DISPLAY,
               fontStyle: lang === "ko" ? "normal" : "italic",
-              color: "rgba(245,241,232,0.82)",
+              color: "rgba(255,246,229,0.85)",
               fontSize: "clamp(14.5px,1.3vw,18px)",
               lineHeight: 1.7,
               maxWidth: "560px",
+              wordBreak: "keep-all",
             }}
           >
             {t(

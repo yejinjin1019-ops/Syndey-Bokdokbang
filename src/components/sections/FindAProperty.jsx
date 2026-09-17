@@ -5,6 +5,7 @@ import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
 import { Reveal } from "../ui/Reveal";
 import { SectionLabel } from "../ui/SectionLabel";
+import { Button } from "../ui/Button";
 import { DevelopmentCard } from "../ui/DevelopmentCard";
 import { DEVELOPMENTS, DEV_PRICE_BUCKETS } from "../../data/developments";
 
@@ -56,14 +57,14 @@ export function FindAProperty() {
                 onChange={(e) => setSuburbQuery(e.target.value)}
                 placeholder={t("지역 입력 (예: 맥쿼리 파크)", "Enter suburb or postcode")}
                 className="w-full pl-10 pr-4 py-3.5 text-[13.5px] outline-none"
-                style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, fontFamily: body, color: COLORS.ink }}
+                style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, borderRadius: "10px", fontFamily: body, color: COLORS.ink }}
               />
             </div>
             <select
               value={priceBucket}
               onChange={(e) => setPriceBucket(e.target.value)}
               className="px-4 py-3.5 text-[13.5px] outline-none appearance-none md:min-w-[150px]"
-              style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, fontFamily: body, color: COLORS.dim }}
+              style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, borderRadius: "10px", fontFamily: body, color: COLORS.dim }}
             >
               <option value="any">{t("가격", "Price")}</option>
               {DEV_PRICE_BUCKETS.map((b) => (
@@ -74,7 +75,7 @@ export function FindAProperty() {
               value={bedrooms}
               onChange={(e) => setBedrooms(e.target.value)}
               className="px-4 py-3.5 text-[13.5px] outline-none appearance-none md:min-w-[130px]"
-              style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, fontFamily: body, color: COLORS.dim }}
+              style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, borderRadius: "10px", fontFamily: body, color: COLORS.dim }}
             >
               <option value="any">{t("침실 수", "Bedrooms")}</option>
               <option value="1">1+</option>
@@ -82,13 +83,9 @@ export function FindAProperty() {
               <option value="3">3+</option>
               <option value="4">4+</option>
             </select>
-            <button
-              onClick={scrollToResults}
-              className="flex items-center justify-center gap-2.5 px-7 py-3.5 text-[13.5px] font-semibold transition-opacity hover:opacity-85"
-              style={{ backgroundColor: COLORS.green, color: COLORS.ivory, fontFamily: body, letterSpacing: "0.04em" }}
-            >
+            <Button variant="fill-green" font={body} onClick={scrollToResults} className="whitespace-nowrap">
               <Search size={14} /> {t("검색", "Search")}
-            </button>
+            </Button>
           </div>
         </Reveal>
 

@@ -8,10 +8,14 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const FIELD_STYLE = (body) => ({
   backgroundColor: COLORS.warm,
-  border: `1px solid ${COLORS.stone}`,
+  border: "1.5px solid rgba(35,108,27,0.35)",
+  borderRadius: "8px",
   fontFamily: body,
   color: COLORS.ink,
 });
+
+const focusField = (e) => { e.currentTarget.style.borderColor = COLORS.green; };
+const blurField = (e) => { e.currentTarget.style.borderColor = "rgba(35,108,27,0.35)"; };
 
 /**
  * Generic lead form: takes a field schema, validates required fields (+
@@ -83,7 +87,7 @@ export function LeadForm({
   if (submitted) {
     return (
       <Reveal>
-        <div className="flex flex-col items-start gap-5 px-7 py-9 md:px-10 md:py-12" style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}` }}>
+        <div className="flex flex-col items-start gap-5 px-7 py-9 md:px-10 md:py-12" style={{ backgroundColor: COLORS.ivory, border: `1px solid ${COLORS.stone}`, borderRadius: "12px" }}>
           <CheckCircle2 size={28} style={{ color: COLORS.green }} />
           <h3 className="text-[19px] md:text-[22px] font-medium" style={{ fontFamily: body, color: COLORS.ink }}>
             {t(successTitleKo, successTitleEn)}
@@ -101,23 +105,27 @@ export function LeadForm({
     <form onSubmit={handleSubmit} noValidate className="grid gap-5">
       {fields.map((f) => (
         <div key={f.name}>
-          <label className="block text-[12px] tracking-wide mb-2" style={{ color: COLORS.dim, fontFamily: body }}>
-            {t(f.labelKo, f.labelEn)}{f.required && <span style={{ color: COLORS.green }}> *</span>}
+          <label className="block text-[12.5px] font-semibold tracking-wide mb-2" style={{ color: COLORS.green, fontFamily: body }}>
+            {t(f.labelKo, f.labelEn)}{f.required && <span style={{ color: COLORS.tangerine }}> *</span>}
           </label>
           {f.type === "textarea" ? (
             <textarea
               rows={5}
               value={values[f.name]}
               onChange={(e) => setValue(f.name, e.target.value)}
+              onFocus={focusField}
+              onBlur={blurField}
               placeholder={t(f.placeholderKo, f.placeholderEn)}
-              className="w-full px-4 py-3 text-[13.5px] outline-none resize-none"
+              className="w-full px-4 py-3 text-[13.5px] outline-none resize-none transition-colors"
               style={FIELD_STYLE(body)}
             />
           ) : f.type === "select" ? (
             <select
               value={values[f.name]}
               onChange={(e) => setValue(f.name, e.target.value)}
-              className="w-full px-4 py-3 text-[13.5px] outline-none appearance-none"
+              onFocus={focusField}
+              onBlur={blurField}
+              className="w-full px-4 py-3 text-[13.5px] outline-none appearance-none transition-colors"
               style={FIELD_STYLE(body)}
             >
               <option value="">{t("선택해주세요", "Select an option")}</option>
@@ -130,8 +138,10 @@ export function LeadForm({
               type={f.type === "email" ? "email" : f.type === "tel" ? "tel" : "text"}
               value={values[f.name]}
               onChange={(e) => setValue(f.name, e.target.value)}
+              onFocus={focusField}
+              onBlur={blurField}
               placeholder={t(f.placeholderKo, f.placeholderEn)}
-              className="w-full px-4 py-3 text-[13.5px] outline-none"
+              className="w-full px-4 py-3 text-[13.5px] outline-none transition-colors"
               style={FIELD_STYLE(body)}
             />
           )}
@@ -148,8 +158,10 @@ export function LeadForm({
       <button
         type="submit"
         disabled={sending}
-        className="mt-2 inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-[13.5px] font-semibold transition-opacity hover:opacity-85 disabled:opacity-60"
-        style={{ backgroundColor: COLORS.green, color: COLORS.ivory, fontFamily: body, letterSpacing: "0.03em" }}
+        className="mt-2 inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-[13.5px] font-semibold transition-colors duration-200 disabled:opacity-60"
+        style={{ backgroundColor: COLORS.green, color: COLORS.warm, fontFamily: body, letterSpacing: "0.03em", borderRadius: "10px", border: `1.5px solid ${COLORS.green}` }}
+        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = COLORS.yellow; e.currentTarget.style.color = COLORS.green; e.currentTarget.style.borderColor = COLORS.yellow; }}
+        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = COLORS.green; e.currentTarget.style.color = COLORS.warm; e.currentTarget.style.borderColor = COLORS.green; }}
       >
         {sending ? t("전송 중...", "Sending...") : t(submitLabelKo, submitLabelEn)}
       </button>
