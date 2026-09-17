@@ -30,24 +30,29 @@ export function WhyUs() {
             <Reveal
               key={item.titleEn}
               delay={i * 70}
-              className="border-r border-b p-8 lg:p-10"
+              className="border-r border-b"
               style={{ borderColor: COLORS.stone }}
             >
-              <div className="flex items-center justify-between mb-6">
-                <span
-                  className="font-semibold"
-                  style={{ fontFamily: display, color: COLORS.green, fontSize: "13px", letterSpacing: "0.02em" }}
+              <div className="group h-full p-8 lg:p-10 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[#FFF6E5] hover:shadow-[0_16px_32px_rgba(25,26,23,0.10)]">
+                <div className="flex items-center justify-between mb-6">
+                  <span
+                    className="font-semibold text-[#236C1B] transition-colors duration-300 group-hover:text-[#FBE148]"
+                    style={{ fontFamily: display, fontSize: "13px", letterSpacing: "0.02em" }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="w-5 h-px bg-[#FBE148] transition-all duration-300 ease-out group-hover:w-9" />
+                </div>
+                <h3
+                  className="text-[17px] md:text-[19px] font-medium mb-3 transition-transform duration-300 ease-out group-hover:translate-x-1"
+                  style={{ fontFamily: display, color: COLORS.ink }}
                 >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="w-5 h-px" style={{ backgroundColor: COLORS.yellow }} />
+                  {t(item.titleKo, item.titleEn)}
+                </h3>
+                <p className="text-[13.5px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body }}>
+                  {t(item.descKo, item.descEn)}
+                </p>
               </div>
-              <h3 className="text-[17px] md:text-[19px] font-medium mb-3" style={{ fontFamily: display, color: COLORS.ink }}>
-                {t(item.titleKo, item.titleEn)}
-              </h3>
-              <p className="text-[13.5px] leading-relaxed" style={{ color: COLORS.dim, fontFamily: body }}>
-                {t(item.descKo, item.descEn)}
-              </p>
             </Reveal>
           ))}
         </div>

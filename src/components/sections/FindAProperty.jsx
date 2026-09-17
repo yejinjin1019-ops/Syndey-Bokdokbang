@@ -34,6 +34,8 @@ export function FindAProperty() {
 
   const scrollToResults = () => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 
+  const visible = filtered.slice(0, 4);
+
   return (
     <section id="properties" style={{ backgroundColor: COLORS.warm, borderTop: `1px solid ${COLORS.stone}`, borderBottom: `1px solid ${COLORS.stone}` }}>
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-20 md:py-28">
@@ -95,8 +97,8 @@ export function FindAProperty() {
               {t("조건에 맞는 매물이 없습니다. 필터를 조정해보세요.", "No properties match your filters. Try adjusting your search.")}
             </p>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
-              {filtered.map((dev, i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-14">
+              {visible.map((dev, i) => (
                 <Reveal key={dev.id} delay={(i % 3) * 70}>
                   <DevelopmentCard dev={dev} t={t} display={display} body={body} />
                 </Reveal>

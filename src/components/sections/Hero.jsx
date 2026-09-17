@@ -98,7 +98,7 @@ export function Hero() {
         <div
           className="absolute left-0 top-0 bottom-0 w-[6px]"
           style={{
-            backgroundColor: COLORS.yellow,
+            backgroundColor: COLORS.pinkLight,
             transform: photoVisible ? "scaleY(1)" : "scaleY(0)",
             transformOrigin: "top",
             transition: "transform 700ms var(--ease-editorial) 950ms",
