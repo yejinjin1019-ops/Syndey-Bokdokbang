@@ -17,22 +17,21 @@ export function Hero() {
   ];
 
   return (
-    <section className="grid md:grid-cols-[56fr_44fr] relative" style={{ minHeight: "100svh", backgroundColor: COLORS.lime }}>
+    <section className="grid md:grid-cols-[54fr_46fr]" style={{ minHeight: "100svh", backgroundColor: COLORS.warm }}>
 
-      {/* Text panel — Lime field, tone-on-tone Green typography */}
-      <div className="flex items-center order-2 md:order-1 relative" style={{ minHeight: "clamp(420px, 42vw, 100svh)" }}>
+      {/* Text panel — magazine-cover headline */}
+      <div className="flex items-center order-2 md:order-1" style={{ minHeight: "clamp(420px, 42vw, 100svh)" }}>
         <div className="px-6 sm:px-9 lg:px-16 xl:px-20 py-16 md:py-20 w-full">
 
-          {/* Brand mark — small Orange label, thin Green rule, small Blue tick */}
+          {/* Brand mark */}
           <Reveal delay={40} className="mb-10 flex items-center gap-3">
             <div className="w-8 h-px" style={{ backgroundColor: COLORS.green }} />
             <div
               className="text-[13px] font-semibold uppercase"
-              style={{ fontFamily: body, color: COLORS.tangerine, letterSpacing: "0.14em" }}
+              style={{ fontFamily: body, color: COLORS.green, letterSpacing: "0.14em" }}
             >
               {t("시드니 복덕방", "Sydney Bokdokbang")}
             </div>
-            <div className="w-3 h-3" style={{ backgroundColor: COLORS.blue }} />
           </Reveal>
 
           {/* Headline — oversized editorial statement, revealed line by line */}
@@ -44,7 +43,7 @@ export function Hero() {
             className="font-semibold mb-7"
             style={{
               fontFamily: display,
-              color: COLORS.green,
+              color: COLORS.ink,
               fontSize: "clamp(32px,4.6vw,66px)",
               lineHeight: 1.12,
               letterSpacing: "-0.01em",
@@ -58,7 +57,7 @@ export function Hero() {
             style={{
               fontFamily: lang === "ko" ? FONT_KO_BODY : FONT_EN_DISPLAY,
               fontStyle: lang === "ko" ? "normal" : "italic",
-              color: "rgba(25,26,23,0.72)",
+              color: COLORS.dim,
               fontSize: "clamp(15px,1.3vw,19px)",
               letterSpacing: "0.01em",
             }}
@@ -68,7 +67,7 @@ export function Hero() {
 
           {/* CTAs */}
           <Reveal delay={520} className="flex flex-col sm:flex-row gap-3">
-            <Button variant="fill-ivory" href="/contact" font={body}>
+            <Button variant="fill-green" href="/contact" font={body}>
               {t("상담하기", "Book a Consultation")} <ArrowRight size={14} />
             </Button>
             <Button variant="outline-dark" href="#properties" font={body}>
@@ -99,13 +98,13 @@ export function Hero() {
         <div
           className="absolute left-0 top-0 bottom-0 w-[6px]"
           style={{
-            backgroundColor: COLORS.blue,
+            backgroundColor: COLORS.yellow,
             transform: photoVisible ? "scaleY(1)" : "scaleY(0)",
             transformOrigin: "top",
             transition: "transform 700ms var(--ease-editorial) 950ms",
           }}
         />
-        {/* Reveal panel — slides upward to uncover the video, once on load */}
+        {/* Reveal panel — slides upward to uncover the photo, once on load */}
         <div
           className="absolute inset-0"
           style={{
@@ -116,23 +115,6 @@ export function Hero() {
           }}
         />
       </div>
-
-      {/* Small Cream tag — deliberately overlaps the Lime / video boundary */}
-      <Reveal
-        delay={640}
-        className="hidden md:block absolute z-10"
-        style={{ left: "56%", top: "10%", transform: "translateX(-50%)" }}
-      >
-        <div
-          className="flex items-center gap-2 px-4 py-2"
-          style={{ backgroundColor: COLORS.warm, color: COLORS.green, fontFamily: body }}
-        >
-          <span className="text-[12px] font-bold" style={{ fontFamily: display }}>01</span>
-          <span className="text-[11px] font-semibold uppercase" style={{ letterSpacing: "0.1em" }}>
-            {t("시드니 라이프", "Sydney Living")}
-          </span>
-        </div>
-      </Reveal>
     </section>
   );
 }

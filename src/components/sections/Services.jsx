@@ -57,7 +57,7 @@ export function Services() {
                 </div>
                 <div className="p-7 lg:p-9 flex flex-col justify-center sm:w-7/12">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-4 h-px" style={{ backgroundColor: COLORS.lime }} />
+                    <div className="w-4 h-px" style={{ backgroundColor: COLORS.yellow }} />
                     <span className="text-[9.5px] tracking-[0.2em] uppercase" style={{ color: COLORS.dim, fontFamily: body }}>
                       {t(service.labelKo, service.labelEn)}
                     </span>

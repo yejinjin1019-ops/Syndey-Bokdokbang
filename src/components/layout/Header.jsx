@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { useScrollState } from "../../hooks/useScrollState";
@@ -30,10 +30,6 @@ export function Header() {
   const { lang, toggleLang, t } = useLanguage();
   const scrolled = useScrollState();
   const direction = useScrollDirection();
-  const { pathname } = useLocation();
-  // Homepage hero is a Lime field — let it show through the header until
-  // the page scrolls, then settle into the standard Cream bar.
-  const overLimeHero = pathname === "/" && !scrolled;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMobileSub, setOpenMobileSub] = useState(null);
   const [openDesktopSub, setOpenDesktopSub] = useState(null);
@@ -75,8 +71,8 @@ export function Header() {
       <div
         className="transition-all"
         style={{
-          backgroundColor: overLimeHero ? "transparent" : COLORS.warm,
-          borderBottom: `1px solid ${overLimeHero ? "rgba(35,108,27,0.16)" : scrolled ? COLORS.stone : "rgba(25,26,23,0.12)"}`,
+          backgroundColor: COLORS.warm,
+          borderBottom: `1px solid ${scrolled ? COLORS.stone : "rgba(25,26,23,0.12)"}`,
           boxShadow: scrolled ? "0 2px 0 rgba(25,26,23,0.03)" : "none",
           transform: hideHeader ? "translateY(-100%)" : "translateY(0)",
           transitionDuration: "300ms",
