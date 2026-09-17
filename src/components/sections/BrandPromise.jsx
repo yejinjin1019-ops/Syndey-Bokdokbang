@@ -65,7 +65,7 @@ export function BrandPromise() {
                   className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-[1.03]"
                 />
               </div>
-              <div className="absolute -bottom-3 -left-3 w-20 h-1" style={{ backgroundColor: COLORS.yellow }} />
+              <div className="absolute -bottom-3 -left-3 w-20 h-1" style={{ backgroundColor: COLORS.lime }} />
             </div>
           </Reveal>
         </div>
