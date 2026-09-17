@@ -73,9 +73,9 @@ export function Hero() {
           .hero-curtain-edge { left: 54%; opacity: 1; transition: left 1100ms var(--ease-editorial) 150ms, opacity 300ms var(--ease-editorial) 850ms, transform 700ms var(--ease-editorial) 950ms; }
           .hero-cinematic.is-expanded .hero-curtain-edge { left: 0%; opacity: 0; }
           .hero-text { width: 54%; transition: width 1100ms var(--ease-editorial); }
-          .hero-cinematic.is-expanded .hero-text { width: 100%; justify-content: center; }
+          .hero-cinematic.is-expanded .hero-text { width: 100%; justify-content: flex-start; }
           .hero-text-inner { max-width: 100%; }
-          .hero-cinematic.is-expanded .hero-text-inner { max-width: 640px; }
+          .hero-cinematic.is-expanded .hero-text-inner { max-width: none; }
         }
       `}</style>
 
