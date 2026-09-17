@@ -5,6 +5,11 @@ export const COLORS = {
   yellow: "#FBE148",  // Sun Yellow — CTA accents, badges, hover states (use sparingly)
   pink: "#F2A0B8",    // Bokdok Pink — editorial accent (Hero: dividers, arrows, hover states)
   pinkLight: "#FBDCE5", // Light Bokdok Pink — soft accent (Hero divider strip)
+
+  // Header brand band — Pink / Dark Olive / Lime, scoped to the site Header only.
+  headerOlive: "#29432C",
+  headerLime: "#D6E635",
+  headerPeach: "#F4E3D7",
   warm: "#FFF6E5",    // Warm Cream — primary background
   ivory: "#FBF0D6",   // secondary cream — card / section contrast against warm
   ink: "#191A17",     // Ink — body copy, dark type, borders

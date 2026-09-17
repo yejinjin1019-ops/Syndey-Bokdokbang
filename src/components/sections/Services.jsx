@@ -11,7 +11,7 @@ export function Services() {
   const { display, body } = getThemeFonts(lang);
 
   return (
-    <section id="services" style={{ backgroundColor: COLORS.warm, borderTop: `1px solid ${COLORS.stone}` }}>
+    <section id="services" style={{ backgroundColor: COLORS.pinkLight, borderTop: `1px solid ${COLORS.stone}` }}>
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-20 md:py-28">
 
         <Reveal>

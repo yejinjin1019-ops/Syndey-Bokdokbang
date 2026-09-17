@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { useScrollState } from "../../hooks/useScrollState";
@@ -8,19 +8,23 @@ import { COLORS, getThemeFonts } from "../../lib/theme";
 import { Button } from "../ui/Button";
 import { CONTACT_INFO } from "../../data/contactInfo";
 
-function NavLink({ to, onClick, children, hasSub, font }) {
+function NavLink({ to, onClick, children, hasSub, active, font }) {
   return (
     <Link
       to={to}
       onClick={onClick}
       className="group/nav flex items-center gap-1 text-[14px] font-medium py-1 relative"
-      style={{ color: COLORS.ink, fontFamily: font, letterSpacing: "0.01em", textDecoration: "none" }}
+      style={{ color: COLORS.headerOlive, fontFamily: font, letterSpacing: "0.01em", textDecoration: "none" }}
     >
       {children}
       {hasSub && <ChevronDown size={13} className="opacity-50 mt-px" />}
       <span
-        className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 transition-transform duration-200 group-hover/nav:scale-x-100"
-        style={{ backgroundColor: COLORS.green, transitionTimingFunction: "var(--ease-editorial)" }}
+        className="absolute -bottom-0.5 left-0 h-px w-full origin-left transition-transform duration-200 group-hover/nav:scale-x-100"
+        style={{
+          backgroundColor: COLORS.headerLime,
+          transform: active ? "scaleX(1)" : "scaleX(0)",
+          transitionTimingFunction: "var(--ease-editorial)",
+        }}
       />
     </Link>
   );
@@ -30,6 +34,7 @@ export function Header() {
   const { lang, toggleLang, t } = useLanguage();
   const scrolled = useScrollState();
   const direction = useScrollDirection();
+  const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMobileSub, setOpenMobileSub] = useState(null);
   const [openDesktopSub, setOpenDesktopSub] = useState(null);
@@ -71,14 +76,21 @@ export function Header() {
       <div
         className="transition-all"
         style={{
-          backgroundColor: COLORS.warm,
-          borderBottom: `1px solid ${scrolled ? COLORS.stone : "rgba(25,26,23,0.12)"}`,
-          boxShadow: scrolled ? "0 2px 0 rgba(25,26,23,0.03)" : "none",
+          backgroundColor: COLORS.pinkLight,
+          borderBottom: "1px solid rgba(41,67,44,0.12)",
+          boxShadow: "none",
           transform: hideHeader ? "translateY(-100%)" : "translateY(0)",
           transitionDuration: "300ms",
           transitionTimingFunction: "var(--ease-editorial)",
         }}
       >
+      {/* Header-scoped overrides — Pink band with Dark Olive nav; hover uses
+          the site-wide Lime (COLORS.lime) so every hover state matches. */}
+      <style>{`
+        .header-cta { background-color: ${COLORS.headerOlive} !important; color: ${COLORS.headerPeach} !important; border-color: ${COLORS.headerOlive} !important; }
+        .header-cta:hover { background-color: ${COLORS.lime} !important; color: ${COLORS.ink} !important; border-color: ${COLORS.lime} !important; }
+        .header-dropdown-link:hover { background-color: ${COLORS.lime} !important; color: ${COLORS.ink} !important; }
+      `}</style>
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="flex items-center justify-between h-[72px] md:h-[84px]">
 
@@ -87,7 +99,7 @@ export function Header() {
             <img src="/logo.svg" alt="Sydney Bokdokbang" className="h-10 w-10 md:h-12 md:w-12" />
             <div
               className="text-[16px] md:text-[18px] font-semibold leading-none"
-              style={{ fontFamily: display, color: COLORS.ink, letterSpacing: "0.01em" }}
+              style={{ fontFamily: display, color: COLORS.headerOlive, letterSpacing: "0.01em" }}
             >
               {t("시드니 복덕방", "Sydney Bokdokbang")}
             </div>
@@ -103,11 +115,11 @@ export function Header() {
                 onMouseLeave={() => item.sub && setOpenDesktopSub(null)}
               >
                 {item.to ? (
-                  <NavLink to={item.to} hasSub={!!item.sub} font={body}>{item.label}</NavLink>
+                  <NavLink to={item.to} hasSub={!!item.sub} active={location.pathname === item.to} font={body}>{item.label}</NavLink>
                 ) : (
                   <button
                     className="flex items-center gap-1 text-[14px] font-medium py-1 transition-colors duration-150"
-                    style={{ color: COLORS.ink, fontFamily: body, letterSpacing: "0.01em" }}
+                    style={{ color: COLORS.headerOlive, fontFamily: body, letterSpacing: "0.01em" }}
                   >
                     {item.label}
                     {item.sub && <ChevronDown size={13} className="opacity-50 mt-px" />}
@@ -122,16 +134,14 @@ export function Header() {
                           ? "opacity-100 visible translate-y-0"
                           : "opacity-0 invisible -translate-y-1 pointer-events-none")
                       }
-                      style={{ backgroundColor: COLORS.warm, border: `1px solid ${COLORS.stone}`, borderRadius: "10px", boxShadow: "3px 3px 0 rgba(25,26,23,0.08)" }}
+                      style={{ backgroundColor: COLORS.headerPeach, border: "1px solid rgba(41,67,44,0.12)", borderRadius: "10px", boxShadow: "3px 3px 0 rgba(41,67,44,0.08)" }}
                     >
                       {item.sub.map((s) => (
                         <Link
                           key={s.label}
                           to={s.to}
-                          className="block px-5 py-2.5 text-[13px] transition-colors"
-                          style={{ color: COLORS.ink, textDecoration: "none", fontFamily: body }}
-                          onMouseEnter={(e) => (e.currentTarget.style.color = COLORS.green)}
-                          onMouseLeave={(e) => (e.currentTarget.style.color = COLORS.ink)}
+                          className="header-dropdown-link block px-5 py-2.5 text-[13px] transition-colors"
+                          style={{ color: COLORS.headerOlive, textDecoration: "none", fontFamily: body }}
                         >
                           {s.label}
                         </Link>
@@ -151,27 +161,27 @@ export function Header() {
               style={{ fontFamily: body }}
               aria-label="Switch language"
             >
-              <span style={{ color: lang === "ko" ? COLORS.green : COLORS.dim, fontWeight: lang === "ko" ? 600 : 400, transition: "color 200ms var(--ease-editorial)" }}>한국어</span>
-              <span className="mx-1.5 opacity-40">·</span>
-              <span style={{ color: lang === "en" ? COLORS.green : COLORS.dim, fontWeight: lang === "en" ? 600 : 400, transition: "color 200ms var(--ease-editorial)" }}>EN</span>
+              <span style={{ color: COLORS.headerOlive, opacity: lang === "ko" ? 1 : 0.55, fontWeight: lang === "ko" ? 600 : 400, transition: "opacity 200ms var(--ease-editorial)" }}>한국어</span>
+              <span className="mx-1.5 opacity-40" style={{ color: COLORS.headerOlive }}>·</span>
+              <span style={{ color: COLORS.headerOlive, opacity: lang === "en" ? 1 : 0.55, fontWeight: lang === "en" ? 600 : 400, transition: "opacity 200ms var(--ease-editorial)" }}>EN</span>
             </button>
 
-            <Button variant="fill-green" size="sm" href="/contact" font={body} className="hidden md:inline-flex">
+            <Button variant="fill-green" size="sm" href="/contact" font={body} className="hidden md:inline-flex header-cta">
               {t("상담하기", "Book a Consultation")}
             </Button>
 
             <a
               href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
               className="hidden lg:flex items-center gap-1.5 text-[13px]"
-              style={{ color: COLORS.dim, fontFamily: body, textDecoration: "none" }}
+              style={{ color: COLORS.headerOlive, fontFamily: body, textDecoration: "none" }}
             >
-              <Phone size={12} style={{ color: COLORS.green }} /> {CONTACT_INFO.phoneDisplay}
+              <Phone size={12} style={{ color: COLORS.headerOlive }} /> {CONTACT_INFO.phoneDisplay}
             </a>
 
             <button
               onClick={() => setMobileOpen((v) => !v)}
               className="lg:hidden p-1"
-              style={{ color: COLORS.ink }}
+              style={{ color: COLORS.headerOlive }}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
             >
@@ -189,7 +199,7 @@ export function Header() {
       <div
         className="lg:hidden fixed inset-x-0 top-[72px] bottom-0 overflow-y-auto"
         style={{
-          backgroundColor: COLORS.green,
+          backgroundColor: COLORS.headerOlive,
           opacity: mobileOpen ? 1 : 0,
           transform: mobileOpen ? "translateY(0)" : "translateY(-14px)",
           visibility: mobileOpen ? "visible" : "hidden",
@@ -206,7 +216,7 @@ export function Header() {
                 key={item.label}
                 className="border-b"
                 style={{
-                  borderColor: "rgba(255,246,229,0.18)",
+                  borderColor: "rgba(242,160,184,0.35)",
                   opacity: mobileOpen ? 1 : 0,
                   transform: mobileOpen ? "translateY(0)" : "translateY(10px)",
                   transition: `opacity 350ms var(--ease-editorial) ${itemDelay}ms, transform 350ms var(--ease-editorial) ${itemDelay}ms`,
@@ -218,7 +228,7 @@ export function Header() {
                       to={item.to}
                       onClick={() => setMobileOpen(false)}
                       className="flex-1 text-left py-4 text-[24px] font-semibold"
-                      style={{ fontFamily: display, color: COLORS.warm, textDecoration: "none" }}
+                      style={{ fontFamily: display, color: COLORS.headerPeach, textDecoration: "none" }}
                     >
                       {item.label}
                     </Link>
@@ -226,7 +236,7 @@ export function Header() {
                     <button
                       onClick={() => item.sub && setOpenMobileSub(isSubOpen ? null : item.label)}
                       className="flex-1 text-left py-4 text-[24px] font-semibold"
-                      style={{ fontFamily: display, color: COLORS.warm }}
+                      style={{ fontFamily: display, color: COLORS.headerPeach }}
                     >
                       {item.label}
                     </button>
@@ -241,7 +251,7 @@ export function Header() {
                       <ChevronDown
                         size={18}
                         className="transition-transform duration-200"
-                        style={{ color: COLORS.yellow, transform: isSubOpen ? "rotate(180deg)" : "none", transitionTimingFunction: "var(--ease-editorial)" }}
+                        style={{ color: COLORS.headerLime, transform: isSubOpen ? "rotate(180deg)" : "none", transitionTimingFunction: "var(--ease-editorial)" }}
                       />
                     </button>
                   )}
@@ -261,7 +271,7 @@ export function Header() {
                           to={s.to}
                           onClick={() => setMobileOpen(false)}
                           className="block py-2 text-[16px]"
-                          style={{ color: COLORS.yellow, fontFamily: body, textDecoration: "none" }}
+                          style={{ color: COLORS.headerLime, fontFamily: body, textDecoration: "none" }}
                         >
                           {s.label}
                         </Link>
@@ -283,17 +293,17 @@ export function Header() {
             <a
               href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
               className="flex items-center justify-center gap-2 w-full py-3 text-[15px]"
-              style={{ color: COLORS.warm, fontFamily: body, textDecoration: "none" }}
+              style={{ color: COLORS.headerPeach, fontFamily: body, textDecoration: "none" }}
             >
-              <Phone size={15} style={{ color: COLORS.yellow }} /> {CONTACT_INFO.phoneDisplay}
+              <Phone size={15} style={{ color: COLORS.headerLime }} /> {CONTACT_INFO.phoneDisplay}
             </a>
-            <Button variant="fill-ivory" href="/contact" font={body} className="w-full" onClick={() => setMobileOpen(false)}>
+            <Button variant="fill-ivory" href="/contact" font={body} className="w-full header-cta" onClick={() => setMobileOpen(false)}>
               {t("상담하기", "Book a Consultation")}
             </Button>
             <button
               onClick={toggleLang}
               className="w-full text-center text-[14px] py-2"
-              style={{ color: "rgba(255,246,229,0.7)", fontFamily: body }}
+              style={{ color: "rgba(244,227,215,0.7)", fontFamily: body }}
             >
               한국어 · EN
             </button>

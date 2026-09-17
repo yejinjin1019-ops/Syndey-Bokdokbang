@@ -27,11 +27,12 @@ const VARIANT_STYLES = {
   },
 };
 
+// Every button variant hovers to the same Lime — one hover colour, site-wide.
 const HOVER_STYLES = {
-  "fill-green": { backgroundColor: COLORS.yellow, color: COLORS.green, borderColor: COLORS.yellow },
-  "fill-ivory": { backgroundColor: COLORS.yellow, color: COLORS.green, borderColor: COLORS.yellow },
-  "outline-dark": { backgroundColor: COLORS.green, color: COLORS.warm, borderColor: COLORS.green },
-  outline: { backgroundColor: COLORS.yellow, color: COLORS.green, borderColor: COLORS.yellow },
+  "fill-green": { backgroundColor: COLORS.lime, color: COLORS.ink, borderColor: COLORS.lime },
+  "fill-ivory": { backgroundColor: COLORS.lime, color: COLORS.ink, borderColor: COLORS.lime },
+  "outline-dark": { backgroundColor: COLORS.lime, color: COLORS.ink, borderColor: COLORS.lime },
+  outline: { backgroundColor: COLORS.lime, color: COLORS.ink, borderColor: COLORS.lime },
 };
 
 const SIZE_CLASSES = {
