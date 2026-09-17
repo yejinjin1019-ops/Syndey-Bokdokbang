@@ -22,21 +22,28 @@ export function Hero() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Some browsers pause background video (tab switch, low-power mode, etc.)
-  // even with autoPlay+loop set. Resume it whenever that happens so the
-  // hero loop never visibly stalls.
+  // Some mobile browsers (iOS Safari/WebViews in particular) only honour
+  // autoplay if `muted` is set as a real DOM property — React setting it as
+  // a JSX attribute isn't always enough — and they otherwise pause
+  // background video (tab switch, low-power mode, etc.) even with
+  // autoPlay+loop set. Force the property and (re)start playback whenever
+  // that happens so the hero loop never visibly stalls or fails to start.
   const videoRef = useRef(null);
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
     const resume = () => {
+      video.muted = true;
       if (video.paused) video.play().catch(() => {});
     };
+    resume();
     document.addEventListener("visibilitychange", resume);
     video.addEventListener("pause", resume);
+    video.addEventListener("loadedmetadata", resume);
     return () => {
       document.removeEventListener("visibilitychange", resume);
       video.removeEventListener("pause", resume);
+      video.removeEventListener("loadedmetadata", resume);
     };
   }, []);
 
