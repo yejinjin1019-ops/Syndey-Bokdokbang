@@ -83,7 +83,7 @@ export function Hero() {
       <video
         ref={videoRef}
         src="/brand/hero-loop.mp4"
-        poster="/brand/cta-apartment-facade.png"
+        poster="/brand/hero-poster.jpg"
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: "50% 40%", zIndex: 0 }}
