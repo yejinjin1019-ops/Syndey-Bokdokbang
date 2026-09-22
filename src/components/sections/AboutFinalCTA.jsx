@@ -4,6 +4,7 @@ import { COLORS, getThemeFonts, FONT_EN_DISPLAY, FONT_KO_BODY } from "../../lib/
 import { Reveal } from "../ui/Reveal";
 import { SectionLabel } from "../ui/SectionLabel";
 import { Button } from "../ui/Button";
+import { TEAM_MEMBERS } from "../../data/team";
 
 export function AboutFinalCTA() {
   const { lang, t } = useLanguage();
@@ -51,6 +52,48 @@ export function AboutFinalCTA() {
                 <div className="absolute -bottom-3 -left-3 w-20 h-1" style={{ backgroundColor: COLORS.yellow }} />
               </div>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section style={{ backgroundColor: COLORS.warm, borderTop: `1px solid ${COLORS.stone}` }}>
+        <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-20 md:py-28">
+          <Reveal>
+            <div className="mb-8">
+              <SectionLabel font={body}>{t("팀 소개", "Our Team")}</SectionLabel>
+            </div>
+            <h2
+              className="font-medium mb-14"
+              style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)" }}
+            >
+              {t("시드니 복덕방을 이끄는 사람들", "The people behind Sydney Bokdokbang")}
+            </h2>
+          </Reveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+            {TEAM_MEMBERS.map((member, i) => (
+              <Reveal key={member.name} delay={i * 70}>
+                <div className="flex flex-col items-center text-center">
+                  <div
+                    className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden mb-5"
+                    style={{ border: `1px solid ${COLORS.stone}` }}
+                  >
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="text-[16px] font-semibold mb-1" style={{ fontFamily: display, color: COLORS.ink }}>
+                    {member.name}
+                  </div>
+                  <div className="text-[12.5px]" style={{ color: COLORS.dim, fontFamily: body }}>
+                    {t(member.roleKo, member.roleEn)}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import { PageHero } from "../components/ui/PageHero";
 import { Reveal } from "../components/ui/Reveal";
 import { SectionLabel } from "../components/ui/SectionLabel";
 import { Button } from "../components/ui/Button";
+import { TEAM_MEMBERS } from "../data/team";
 
 const HOW_WE_WORK = [
   { n: "01", ko: "경청", en: "Listen", descKo: "실거주인지 투자인지, 예산과 타임라인까지 — 먼저 상황을 충분히 듣습니다.", descEn: "Owner-occupier or investor, budget, timeline — we start by listening closely." },
@@ -300,6 +301,44 @@ export function AboutPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section style={{ backgroundColor: COLORS.ivory, borderTop: `1px solid ${COLORS.stone}` }}>
+        <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-20 md:py-28">
+          <Reveal>
+            <div className="mb-8">
+              <SectionLabel font={body}>{t("팀 소개", "Our Team")}</SectionLabel>
+            </div>
+            <h2
+              className="font-medium mb-14"
+              style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(24px,2.8vw,40px)" }}
+            >
+              {t("시드니 복덕방을 이끄는 사람들", "The people behind Sydney Bokdokbang")}
+            </h2>
+          </Reveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+            {TEAM_MEMBERS.map((member, i) => (
+              <Reveal key={member.name} delay={i * 70}>
+                <div className="flex flex-col items-center text-center">
+                  <div
+                    className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden mb-5"
+                    style={{ border: `1px solid ${COLORS.stone}` }}
+                  >
+                    <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="text-[16px] font-semibold mb-1" style={{ fontFamily: display, color: COLORS.ink }}>
+                    {member.name}
+                  </div>
+                  <div className="text-[12.5px]" style={{ color: COLORS.dim, fontFamily: body }}>
+                    {t(member.roleKo, member.roleEn)}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
