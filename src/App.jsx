@@ -31,6 +31,7 @@ import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
 import { TermsPage } from "./pages/TermsPage";
 import { DisclaimerPage } from "./pages/DisclaimerPage";
 import { LicenceInformationPage } from "./pages/LicenceInformationPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 
 export default function App() {
   return (
@@ -75,6 +76,8 @@ export default function App() {
             <Route path="/legal/disclaimer" element={<DisclaimerPage />} />
             <Route path="/legal/licence" element={<LicenceInformationPage />} />
             <Route path="/legal/:slug" element={<LegalPage />} />
+
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />
         </div>
