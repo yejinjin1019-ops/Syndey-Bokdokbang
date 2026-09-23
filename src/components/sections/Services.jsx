@@ -21,7 +21,7 @@ export function Services() {
                 <SectionLabel font={body}>{t("서비스", "Services")}</SectionLabel>
               </div>
               <h2
-                className="font-medium max-w-lg"
+                className="font-medium sm:whitespace-nowrap"
                 style={{ fontFamily: display, color: COLORS.ink, fontSize: "clamp(26px,2.8vw,42px)", lineHeight: 1.45 }}
               >
                 {t("매매 이후에도 계속되는 케어", "Support that continues after the sale")}
