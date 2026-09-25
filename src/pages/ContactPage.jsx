@@ -5,6 +5,7 @@ import { PageHero } from "../components/ui/PageHero";
 import { Reveal } from "../components/ui/Reveal";
 import { LeadForm } from "../components/ui/LeadForm";
 import { CONTACT_INFO } from "../data/contactInfo";
+import { SOCIAL_LINKS } from "../components/ui/socialLinks";
 import { sendContactEnquiry } from "../lib/emailjs";
 
 const FIELDS = [
@@ -79,6 +80,16 @@ export function ContactPage() {
                   <a href={CONTACT_INFO.kakaoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-[15px]" style={{ color: COLORS.ink, fontFamily: body, textDecoration: "none" }}>
                     <MessageCircle size={16} style={{ color: COLORS.green }} /> @{CONTACT_INFO.kakaoId}
                   </a>
+                </div>
+                <div className="pb-6 mb-6" style={{ borderBottom: `1px solid ${COLORS.stone}` }}>
+                  <div className="text-[11px] tracking-[0.14em] uppercase mb-2.5 font-semibold" style={{ color: COLORS.dim, fontFamily: body }}>{t("소셜 미디어", "Social")}</div>
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                    {SOCIAL_LINKS.map(({ name, url, Icon }) => (
+                      <a key={name} href={url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[15px]" style={{ color: COLORS.ink, fontFamily: body, textDecoration: "none" }}>
+                        <Icon size={16} style={{ color: COLORS.green }} /> {name}
+                      </a>
+                    ))}
+                  </div>
                 </div>
                 <div>
                   <div className="text-[11px] tracking-[0.14em] uppercase mb-2.5 flex items-center gap-2 font-semibold" style={{ color: COLORS.dim, fontFamily: body }}>

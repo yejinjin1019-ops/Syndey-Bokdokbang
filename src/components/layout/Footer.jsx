@@ -4,6 +4,7 @@ import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
 import { CONTACT_INFO } from "../../data/contactInfo";
 import { Reveal } from "../ui/Reveal";
+import { SOCIAL_LINKS } from "../ui/socialLinks";
 import { RevealRule } from "../ui/RevealRule";
 
 const DIM_TEXT = "rgba(255,246,229,0.68)";
@@ -125,6 +126,21 @@ export function Footer() {
               >
                 <Mail size={13} style={{ color: COLORS.yellow }} /> {CONTACT_INFO.email}
               </a>
+              <div className="flex items-center gap-4 pt-1">
+                {SOCIAL_LINKS.map(({ name, url, Icon }) => (
+                  <a
+                    key={name}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={name}
+                    className="flex items-center transition-opacity hover:opacity-70"
+                    style={{ color: COLORS.warm }}
+                  >
+                    <Icon size={17} />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 

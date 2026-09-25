@@ -11,6 +11,9 @@ export const CONTACT_INFO = {
   email: "sydney.sbb.admin@gmail.com",
   kakaoId: "sydneybokdokbang",
   kakaoUrl: "https://open.kakao.com/o/sydneybokdokbang",
+  instagramUrl: "https://www.instagram.com/sydney_bokdokbang",
+  facebookUrl: "https://www.facebook.com/profile.php?id=61594491382015",
+  threadsUrl: "https://www.threads.com/@sydney_bokdokbang",
   // Kept English-only everywhere (Footer, Contact page) — not translated to Korean.
   address: "Suite 101A, 27 Lyons Street, Strathfield NSW 2135, Australia",
   hoursKo: "월–금 오전 9:30–오후 5:30 (주말 휴무)",
