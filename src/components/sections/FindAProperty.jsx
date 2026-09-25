@@ -99,7 +99,7 @@ export function FindAProperty() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-14">
               {visible.map((dev, i) => (
-                <Reveal key={dev.id} delay={(i % 3) * 70}>
+                <Reveal key={dev.id} delay={(i % 3) * 70} className="h-full">
                   <DevelopmentCard dev={dev} t={t} display={display} body={body} />
                 </Reveal>
               ))}

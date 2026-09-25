@@ -25,7 +25,7 @@ export function DevelopmentCard({ dev, t, body }) {
   const completionStat = dev.stats.find((s) => s.labelEn === "Completion");
 
   return (
-    <Link to={`/new-developments/${dev.id}`} className="group block" style={{ textDecoration: "none" }}>
+    <Link to={`/new-developments/${dev.id}`} className="group flex flex-col h-full" style={{ textDecoration: "none" }}>
       <div className="relative overflow-hidden mb-6" style={{ aspectRatio: "16/11", backgroundColor: COLORS.stone }}>
         <img
           src={dev.img}
@@ -49,7 +49,7 @@ export function DevelopmentCard({ dev, t, body }) {
         {dev.name}
       </h3>
 
-      <div className="grid grid-cols-2 gap-x-4 gap-y-4 mb-5 pb-5" style={{ borderBottom: `1px solid ${COLORS.stone}` }}>
+      <div className="grid grid-cols-2 gap-x-4 gap-y-4 mt-auto mb-5 pb-5" style={{ borderBottom: `1px solid ${COLORS.stone}` }}>
         <Stat label={t("시작가", "Starting Price")} value={`$${dev.startingPrice.toLocaleString()}`} body={body} />
         <Stat label={t("침실 구성", "Bedroom Range")} value={bedroomRange} body={body} />
         <Stat label={t(completionStat.labelKo, completionStat.labelEn)} value={completionStat.value} body={body} />

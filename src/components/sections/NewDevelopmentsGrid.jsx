@@ -97,7 +97,7 @@ export function NewDevelopmentsGrid() {
         ) : (
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-16">
             {filtered.map((dev, i) => (
-              <Reveal key={dev.id} delay={(i % 3) * 70}>
+              <Reveal key={dev.id} delay={(i % 3) * 70} className="h-full">
                 <DevelopmentCard dev={dev} t={t} display={display} body={body} />
               </Reveal>
             ))}
