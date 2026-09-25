@@ -8,7 +8,7 @@ export const CONTACT_INFO = {
   legalName: "Bokdokbang Pty Ltd",
   phone: "+61 492 058 159",
   phoneDisplay: "0492 058 159",
-  email: "info.sydneybokdokbang@gmail.com",
+  email: "sydney.sbb.admin@gmail.com",
   kakaoId: "sydneybokdokbang",
   kakaoUrl: "https://open.kakao.com/o/sydneybokdokbang",
   // Kept English-only everywhere (Footer, Contact page) — not translated to Korean.
