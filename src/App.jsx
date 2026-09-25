@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./i18n/translations";
 import { COLORS } from "./lib/theme";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { CanonicalLink } from "./components/CanonicalLink";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { HomePage } from "./pages/HomePage";
@@ -38,6 +39,7 @@ export default function App() {
     <LanguageProvider>
       <BrowserRouter>
         <ScrollToTop />
+        <CanonicalLink />
         <div style={{ backgroundColor: COLORS.warm, color: COLORS.ink, overflowX: "hidden" }}>
           <Header />
           <Routes>
