@@ -6,6 +6,7 @@ import { COLORS, getThemeFonts } from "../../lib/theme";
 import { Reveal } from "../ui/Reveal";
 import { SectionLabel } from "../ui/SectionLabel";
 import { Button } from "../ui/Button";
+import { NoListings } from "../ui/NoListings";
 import { SearchResultCard } from "../ui/SearchResultCard";
 import { BUY_LISTINGS, BUY_PRICE_BUCKETS } from "../../data/buyListings";
 import { RENT_LISTINGS, RENT_PRICE_BUCKETS } from "../../data/rentListings";
@@ -156,7 +157,9 @@ export function PropertiesFinder() {
         </Reveal>
 
         <div ref={resultsRef} style={{ scrollMarginTop: "90px" }}>
-          {!searched ? (
+          {source.listings.length === 0 ? (
+            <NoListings kind={tab} />
+          ) : !searched ? (
             <p className="text-center py-16 text-[14px]" style={{ color: COLORS.dim, fontFamily: body }}>
               {t("조건을 선택하고 검색을 눌러 매물을 확인하세요.", "Set your filters and press Search to see matching properties.")}
             </p>

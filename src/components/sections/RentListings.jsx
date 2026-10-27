@@ -5,6 +5,7 @@ import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
 import { Reveal } from "../ui/Reveal";
 import { Button } from "../ui/Button";
+import { NoListings } from "../ui/NoListings";
 import { RentListingCard } from "../ui/RentListingCard";
 import { RENT_LISTINGS, RENT_PRICE_BUCKETS } from "../../data/rentListings";
 
@@ -157,7 +158,9 @@ export function RentListings() {
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-28">
         <div className={view === "map" ? "grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10" : ""}>
           <div>
-            {filtered.length === 0 ? (
+            {RENT_LISTINGS.length === 0 ? (
+              <NoListings kind="rent" />
+            ) : filtered.length === 0 ? (
               <p className="text-center py-16 text-[14px]" style={{ color: COLORS.dim, fontFamily: body }}>
                 {t("조건에 맞는 매물이 없습니다. 필터를 조정해보세요.", "No properties match your filters. Try adjusting your search.")}
               </p>

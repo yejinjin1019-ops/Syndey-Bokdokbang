@@ -1,72 +1,13 @@
 // RENT property listings for the /rent editorial search page.
-export const RENT_LISTINGS = [
-  {
-    id: "rent-surry-hills-apt",
-    suburb: "Surry Hills", subKo: "서리 힐스",
-    address: "4/210 Crown Street, Surry Hills",
-    type: "Apartment", typeKo: "아파트",
-    rentValue: 850,
-    availableKo: "즉시 입주 가능", availableEn: "Available now", availableNow: true,
-    inspection: { status: "open", nextKo: "토요일 오전 10:00–10:15", nextEn: "Sat 10:00–10:15am" },
-    beds: 2, baths: 1, parking: 1,
-    img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&h=900&fit=crop&auto=format",
-  },
-  {
-    id: "rent-chatswood-apt",
-    suburb: "Chatswood", subKo: "채스우드",
-    address: "8/15 Victor Street, Chatswood",
-    type: "Apartment", typeKo: "아파트",
-    rentValue: 720,
-    availableKo: "11월 5일부터", availableEn: "Available 5 Nov", availableNow: false,
-    inspection: { status: "open", nextKo: "토요일 오전 11:00–11:20", nextEn: "Sat 11:00–11:20am" },
-    beds: 1, baths: 1, parking: 1,
-    img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&h=900&fit=crop&auto=format",
-  },
-  {
-    id: "rent-eastwood-th",
-    suburb: "Eastwood", subKo: "이스트우드",
-    address: "2/9 Kirkham Street, Eastwood",
-    type: "Townhouse", typeKo: "타운하우스",
-    rentValue: 980,
-    availableKo: "즉시 입주 가능", availableEn: "Available now", availableNow: true,
-    inspection: { status: "appointment", nextKo: "예약 방문", nextEn: "By appointment" },
-    beds: 3, baths: 2, parking: 2,
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=900&fit=crop&auto=format",
-  },
-  {
-    id: "rent-north-sydney-apt",
-    suburb: "North Sydney", subKo: "노스 시드니",
-    address: "21/100 Walker Street, North Sydney",
-    type: "Apartment", typeKo: "아파트",
-    rentValue: 680,
-    availableKo: "10월 28일부터", availableEn: "Available 28 Oct", availableNow: false,
-    inspection: { status: "open", nextKo: "토요일 오후 1:30–1:45", nextEn: "Sat 1:30–1:45pm" },
-    beds: 1, baths: 1, parking: 0,
-    img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&h=900&fit=crop&auto=format",
-  },
-  {
-    id: "rent-strathfield-house",
-    suburb: "Strathfield", subKo: "스트라스필드",
-    address: "17 Boronia Street, Strathfield",
-    type: "House", typeKo: "주택",
-    rentValue: 1150,
-    availableKo: "즉시 입주 가능", availableEn: "Available now", availableNow: true,
-    inspection: { status: "appointment", nextKo: "예약 방문", nextEn: "By appointment" },
-    beds: 4, baths: 2, parking: 2,
-    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&h=900&fit=crop&auto=format",
-  },
-  {
-    id: "rent-glebe-apt",
-    suburb: "Glebe", subKo: "글리브",
-    address: "6/48 St Johns Road, Glebe",
-    type: "Apartment", typeKo: "아파트",
-    rentValue: 750,
-    availableKo: "11월 12일부터", availableEn: "Available 12 Nov", availableNow: false,
-    inspection: { status: "open", nextKo: "토요일 오전 9:30–9:45", nextEn: "Sat 9:30–9:45am" },
-    beds: 2, baths: 1, parking: 0,
-    img: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&h=900&fit=crop&auto=format",
-  },
-];
+// No listings are published yet (the original entries were placeholders).
+// Each listing looks like:
+//   { id: "rent-chatswood-apt", suburb: "Chatswood", subKo: "채스우드",
+//     address: "...", type: "Apartment", typeKo: "아파트", rentValue: 720,
+//     availableKo: "즉시 입주 가능", availableEn: "Available now", availableNow: true,
+//     inspection: { status: "open" | "appointment", nextKo: "...", nextEn: "..." },
+//     beds: 1, baths: 1, parking: 1, img: "/properties/..." }
+// Adding one also adds its /property/:id page to the prerender and sitemap.
+export const RENT_LISTINGS = [];
 
 export const RENT_PRICE_BUCKETS = [
   { id: "0-600", min: 0, max: 600, label: "$0 – $600/wk" },
