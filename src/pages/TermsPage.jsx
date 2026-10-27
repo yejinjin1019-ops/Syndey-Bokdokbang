@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "../i18n/LocalizedLink";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../i18n/translations";
 import { COLORS, getThemeFonts, FONT_EN_DISPLAY } from "../lib/theme";

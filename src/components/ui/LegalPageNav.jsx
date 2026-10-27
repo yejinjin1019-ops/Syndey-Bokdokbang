@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "../../i18n/LocalizedLink";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";
 
@@ -12,16 +12,15 @@ const NAV_ITEMS = [
 /** Discreet nav bar shared across dedicated legal pages — quiet, pill-less
  * tabs with a thin underline marking the active page. */
 export function LegalPageNav() {
-  const { lang, t } = useLanguage();
+  const { lang, t, basePath } = useLanguage();
   const { body } = getThemeFonts(lang);
-  const { pathname } = useLocation();
 
   return (
     <div style={{ backgroundColor: COLORS.ivory, borderTop: `1px solid ${COLORS.stone}` }}>
       <div className="max-w-[760px] mx-auto px-5 md:px-10">
         <nav className="flex flex-wrap items-center gap-x-7 gap-y-1 py-6">
           {NAV_ITEMS.map((item) => {
-            const active = pathname === item.to;
+            const active = basePath === item.to;
             return (
               <Link
                 key={item.to}

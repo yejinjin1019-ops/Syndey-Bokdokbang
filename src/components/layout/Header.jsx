@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "../../i18n/LocalizedLink";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { useScrollState } from "../../hooks/useScrollState";
@@ -31,10 +31,9 @@ function NavLink({ to, onClick, children, hasSub, active, font }) {
 }
 
 export function Header() {
-  const { lang, toggleLang, t } = useLanguage();
+  const { lang, toggleLang, t, basePath } = useLanguage();
   const scrolled = useScrollState();
   const direction = useScrollDirection();
-  const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMobileSub, setOpenMobileSub] = useState(null);
   const [openDesktopSub, setOpenDesktopSub] = useState(null);
@@ -115,7 +114,7 @@ export function Header() {
                 onMouseLeave={() => item.sub && setOpenDesktopSub(null)}
               >
                 {item.to ? (
-                  <NavLink to={item.to} hasSub={!!item.sub} active={location.pathname === item.to} font={body}>{item.label}</NavLink>
+                  <NavLink to={item.to} hasSub={!!item.sub} active={basePath === item.to} font={body}>{item.label}</NavLink>
                 ) : (
                   <button
                     className="flex items-center gap-1 text-[14px] font-medium py-1 transition-colors duration-150"

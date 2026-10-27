@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "../../i18n/LocalizedLink";
 import { COLORS } from "../../lib/theme";
 
 // Bold, simple editorial-label buttons — vintage print energy, modern web UI.

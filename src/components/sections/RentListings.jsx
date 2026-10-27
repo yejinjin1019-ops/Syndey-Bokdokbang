@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "../../i18n/LocalizedLink";
 import { Search, MapPin, Map as MapIcon, List as ListIcon } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";

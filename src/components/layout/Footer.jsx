@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "../../i18n/LocalizedLink";
 import { Phone, MessageSquare, Mail } from "lucide-react";
 import { useLanguage } from "../../i18n/translations";
 import { COLORS, getThemeFonts } from "../../lib/theme";

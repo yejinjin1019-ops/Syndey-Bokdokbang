@@ -44,41 +44,41 @@ export default function App() {
       <div style={{ backgroundColor: COLORS.warm, color: COLORS.ink, overflowX: "hidden" }}>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/en?" element={<HomePage />} />
 
-          <Route path="/properties" element={<PropertiesPage />} />
-          <Route path="/buy" element={<BuyPage />} />
-          <Route path="/rent" element={<RentPage />} />
-          <Route path="/property/:id" element={<PropertyDetailPage />} />
+          <Route path="/en?/properties" element={<PropertiesPage />} />
+          <Route path="/en?/buy" element={<BuyPage />} />
+          <Route path="/en?/rent" element={<RentPage />} />
+          <Route path="/en?/property/:id" element={<PropertyDetailPage />} />
 
-          <Route path="/new-developments" element={<NewDevelopmentsPage />} />
-          <Route path="/new-developments/:id" element={<ProjectDetailPage />} />
+          <Route path="/en?/new-developments" element={<NewDevelopmentsPage />} />
+          <Route path="/en?/new-developments/:id" element={<ProjectDetailPage />} />
 
-          <Route path="/appraisal" element={<AppraisalPage />} />
+          <Route path="/en?/appraisal" element={<AppraisalPage />} />
 
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/property-advisory" element={<PropertyAdvisoryPage />} />
-          <Route path="/services/settlement-care" element={<SettlementCarePage />} />
-          <Route path="/services/leasing-care" element={<LeasingCarePage />} />
-          <Route path="/services/move-in-care" element={<MoveInCarePage />} />
-          <Route path="/services/property-management" element={<PropertyManagementPage />} />
-          <Route path="/services/property-management/tenant-application" element={<TenantApplicationPage />} />
-          <Route path="/services/property-management/maintenance-request" element={<MaintenanceRequestPage />} />
-          <Route path="/services/property-management/landlord-portal" element={<LandlordPortalPage />} />
-          <Route path="/services/:slug" element={<ServiceDetailPage />} />
+          <Route path="/en?/services" element={<ServicesPage />} />
+          <Route path="/en?/services/property-advisory" element={<PropertyAdvisoryPage />} />
+          <Route path="/en?/services/settlement-care" element={<SettlementCarePage />} />
+          <Route path="/en?/services/leasing-care" element={<LeasingCarePage />} />
+          <Route path="/en?/services/move-in-care" element={<MoveInCarePage />} />
+          <Route path="/en?/services/property-management" element={<PropertyManagementPage />} />
+          <Route path="/en?/services/property-management/tenant-application" element={<TenantApplicationPage />} />
+          <Route path="/en?/services/property-management/maintenance-request" element={<MaintenanceRequestPage />} />
+          <Route path="/en?/services/property-management/landlord-portal" element={<LandlordPortalPage />} />
+          <Route path="/en?/services/:slug" element={<ServiceDetailPage />} />
 
-          <Route path="/about" element={<AboutPage />} />
+          <Route path="/en?/about" element={<AboutPage />} />
 
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/en?/contact" element={<ContactPage />} />
 
-          <Route path="/guides" element={<GuidesPage />} />
-          <Route path="/guides/:slug" element={<GuideDetailPage />} />
+          <Route path="/en?/guides" element={<GuidesPage />} />
+          <Route path="/en?/guides/:slug" element={<GuideDetailPage />} />
 
-          <Route path="/legal/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/legal/terms" element={<TermsPage />} />
-          <Route path="/legal/disclaimer" element={<DisclaimerPage />} />
-          <Route path="/legal/licence" element={<LicenceInformationPage />} />
-          <Route path="/legal/:slug" element={<LegalPage />} />
+          <Route path="/en?/legal/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/en?/legal/terms" element={<TermsPage />} />
+          <Route path="/en?/legal/disclaimer" element={<DisclaimerPage />} />
+          <Route path="/en?/legal/licence" element={<LicenceInformationPage />} />
+          <Route path="/en?/legal/:slug" element={<LegalPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

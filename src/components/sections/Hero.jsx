@@ -138,7 +138,7 @@ export function Hero() {
               className="text-[13px] font-semibold uppercase"
               style={{ fontFamily: body, color: "var(--hero-fg-dim)", letterSpacing: "0.14em" }}
             >
-              {t("시드니 복덕방", "SBB")}
+              {t("시드니 복덕방", "Sydney Bokdokbang")}
             </h1>
           </Reveal>
 

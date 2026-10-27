@@ -1,4 +1,5 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { Link } from "../i18n/LocalizedLink";
 import { ArrowLeft, ArrowRight, Bed, Bath, Car } from "lucide-react";
 import { useLanguage } from "../i18n/translations";
 import { COLORS, getThemeFonts, FONT_EN_DISPLAY } from "../lib/theme";

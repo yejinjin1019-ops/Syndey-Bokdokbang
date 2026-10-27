@@ -1,8 +1,8 @@
 // Runs after `vite build` and the SSR build of src/entry-server.jsx: renders
-// every route in PRERENDER_PATHS to its own HTML file (dist/about.html,
-// dist/services/settlement-care.html, ...) with that page's title,
-// description, Open Graph tags and canonical link, so search engines get real
-// content instead of an empty <div id="root">. vercel.json's cleanUrls serves
+// every route in PRERENDER_PATHS, Korean and English, to its own HTML file
+// (dist/about.html, dist/en/about.html, ...) with that page's language, title,
+// description, Open Graph tags, canonical link and ko/en hreflang alternates,
+// so search engines get real content instead of an empty <div id="root">. vercel.json's cleanUrls serves
 // them at /about etc.; unknown URLs get dist/404.html with a real 404 status.
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
@@ -25,17 +25,25 @@ function replaceOnce(html, pattern, replacement, label) {
   return html.replace(pattern, () => replacement);
 }
 
-function buildPage({ title, description, url, appHtml, indexable }) {
+const OG_LOCALE = { ko: "ko_KR", en: "en_AU" };
+
+function buildPage({ title, description, lang = "ko", path, alternates, appHtml, indexable }) {
   let html = template;
+  html = replaceOnce(html, '<html lang="ko">', `<html lang="${lang}">`, "<html lang>");
+  html = replaceOnce(html, /<meta property="og:locale" content="[^"]*" \/>/, `<meta property="og:locale" content="${OG_LOCALE[lang]}" />`, "og:locale");
   html = replaceOnce(html, /<title>[^<]*<\/title>/, `<title>${escapeText(title)}</title>`, "<title>");
   html = replaceOnce(html, /<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${escapeAttr(description)}" />`, "meta description");
   html = replaceOnce(html, /<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${escapeAttr(title)}" />`, "og:title");
   html = replaceOnce(html, /<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${escapeAttr(description)}" />`, "og:description");
   if (indexable) {
+    const url = `${SITE_URL}${path}`;
+    const hreflang = [...Object.entries(alternates), ["x-default", alternates.ko]]
+      .map(([l, p]) => `\n    <link rel="alternate" hreflang="${l}" href="${SITE_URL}${p}" />`)
+      .join("");
     html = replaceOnce(
       html,
       /<meta property="og:url" content="[^"]*" \/>/,
-      `<meta property="og:url" content="${url}" />\n    <link rel="canonical" href="${url}" />`,
+      `<meta property="og:url" content="${url}" />\n    <link rel="canonical" href="${url}" />${hreflang}`,
       "og:url"
     );
   } else {
@@ -51,8 +59,7 @@ function writePage(file, html) {
 }
 
 for (const path of PRERENDER_PATHS) {
-  const { title, description } = getPageMeta(path);
-  const html = buildPage({ title, description, url: `${SITE_URL}${path}`, appHtml: render(path), indexable: true });
+  const html = buildPage({ ...getPageMeta(path), appHtml: render(path), indexable: true });
   writePage(path === "/" ? "index.html" : `${path.slice(1)}.html`, html);
 }
 
