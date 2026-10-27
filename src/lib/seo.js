@@ -141,14 +141,19 @@ function dynamicMeta(path) {
   return null;
 }
 
-/** Title + description for a pathname. Unknown paths fall back to the home
- * page's metadata. */
+export const NOT_FOUND_META = {
+  title: `페이지를 찾을 수 없습니다 | ${BRAND}`,
+  description: HOME.description,
+};
+
+/** Title + description for a pathname; `found` is false for paths with no
+ * page (the 404). */
 export function getPageMeta(pathname) {
   const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : "/";
   const page = STATIC_PAGES[path] || dynamicMeta(path);
-  if (!page) return { ...HOME, path };
+  if (!page) return { ...NOT_FOUND_META, path, found: false };
   const title = path === "/" ? page.title : `${page.title} | ${BRAND}`;
-  return { title, description: page.description, path };
+  return { title, description: page.description, path, found: true };
 }
 
 /** Every URL that should be prerendered at build time. */

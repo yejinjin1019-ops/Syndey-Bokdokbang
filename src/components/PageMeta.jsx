@@ -18,7 +18,7 @@ export function PageMeta() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const { title, description, path } = getPageMeta(pathname);
+    const { title, description, path, found } = getPageMeta(pathname);
     const url = `${SITE_URL}${path}`;
     const meta = (key, name) => () => {
       const el = document.createElement("meta");
@@ -31,6 +31,11 @@ export function PageMeta() {
     setHeadTag('meta[property="og:title"]', meta("property", "og:title"), "content", title);
     setHeadTag('meta[property="og:description"]', meta("property", "og:description"), "content", description);
     setHeadTag('meta[property="og:url"]', meta("property", "og:url"), "content", url);
+    const canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!found) {
+      canonical?.remove();
+      return;
+    }
     setHeadTag(
       'link[rel="canonical"]',
       () => {
