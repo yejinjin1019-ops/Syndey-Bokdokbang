@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./i18n/translations";
 import { COLORS } from "./lib/theme";
 import { ScrollToTop } from "./components/ScrollToTop";
-import { CanonicalLink } from "./components/CanonicalLink";
+import { PageMeta } from "./components/PageMeta";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { HomePage } from "./pages/HomePage";
@@ -34,56 +34,56 @@ import { DisclaimerPage } from "./pages/DisclaimerPage";
 import { LicenceInformationPage } from "./pages/LicenceInformationPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 
+/** The whole site, minus the router: main.jsx wraps it in BrowserRouter and
+ * entry-server.jsx in StaticRouter for build-time prerendering. */
 export default function App() {
   return (
     <LanguageProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <CanonicalLink />
-        <div style={{ backgroundColor: COLORS.warm, color: COLORS.ink, overflowX: "hidden" }}>
-          <Header />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
+      <ScrollToTop />
+      <PageMeta />
+      <div style={{ backgroundColor: COLORS.warm, color: COLORS.ink, overflowX: "hidden" }}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
 
-            <Route path="/properties" element={<PropertiesPage />} />
-            <Route path="/buy" element={<BuyPage />} />
-            <Route path="/rent" element={<RentPage />} />
-            <Route path="/property/:id" element={<PropertyDetailPage />} />
+          <Route path="/properties" element={<PropertiesPage />} />
+          <Route path="/buy" element={<BuyPage />} />
+          <Route path="/rent" element={<RentPage />} />
+          <Route path="/property/:id" element={<PropertyDetailPage />} />
 
-            <Route path="/new-developments" element={<NewDevelopmentsPage />} />
-            <Route path="/new-developments/:id" element={<ProjectDetailPage />} />
+          <Route path="/new-developments" element={<NewDevelopmentsPage />} />
+          <Route path="/new-developments/:id" element={<ProjectDetailPage />} />
 
-            <Route path="/appraisal" element={<AppraisalPage />} />
+          <Route path="/appraisal" element={<AppraisalPage />} />
 
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/services/property-advisory" element={<PropertyAdvisoryPage />} />
-            <Route path="/services/settlement-care" element={<SettlementCarePage />} />
-            <Route path="/services/leasing-care" element={<LeasingCarePage />} />
-            <Route path="/services/move-in-care" element={<MoveInCarePage />} />
-            <Route path="/services/property-management" element={<PropertyManagementPage />} />
-            <Route path="/services/property-management/tenant-application" element={<TenantApplicationPage />} />
-            <Route path="/services/property-management/maintenance-request" element={<MaintenanceRequestPage />} />
-            <Route path="/services/property-management/landlord-portal" element={<LandlordPortalPage />} />
-            <Route path="/services/:slug" element={<ServiceDetailPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/property-advisory" element={<PropertyAdvisoryPage />} />
+          <Route path="/services/settlement-care" element={<SettlementCarePage />} />
+          <Route path="/services/leasing-care" element={<LeasingCarePage />} />
+          <Route path="/services/move-in-care" element={<MoveInCarePage />} />
+          <Route path="/services/property-management" element={<PropertyManagementPage />} />
+          <Route path="/services/property-management/tenant-application" element={<TenantApplicationPage />} />
+          <Route path="/services/property-management/maintenance-request" element={<MaintenanceRequestPage />} />
+          <Route path="/services/property-management/landlord-portal" element={<LandlordPortalPage />} />
+          <Route path="/services/:slug" element={<ServiceDetailPage />} />
 
-            <Route path="/about" element={<AboutPage />} />
+          <Route path="/about" element={<AboutPage />} />
 
-            <Route path="/contact" element={<ContactPage />} />
+          <Route path="/contact" element={<ContactPage />} />
 
-            <Route path="/guides" element={<GuidesPage />} />
-            <Route path="/guides/:slug" element={<GuideDetailPage />} />
+          <Route path="/guides" element={<GuidesPage />} />
+          <Route path="/guides/:slug" element={<GuideDetailPage />} />
 
-            <Route path="/legal/privacy-policy" element={<PrivacyPolicyPage />} />
-            <Route path="/legal/terms" element={<TermsPage />} />
-            <Route path="/legal/disclaimer" element={<DisclaimerPage />} />
-            <Route path="/legal/licence" element={<LicenceInformationPage />} />
-            <Route path="/legal/:slug" element={<LegalPage />} />
+          <Route path="/legal/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/legal/terms" element={<TermsPage />} />
+          <Route path="/legal/disclaimer" element={<DisclaimerPage />} />
+          <Route path="/legal/licence" element={<LicenceInformationPage />} />
+          <Route path="/legal/:slug" element={<LegalPage />} />
 
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-          <Footer />
-        </div>
-      </BrowserRouter>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+        <Footer />
+      </div>
     </LanguageProvider>
   );
 }
