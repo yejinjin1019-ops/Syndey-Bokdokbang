@@ -130,20 +130,21 @@ export function Hero() {
       <div className="hero-text relative flex items-center" style={{ minHeight: "100svh", zIndex: 5 }}>
         <div className="hero-text-inner px-6 sm:px-9 lg:px-16 xl:px-20 py-16 md:py-20 w-full">
 
-          {/* Brand mark */}
+          {/* Brand mark — the page's h1, so the brand name is the homepage's
+              main heading for search engines; the big tagline below is h2. */}
           <Reveal delay={40} className="mb-10 flex items-center gap-3">
             <div className="w-8 h-px" style={{ backgroundColor: COLORS.lime }} />
-            <div
+            <h1
               className="text-[13px] font-semibold uppercase"
               style={{ fontFamily: body, color: "var(--hero-fg-dim)", letterSpacing: "0.14em" }}
             >
               {t("시드니 복덕방", "SBB")}
-            </div>
+            </h1>
           </Reveal>
 
           {/* Headline — oversized editorial statement, revealed line by line */}
           <RevealLines
-            as="h1"
+            as="h2"
             lines={headlineLines}
             baseDelay={180}
             delayStep={110}
